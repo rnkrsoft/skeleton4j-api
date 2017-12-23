@@ -1,0 +1,59 @@
+package javax.web.skeleton4j.module;
+
+import javax.web.skeleton4j.menu.WebNode;
+import javax.web.skeleton4j.page.WebPage;
+import javax.web.skeleton4j.remote.WebInterfaceMetadata;
+import java.util.List;
+
+/**
+ * Created by devops4j on 2017/10/13.
+ * 模块封装
+ */
+public interface WebModule {
+    /**
+     * 模块描述
+     */
+    String getDesc();
+
+    /**
+     * 模块名称(英文)
+     */
+    String getName();
+
+    /**
+     * 包路径，只要包相同，则是相同的模块
+     */
+    String getPackagePath();
+
+    /**
+     * 子菜单
+     */
+    List<WebNode> getSubMenus();
+
+    /**
+     * 页面列表，包含的页面对象，一般为编译好的页面，只需要进行权限渲染
+     */
+    List<WebPage> getPages();
+
+    /**
+     * 异步接口列表
+     */
+    List<WebInterfaceMetadata> getInterfaces();
+
+    /**
+     * 增加接口信息
+     *
+     * @param remoteInterfaceMetadata
+     * @return
+     */
+    WebModule addInterface(WebInterfaceMetadata remoteInterfaceMetadata);
+
+    /**
+     * 增加页面
+     *
+     * @param webPage
+     * @return
+     */
+    WebModule addPage(WebPage webPage);
+
+}
