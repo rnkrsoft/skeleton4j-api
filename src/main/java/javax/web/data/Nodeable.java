@@ -7,13 +7,13 @@ import java.util.List;
  * Created by devops4j on 2017/12/5.
  * 提供树形节点接口
  */
-public interface ProvideTreeable extends Serializable {
+public interface Nodeable extends Serializable {
     /**
      * 返回树形节点数据
      *
      * @return
      */
-    List<TreeNode> getNodes();
+    List<Node> getNodes();
 
     /**
      * 增加树节点
@@ -21,5 +21,5 @@ public interface ProvideTreeable extends Serializable {
      * @param node 节点
      * @return 树形节点接口
      */
-    ProvideTreeable addNode(TreeNode node);
+    Nodeable addNode(Node node);
 }

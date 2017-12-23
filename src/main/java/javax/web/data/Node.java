@@ -17,7 +17,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TreeNode implements Serializable {
+public class Node implements Serializable {
     /**
      * 显示文本
      */
@@ -29,9 +29,9 @@ public class TreeNode implements Serializable {
     /**
      * 子节点
      */
-    List<TreeNode> nodes;
+    List<Node> nodes;
 
-    public TreeNode addNode(TreeNode node) {
+    public Node addNode(Node node) {
         if (nodes == null) {
             this.nodes = new ArrayList();
         }

@@ -10,8 +10,8 @@ import java.util.List;
  * 申明用于树形结构数据获取时的对象定义
  */
 @Data
-public class Tree implements ProvideTreeable {
-    List<TreeNode> nodes;
+public class RootNode implements Nodeable {
+    List<Node> nodes;
 
     /**
      * 增加节点
@@ -19,7 +19,7 @@ public class Tree implements ProvideTreeable {
      * @param node 节点
      * @return 树
      */
-    public ProvideTreeable addNode(TreeNode node) {
+    public Nodeable addNode(Node node) {
         if (nodes == null) {
             this.nodes = new ArrayList();
         }

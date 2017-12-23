@@ -1,6 +1,6 @@
 package javax.web.skeleton4j.enums;
 
-import javax.web.interfaces.EnumStringCode;
+import javax.interfaces.EnumStringCode;
 
 public enum WebGui implements EnumStringCode {
     /**
