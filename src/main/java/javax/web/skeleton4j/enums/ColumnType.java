@@ -1,6 +1,6 @@
 package javax.web.skeleton4j.enums;
 
-import javax.interfaces.EnumStringCode;
+import com.devops4j.interfaces.EnumStringCode;
 
 /**
  * Created by devops4j on 2017/12/12.
