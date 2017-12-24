@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <groupId>com.devops4j.skeleton4j</groupId>
     <artifactId>skeleton4j-api</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-RC</version>
     <name>skeleton4j-api</name>
     <description>this is skeleton4j application interface! 这是skeleton4j的API规范，定义了一系列的接口注解规范</description>
     <url>https://github.com/devops4j/skeleton4j-api.git</url>
@@ -20,7 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
         <sourceEncoding>UTF-8</sourceEncoding>
-        <groundwork.version>1.0.0-SNAPSHOT</groundwork.version>
+        <groundwork.version>1.0.0-RC</groundwork.version>
     </properties>
     <scm>
         <connection>git@github.com:devops4j/skeleton4j-api.git</connection>
