@@ -20,16 +20,23 @@ public interface Skeleton4jService {
      * @return
      */
     Skeleton4jConfig getConfig();
+
     /**
      * 初始化核心服务
      * @param config 配置对象
-     * @param docScanner 文档扫描器
-     * @param modulePool 模块池
-     * @param pagePool 页面池
-     * @param pagePackages 页面包路径
-     * @param themePackages 主题包路径
+     * @param docScanner 文档扫描器 如果不存在，则自动使用DocScannerFactory创建实例
+     * @param modulePool 模块池 如果模块池不存在则自动创建
+     * @param pagePool 页面池 如果页面池不存在则自动创建
+     * @param pagePackages 页面包路径 页面路径默认需要包含javax.web.skeleton4j.page
+     * @param themePackages 主题包路径 主题路径默认需要包含javax.web.skeleton4j.theme
      */
     void init(Skeleton4jConfig config, DocScanner docScanner, ModulePool modulePool, PagePool pagePool, Collection<String> pagePackages, Collection<String> themePackages);
+
+    /**
+     * 编译页面类为代码
+     * @param pageClass 页面类
+     */
+    void compile(Class pageClass);
     /**
      * @param product  模块名称 模块名即权限中的product
      * @param action   页面名称 模块名即权限中的action
