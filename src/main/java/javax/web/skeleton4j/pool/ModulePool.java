@@ -50,4 +50,6 @@ public interface ModulePool {
     List<WebInterfaceMetadata> getImportInterfaces();
 
     List<WebModule> listModules();
+
+    ModulePool clean();
 }

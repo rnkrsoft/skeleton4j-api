@@ -33,6 +33,10 @@ public interface Skeleton4jService {
     void init(Skeleton4jConfig config, DocScanner docScanner, ModulePool modulePool, PagePool pagePool, Collection<String> pagePackages, Collection<String> themePackages);
 
     /**
+     * 扫描所有页面类
+     */
+    void scan();
+    /**
      * 编译页面类为代码
      * @param pageClass 页面类
      */
