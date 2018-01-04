@@ -1,6 +1,6 @@
 package javax.web.skeleton4j.enums;
 
-import javax.interfaces.EnumStringCode;
+import com.devops4j.interfaces.EnumStringCode;
 
 public enum InterfaceCall implements EnumStringCode {
     DUBBO("DUBBO", "DUBBO调用"),

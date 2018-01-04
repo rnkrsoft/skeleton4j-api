@@ -20,7 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
         <sourceEncoding>UTF-8</sourceEncoding>
-        <groundwork.version>1.0.0-SNAPSHOT</groundwork.version>
+        <groundwork.version>1.0.0-RC</groundwork.version>
     </properties>
     <scm>
         <connection>git@github.com:devops4j/skeleton4j-api.git</connection>

@@ -1,6 +1,6 @@
 package javax.web.doc.enums;
 
-import javax.interfaces.EnumStringCode;
+import com.devops4j.interfaces.EnumStringCode;
 
 public enum RspCode implements EnumStringCode {
     FAIL("9999999", "失败"),

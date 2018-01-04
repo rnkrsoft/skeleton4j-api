@@ -1,7 +1,7 @@
 package javax.web.doc;
 
-import javax.interfaces.EnumIntegerCode;
-import javax.interfaces.EnumStringCode;
+import com.devops4j.interfaces.EnumIntegerCode;
+import com.devops4j.interfaces.EnumStringCode;
 import java.io.Serializable;
 
 /**
