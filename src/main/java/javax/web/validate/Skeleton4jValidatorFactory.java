@@ -45,9 +45,9 @@ public class Skeleton4jValidatorFactory {
     }
 
     /**
-     * 构建一个Skeleton4j服务实例
+     * 构建一个校验器实例
      *
-     * @return Skeleton4j服务实例
+     * @return 校验器实例
      */
     public static Skeleton4jValidator newInstance() {
         return newInstance(null);
