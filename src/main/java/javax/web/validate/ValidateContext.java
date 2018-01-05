@@ -1,5 +1,9 @@
 package javax.web.validate;
 
+import com.devops4j.reflection4j.GlobalSystemMetadata;
+import com.devops4j.reflection4j.MetaObject;
+import com.devops4j.reflection4j.meta.DefaultMetaObject;
+import com.devops4j.reflection4j.property.PropertyTokenizer;
 import lombok.Data;
 
 import java.util.HashMap;
@@ -10,10 +14,12 @@ import java.util.Map;
  */
 @Data
 public class ValidateContext {
-    /**
-     * 校验值
-     */
     Object value;
+    String failureField;
+    /**
+     * 对象包装
+     */
+    MetaObject metaObject;
     /**
      * 注册的发生异常的原因
      */
@@ -21,11 +27,11 @@ public class ValidateContext {
     /**
      * 校验发生错误的代码
      */
-    String code;
+    int code = ValidateCause.SUCCESS.getCode();
     /**
      * 校验发生错误的描述
      */
-    String desc;
+    String desc = ValidateCause.SUCCESS.getDesc();
     /**
      * 是否抛出异常
      */
@@ -40,6 +46,13 @@ public class ValidateContext {
         register(ValidateCause.NOT_MATCH_PATTERN, ValidateCause.NOT_MATCH_PATTERN.getDesc());
         register(ValidateCause.NOT_MATCH_ENUM, ValidateCause.NOT_MATCH_ENUM.getDesc());
         register(ValidateCause.NOT_IMPLEMENT_ENUM_INTERFACE, ValidateCause.NOT_IMPLEMENT_ENUM_INTERFACE.getDesc());
+    }
+
+    public ValidateContext(ValidateContext validateContext , MetaObject metaObject) {
+        this.causes.clear();
+        this.causes.putAll(validateContext.getCauses());
+        this.metaObject = metaObject;
+        this.value = metaObject.getObject();
     }
 
     public void register(ValidateCause cause, String desc){
@@ -66,6 +79,7 @@ public class ValidateContext {
 
         public ValidateContext build(){
             ValidateContext context = new ValidateContext();
+            context.metaObject = GlobalSystemMetadata.forObject(value.getClass(), value);
             context.value = value;
             context.throwException = throwException;
             return context;

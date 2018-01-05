@@ -21,6 +21,7 @@
         <jdk.version>1.6</jdk.version>
         <sourceEncoding>UTF-8</sourceEncoding>
         <groundwork.version>1.0.0-RC</groundwork.version>
+        <reflection4j.version>1.0.0-RC3</reflection4j.version>
     </properties>
     <scm>
         <connection>git@github.com:devops4j/skeleton4j-api.git</connection>
@@ -56,6 +57,11 @@
             <groupId>com.devops4j.groundwork</groupId>
             <artifactId>groundwork</artifactId>
             <version>${groundwork.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.devops4j.reflection4j</groupId>
+            <artifactId>reflection4j</artifactId>
+            <version>${reflection4j.version}</version>
         </dependency>
     </dependencies>
     <developers>
