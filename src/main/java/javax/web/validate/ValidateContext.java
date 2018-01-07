@@ -53,6 +53,7 @@ public class ValidateContext {
         this.causes.putAll(validateContext.getCauses());
         this.metaObject = metaObject;
         this.value = metaObject.getObject();
+        this.throwException = validateContext.isThrowException();
     }
 
     public void register(ValidateCause cause, String desc){
