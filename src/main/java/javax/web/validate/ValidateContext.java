@@ -14,7 +14,13 @@ import java.util.Map;
  */
 @Data
 public class ValidateContext {
+    /**
+     * 校验值对象
+     */
     Object value;
+    /**
+     * 失败字段
+     */
     String failureField;
     /**
      * 对象包装
