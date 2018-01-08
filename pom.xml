@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <groupId>com.devops4j.skeleton4j</groupId>
     <artifactId>skeleton4j-api</artifactId>
-    <version>1.0.0-RC2</version>
+    <version>1.0.0-RC3</version>
     <name>skeleton4j-api</name>
     <description>this is skeleton4j application interface! 这是skeleton4j的API规范，定义了一系列的接口注解规范</description>
     <url>https://github.com/devops4j/skeleton4j-api.git</url>
