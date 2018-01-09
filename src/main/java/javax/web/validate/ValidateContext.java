@@ -52,6 +52,8 @@ public class ValidateContext {
         register(ValidateCause.NOT_MATCH_PATTERN, ValidateCause.NOT_MATCH_PATTERN.getDesc());
         register(ValidateCause.NOT_MATCH_ENUM, ValidateCause.NOT_MATCH_ENUM.getDesc());
         register(ValidateCause.NOT_IMPLEMENT_ENUM_INTERFACE, ValidateCause.NOT_IMPLEMENT_ENUM_INTERFACE.getDesc());
+        register(ValidateCause.NOT_SUPPORT_JAVA_TYPE, ValidateCause.NOT_SUPPORT_JAVA_TYPE.getDesc());
+        register(ValidateCause.NOT_DEFINE_ENUM_FACTORY_METHOD, ValidateCause.NOT_DEFINE_ENUM_FACTORY_METHOD.getDesc());
     }
 
     public ValidateContext(ValidateContext validateContext , MetaObject metaObject) {
