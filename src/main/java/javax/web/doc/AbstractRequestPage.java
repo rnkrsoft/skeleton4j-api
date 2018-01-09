@@ -26,7 +26,6 @@ public abstract class AbstractRequestPage extends AbstractRequest implements Req
     /**
      * 分页大小
      *
-     * @return
      */
     public final void setPageSize(int pageSize) {
         this.pageSize = pageSize;
