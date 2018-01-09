@@ -8,8 +8,28 @@ import java.util.List;
  * 文档扫描器接口
  */
 public interface DocScanner {
+    /**
+     * 设置类加载器
+     *
+     * @param classLoader 类加载器
+     * @return 文档扫描器
+     */
+    DocScanner setClassLoader(ClassLoader classLoader);
+
+    /**
+     * 获取类加载器
+     *
+     * @return 类加载器
+     */
+    ClassLoader getClassLoader();
+
+    /**
+     * 设置组件注册类
+     *
+     * @return 组件注册类
+     */
     WebComponentRegistry getComponentRegistry();
-    void setComponentRegistry(WebComponentRegistry componentRegistry);
+
     /**
      * 增加扫描包路径
      *
@@ -54,7 +74,7 @@ public interface DocScanner {
      * 根据服务名，列出接口
      *
      * @param serviceNames 服务名
-     * @return 接口
+     * @return 接口列表
      */
     List<InterfaceInfo> listInterface(String... serviceNames);
 
@@ -62,7 +82,7 @@ public interface DocScanner {
      * 根据服务类，列出接口
      *
      * @param serviceClasses 服务类
-     * @return 接口
+     * @return 接口列表
      */
     List<InterfaceInfo> listInterface(Class<?>... serviceClasses);
 

@@ -51,7 +51,7 @@ public interface Skeleton4jService {
      * @param product  模块名称 模块名即权限中的product
      * @param action   页面名称 模块名即权限中的action
      *                 ，例如com.devops4j.page.demo.TestPlugin{
-     *                 }
+     *                 }s
      *                 modelName = 包名(product)
      *                 pageName = 类名缩写(action)
      *                 usbAction(page)//固定写法
