@@ -9,6 +9,7 @@ import javax.web.skeleton4j.pool.ModulePool;
 import javax.web.skeleton4j.pool.PagePool;
 import java.io.File;
 import java.util.Collection;
+import java.util.Set;
 
 /**
  * Created by devops4j on 2017/12/16.
@@ -16,12 +17,25 @@ import java.util.Collection;
  */
 public interface Skeleton4jService {
     /**
+     * 默认页面类存放包路径
+     */
+    String DEFAULT_PAGES = "javax.web.skeleton4j.pages";
+    /**
+     * 默认主题类存放包路径
+     */
+    String DEFAULT_THEMES = "javax.web.skeleton4j.themes";
+    /**
      * 获取当前配置对象
      *
      * @return
      */
     Skeleton4jConfig getConfig();
-
+    /**
+     * 获取支持的Skeleton4j版本号
+     *
+     * @return 版本号集合
+     */
+    Set<String> getSupportVersions();
     /**
      * 初始化核心服务
      *
