@@ -69,7 +69,7 @@ public class CascadeInterface {
             this.ref = ref;
             return this;
         }
-        public CascadeInterfaceBuilder confirm(ReferenceInterface ref) {
+        public CascadeInterfaceBuilder confirm(boolean confirm) {
             this.confirm = confirm;
             return this;
         }

@@ -2,6 +2,7 @@ package javax.web.data;
 
 import lombok.Data;
 
+import javax.web.doc.annotation.ApidocElement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  */
 @Data
 public class RootNode implements Nodeable {
+    @ApidocElement("节点")
     List<Node> nodes;
 
     /**
