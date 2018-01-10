@@ -14,7 +14,7 @@ public interface DocScanner {
      * @param classLoader 类加载器
      * @return 文档扫描器
      */
-    DocScanner setClassLoader(ClassLoader classLoader);
+    void setClassLoader(ClassLoader classLoader);
 
     /**
      * 获取类加载器
@@ -24,7 +24,7 @@ public interface DocScanner {
     ClassLoader getClassLoader();
 
     /**
-     * 设置组件注册类
+     * 获取组件注册类
      *
      * @return 组件注册类
      */
