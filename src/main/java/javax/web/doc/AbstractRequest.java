@@ -11,7 +11,7 @@ import javax.web.skeleton4j.enums.WebMode;
  */
 @ToString
 public abstract class AbstractRequest implements Requestable {
-    @ApidocElement(value = "接口模式", enumClass = WebMode.class)
+    @ApidocElement(value = "接口模式", enumClass = WebMode.class, required = false)
     String interfaceMode;
 
     /**

@@ -9,9 +9,9 @@ import com.devops4j.interfaces.EnumStringCode;
 @ToString
 public abstract class AbstractResponse implements RspCodeReadable, RspCodeWritable {
     @ApidocElement("应答码")
-    String rspCode;
+    String rspCode = "AAAAAAA";
     @ApidocElement("应答描述")
-    String rspDesc;
+    String rspDesc = "成功";
 
     @Override
     public final String getRspCode() {

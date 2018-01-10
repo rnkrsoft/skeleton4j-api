@@ -17,6 +17,11 @@ public @interface WebCascadeInterface {
     String value();
 
     /**
+     * 是否在进行事件触发前进行确认操作
+     * @return 确认操作
+     */
+    boolean confirm() default false;
+    /**
      * 生成的模态框的元素布局，会覆盖接口定义中的布局
      *
      * @return 布局类型

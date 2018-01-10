@@ -31,6 +31,10 @@ public class CascadeInterface {
      */
     final Set<WebTriggerEvent> cascadeEvents = new HashSet();
     /**
+     * 在接口事件触发前，是否展示确认框
+     */
+    boolean confirm = false;
+    /**
      * 级联接口
      */
     ReferenceInterface ref;
@@ -55,14 +59,18 @@ public class CascadeInterface {
         final List<ResultDisplay> resultDisplays = new ArrayList();
         final List<CascadeColumn> cascadeColumns = new ArrayList();
         final Set<WebTriggerEvent> cascadeEvents = new HashSet();
+        boolean confirm = false;
         ReferenceInterface ref;
         WebLayout layout = WebLayout.INLINE;
         String displayName;
         private CascadeInterfaceBuilder() {
         }
-
         public CascadeInterfaceBuilder ref(ReferenceInterface ref) {
             this.ref = ref;
+            return this;
+        }
+        public CascadeInterfaceBuilder confirm(ReferenceInterface ref) {
+            this.confirm = confirm;
             return this;
         }
 
@@ -115,6 +123,7 @@ public class CascadeInterface {
             } else {
                 cascadeInterface.displayName = displayName;
             }
+            cascadeInterface.confirm = confirm;
             cascadeInterface.cssClasses.addAll(cssClasses);
             cascadeInterface.cascadeColumns.addAll(cascadeColumns);
             cascadeInterface.resultDisplays.addAll(resultDisplays);
