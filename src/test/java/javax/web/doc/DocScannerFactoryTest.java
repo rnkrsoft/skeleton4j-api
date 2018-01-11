@@ -7,8 +7,8 @@ import org.junit.Test;
  */
 public class DocScannerFactoryTest {
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void testNewInstance() throws Exception {
-        DocScannerFactory.newInstance();
+        DocScannerFactory.newInstance("javax.web.doc.DemoDocScanner");
     }
 }

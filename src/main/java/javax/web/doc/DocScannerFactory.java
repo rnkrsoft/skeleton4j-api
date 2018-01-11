@@ -1,5 +1,8 @@
 package javax.web.doc;
 
+import com.devops4j.logtrace4j.ErrorContext;
+import com.devops4j.logtrace4j.ErrorContextFactory;
+
 import java.util.Iterator;
 import java.util.ServiceLoader;
 
@@ -8,9 +11,10 @@ import java.util.ServiceLoader;
  * 文档扫描器工厂类
  */
 public final class DocScannerFactory {
-    private DocScannerFactory(){
+    private DocScannerFactory() {
 
     }
+
     /**
      * 新建一个文档扫描器
      *
@@ -24,7 +28,7 @@ public final class DocScannerFactory {
         while (scanner == null && scannerIterator.hasNext()) {
             DocScanner scanner0 = scannerIterator.next();
             if (impClassName != null) {
-                if (scanner.getClass().getName().equals(impClassName)) {
+                if (scanner0.getClass().getName().equals(impClassName)) {
                     scanner = scanner0;
                 }
             } else {
@@ -32,7 +36,17 @@ public final class DocScannerFactory {
             }
         }
         if (scanner == null) {
-            throw new RuntimeException("未发现'" + DocScanner.class.getName() + "' 实现");
+            ErrorContext errorContext = ErrorContextFactory.instance().reset();
+            errorContext.message("未发现'{}' 实现", impClassName == null ? DocScanner.class.getName() : impClassName)
+                    .solution("在META-INF/services/javax.web.doc.DocScanner文件中定义实现类");
+            Iterator<DocScanner> it = serviceLoader.iterator();
+            int i = 0;
+            while (it.hasNext()) {
+                i++;
+                DocScanner docScanner = it.next();
+                errorContext.extra("found", "实现{} {}", i, docScanner.getClass().getName());
+            }
+            throw errorContext.runtimeException();
         }
         System.out.println("DocScanner 使用实现'" + scanner.getClass().getName() + "'");
         return scanner;
