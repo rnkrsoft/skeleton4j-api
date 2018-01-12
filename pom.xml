@@ -6,9 +6,9 @@
     <packaging>jar</packaging>
     <groupId>com.devops4j.skeleton4j</groupId>
     <artifactId>skeleton4j-api</artifactId>
-    <version>1.0.0-RC7</version>
+    <version>1.0.0-PRE1</version>
     <name>skeleton4j-api</name>
-    <description>skeleton4j application interface! skeleton4j的API规范，定义了一系列的接口注解规范</description>
+    <description>skeleton4j application interface</description>
     <url>https://github.com/devops4j/skeleton4j-api.git</url>
     <licenses>
         <license>
@@ -20,8 +20,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
         <sourceEncoding>UTF-8</sourceEncoding>
-        <groundwork.version>1.0.0-RC</groundwork.version>
-        <reflection4j.version>1.0.0-RC3</reflection4j.version>
+        <groundwork.version>1.0.0-PRE1</groundwork.version>
+        <logtrace4j.version>1.0.0-PRE1</logtrace4j.version>
+        <reflection4j.version>1.0.0-PRE1</reflection4j.version>
     </properties>
     <scm>
         <connection>git@github.com:devops4j/skeleton4j-api.git</connection>
@@ -53,15 +54,23 @@
             <version>1.16.10</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
+		<dependency>
             <groupId>com.devops4j.groundwork</groupId>
             <artifactId>groundwork</artifactId>
             <version>${groundwork.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.devops4j.logtrace4j</groupId>
+            <artifactId>logtrace4j</artifactId>
+            <version>${logtrace4j.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.devops4j.reflection4j</groupId>
             <artifactId>reflection4j</artifactId>
             <version>${reflection4j.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <developers>
