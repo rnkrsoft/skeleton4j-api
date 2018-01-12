@@ -23,6 +23,11 @@ public class DemoDocScanner implements DocScanner{
     }
 
     @Override
+    public void setComponentRegistry(WebComponentRegistry registry) {
+
+    }
+
+    @Override
     public WebComponentRegistry getComponentRegistry() {
         return null;
     }

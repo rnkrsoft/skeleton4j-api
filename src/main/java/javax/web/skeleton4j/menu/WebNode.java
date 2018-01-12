@@ -9,6 +9,9 @@ import javax.web.skeleton4j.module.WebModule;
  * Created by devops4j on 2017/10/9.
  */
 public class WebNode {
+    @Getter
+    @Setter
+    int no = 0;
     /**
      * 图标 字体或者图片路径classpath*:com.devops4j.xxx.png
      */

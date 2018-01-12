@@ -1,10 +1,12 @@
 package javax.web.doc;
 
+import java.io.Serializable;
+
 /**
  * Created by devops4j on 2017/12/5.
  * 分页接口时必须实现该接接口，与ResponsePageable接口成对出现
  */
-public interface RequestPageable {
+public interface RequestPageable  extends Serializable {
     /**
      * 获取分页大小
      *

@@ -32,6 +32,11 @@ public interface DocScanner {
     ClassLoader getClassLoader();
 
     /**
+     * 设置
+     * @param registry
+     */
+    void setComponentRegistry(WebComponentRegistry registry);
+    /**
      * 获取组件注册类
      *
      * @return 组件注册类

@@ -8,7 +8,7 @@ import javax.web.doc.annotation.ApidocElement;
  * 分页请求
  */
 @ToString(callSuper = true)
-public abstract class AbstractRequestPage extends AbstractRequest implements RequestPageable {
+public abstract class AbstractRequestPage implements RequestPageable {
     @ApidocElement("分页大小")
     int pageSize;
     @ApidocElement("当前页")
