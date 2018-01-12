@@ -49,14 +49,6 @@ public interface DocScanner {
     /**
      * 初始化
      *
-     * @param ifThrow 如果发生异常，是否抛出异常
-     * @return 文档扫描器
-     */
-    DocScanner init(boolean ifThrow);
-
-    /**
-     * 初始化
-     *
      * @param ifThrow  如果发生异常，是否抛出异常
      * @param packages 包路径
      * @return 文档扫描器
@@ -67,9 +59,15 @@ public interface DocScanner {
      * 扫描类
      *
      * @param ifThrow 如果发生异常，是否抛出异常
-     * @param clazz   类，需要标注@ApidocService和@ApidocInterface
+     * @param serviceClass   类，需要标注@ApidocService和@ApidocInterface
      */
-    void scan(boolean ifThrow, Class<?> clazz);
+    void scan(boolean ifThrow, Class<?> serviceClass);
+
+    /**
+     * 扫描类
+     * @param serviceClass   类，需要标注@ApidocService和@ApidocInterface
+     */
+    void scan(Class<?> serviceClass);
 
     /**
      * 列出已扫描的服务

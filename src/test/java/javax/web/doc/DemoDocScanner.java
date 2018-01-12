@@ -33,17 +33,17 @@ public class DemoDocScanner implements DocScanner{
     }
 
     @Override
-    public DocScanner init(boolean ifThrow) {
-        return null;
-    }
-
-    @Override
     public DocScanner init(boolean ifThrow, String... packages) {
         return null;
     }
 
     @Override
     public void scan(boolean ifThrow, Class<?> clazz) {
+
+    }
+
+    @Override
+    public void scan(Class<?> serviceClass) {
 
     }
 
