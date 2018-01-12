@@ -73,7 +73,7 @@ public @interface ApidocElement {
      *
      * @return 字段类型
      */
-    ValueDisplayType valueDisplayType() default ValueDisplayType.String;
+    ValueDisplayType valueDisplayType() default ValueDisplayType.Auto;
 
     /**
      * 枚举字典类

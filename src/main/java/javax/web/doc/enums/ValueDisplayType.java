@@ -5,6 +5,7 @@ package javax.web.doc.enums;
  * 字段值展示类型，用于将数据转换为可见的形式
  */
 public enum ValueDisplayType {
+    Auto,
     /**
      * 字符串
      */
