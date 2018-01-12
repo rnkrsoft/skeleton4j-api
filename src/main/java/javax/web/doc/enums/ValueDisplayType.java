@@ -19,10 +19,6 @@ public enum ValueDisplayType {
      */
     Decimal,
     /**
-     * 布尔值
-     */
-    Boolean,
-    /**
      * 列表
      */
     List,
