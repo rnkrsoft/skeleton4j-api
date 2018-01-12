@@ -1,5 +1,9 @@
 package javax.web.skeleton4j.registry;
 
+import com.devops4j.logtrace4j.ErrorContext;
+import com.devops4j.logtrace4j.ErrorContextFactory;
+
+import javax.web.doc.DocScanner;
 import javax.web.doc.ElementInfo;
 import javax.web.skeleton4j.element.WebElement;
 import javax.web.skeleton4j.page.WebPage;
@@ -83,7 +87,17 @@ public final class WebComponentRegistryFactory {
             }
         }
         if (registry == null) {
-            throw new RuntimeException("未发现'" + WebComponentRegistry.class.getName() + "' 实现");
+            ErrorContext errorContext = ErrorContextFactory.instance().reset();
+            errorContext.message("未发现'{}' 实现", impClassName == null ? WebComponentRegistry.class.getName() : impClassName)
+                    .solution("在META-INF/services/javax.web.skeleton4j.registry.WebComponentRegistry文件中定义实现类");
+            Iterator<WebComponentRegistry> it = serviceLoader.iterator();
+            int i = 0;
+            while (it.hasNext()) {
+                i++;
+                WebComponentRegistry registry1 = it.next();
+                errorContext.extra("found", "实现[{}] {}", i, registry1.getClass().getName());
+            }
+            throw errorContext.runtimeException();
         }
         return registry;
     }

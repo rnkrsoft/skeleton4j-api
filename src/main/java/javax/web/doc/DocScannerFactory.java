@@ -44,7 +44,7 @@ public final class DocScannerFactory {
             while (it.hasNext()) {
                 i++;
                 DocScanner docScanner = it.next();
-                errorContext.extra("found", "实现{} {}", i, docScanner.getClass().getName());
+                errorContext.extra("found", "实现[{}] {}", i, docScanner.getClass().getName());
             }
             throw errorContext.runtimeException();
         }

@@ -1,5 +1,9 @@
 package javax.web.skeleton4j;
 
+import com.devops4j.logtrace4j.ErrorContext;
+import com.devops4j.logtrace4j.ErrorContextFactory;
+
+import javax.web.skeleton4j.registry.WebComponentRegistry;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -55,7 +59,7 @@ public final class Skeleton4jConfigServiceFactory {
         while (service == null && serviceIterator.hasNext()) {
             Skeleton4jConfigService service0 = serviceIterator.next();
             if (impClassName != null) {
-                if (service.getClass().getName().equals(impClassName)) {
+                if (service0.getClass().getName().equals(impClassName)) {
                     service = service0;
                 }
             } else {
@@ -63,7 +67,17 @@ public final class Skeleton4jConfigServiceFactory {
             }
         }
         if (service == null) {
-            throw new RuntimeException("未发现'" + Skeleton4jConfigService.class.getName() + "' 实现类'" + impClassName + "'");
+            ErrorContext errorContext = ErrorContextFactory.instance().reset();
+            errorContext.message("未发现'{}' 实现", impClassName == null ? Skeleton4jConfigService.class.getName() : impClassName)
+                    .solution("在META-INF/services/javax.web.skeleton4j.Skeleton4jConfigService");
+            Iterator<Skeleton4jConfigService> it = serviceLoader.iterator();
+            int i = 0;
+            while (it.hasNext()) {
+                i++;
+                Skeleton4jConfigService service0 = it.next();
+                errorContext.extra("found", "实现[{}] {}", i, service0.getClass().getName());
+            }
+            throw errorContext.runtimeException();
         }
         return service;
     }
