@@ -29,14 +29,14 @@ public interface WebTreeComponent extends WebFormableComponent , WebGroupableCom
     boolean isExpand();
 
     /**
-     * 设置为下拉模式
-     * @param dropdown
+     * 设置为下拉模式,如果不是下拉模式则为ListView
+     * @param dropdown 下拉模式
      */
     void setDropdown(boolean dropdown);
 
     /**
-     * 是否为下拉模式
-     * @return
+     * 是否为下拉模式,如果不是下拉模式则为ListView
+     * @return 下拉模式
      */
     boolean isDropdown();
 
