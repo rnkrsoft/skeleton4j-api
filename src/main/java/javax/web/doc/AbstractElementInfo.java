@@ -29,6 +29,10 @@ public abstract class AbstractElementInfo implements ElementInfo {
      */
     protected final String fullName;
     /**
+     * 是否为只读字段
+     */
+    boolean readonly = false;
+    /**
      * 所属接口对象
      */
     protected final InterfaceInfo interfaceInfo;

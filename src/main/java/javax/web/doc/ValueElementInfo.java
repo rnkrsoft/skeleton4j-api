@@ -89,10 +89,6 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
      */
     boolean hidden = false;
     /**
-     * 是否为只读字段
-     */
-    boolean readonly = false;
-    /**
      * 字段的用法
      */
     String usage;
