@@ -27,7 +27,7 @@ public interface Skeleton4jService {
     /**
      * 获取当前配置对象
      *
-     * @return
+     * @return 配置对象
      */
     Skeleton4jConfig getConfig();
     /**
