@@ -48,4 +48,16 @@ public interface WebSelectComponent extends WebFormableComponent , WebGroupableC
      * @return 多选
      */
     boolean isMultiSelect();
+
+    /**
+     * 设置为下拉模式
+     * @param dropdown
+     */
+    void setDropdown(boolean dropdown);
+
+    /**
+     * 是否为下拉模式
+     * @return
+     */
+    boolean isDropdown();
 }

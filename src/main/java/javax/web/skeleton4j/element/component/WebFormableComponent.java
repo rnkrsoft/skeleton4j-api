@@ -151,4 +151,16 @@ public interface WebFormableComponent extends WebComponent {
      * @return  字段信息
      */
     ValueElementInfo getColumnMetadata();
+
+    /**
+     * 获取占位文本
+     * @return
+     */
+    String getPlaceholder();
+
+    /**
+     * 设置占位文本
+     * @param placeholder 占位文本
+     */
+    void setPlaceholder(String placeholder);
 }

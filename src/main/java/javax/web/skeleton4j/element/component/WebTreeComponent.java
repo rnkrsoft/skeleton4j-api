@@ -15,4 +15,29 @@ public interface WebTreeComponent extends WebFormableComponent , WebGroupableCom
      * @return 多选
      */
     boolean isMultiSelect();
+
+    /**
+     * 设置树图展开
+     * @param expand
+     */
+    void setExpand(boolean expand);
+
+    /**
+     * 树图是否为展开
+     * @return
+     */
+    boolean isExpand();
+
+    /**
+     * 设置为下拉模式
+     * @param dropdown
+     */
+    void setDropdown(boolean dropdown);
+
+    /**
+     * 是否为下拉模式
+     * @return
+     */
+    boolean isDropdown();
+
 }

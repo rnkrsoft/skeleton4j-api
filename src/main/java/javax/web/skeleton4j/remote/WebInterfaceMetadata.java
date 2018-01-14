@@ -8,11 +8,22 @@ import javax.web.skeleton4j.enums.InterfaceCall;
  * 接口元信息
  */
 public interface WebInterfaceMetadata {
-
+    /**
+     *
+     * @return
+     */
     String getUrl();
 
+    /**
+     *
+     * @param url
+     */
     void setUrl(String url);
 
+    /**
+     *
+     * @return
+     */
     String getProduct();
 
     void setProduct(String product);
@@ -24,10 +35,6 @@ public interface WebInterfaceMetadata {
     String getSubAction();
 
     void setSubAction(String subAction);
-
-    String getVersion();
-
-    void setVersion(String version);
 
     InterfaceCall getCall();
 

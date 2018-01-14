@@ -21,17 +21,6 @@ public interface WebTextComponent extends WebFormableComponent  , WebGroupableCo
     void setUnique(boolean unique);
 
     /**
-     * 获取占位文本
-     * @return
-     */
-    String getPlaceholder();
-
-    /**
-     * 设置占位文本
-     * @param placeholder 占位文本
-     */
-    void setPlaceholder(String placeholder);
-    /**
      * 获取文本格式
      *
      * @return
