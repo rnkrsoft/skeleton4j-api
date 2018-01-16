@@ -40,11 +40,12 @@ public class ReferenceInterface {
      * 复制一个接口引用对象
      *
      * @param namespace 命名空间
-     * @param ref 引用对象
+     * @param ref       引用对象
      */
     public ReferenceInterface(String namespace, ReferenceInterface ref) {
         this(ref.docScanner, namespace, ref.alias, ref.serviceName, ref.interfaceName, ref.version);
     }
+
     /**
      * 复制一个接口引用对象
      *
@@ -76,11 +77,11 @@ public class ReferenceInterface {
     /**
      * 获取真实的接口定义信息,通过延迟解析
      *
-     * @return
+     * @return 接口定义信息
      */
     public InterfaceInfo get() {
         if (docScanner == null) {
-            return null;
+            throw new NullPointerException("docScanner未初始化");
         }
         return docScanner.listInterface(serviceName, interfaceName, version);
     }
@@ -88,22 +89,17 @@ public class ReferenceInterface {
     /**
      * 检测接口是否存在
      *
-     * @return
+     * @return 是否存在
      */
     public boolean exists() {
         if (docScanner == null) {
-            return false;
+            throw new NullPointerException("docScanner未初始化");
         }
         InterfaceInfo interfaceInfo = docScanner.listInterface(serviceName, interfaceName);
         return interfaceInfo != null;
     }
 
     public String toString() {
-        return "{" +
-                "alias='" + alias + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", interfaceName='" + interfaceName + '\'' +
-                ", version='" + version + '\'' +
-                '}';
+        return alias + "=" + serviceName + "." + interfaceName + ":" + version;
     }
 }

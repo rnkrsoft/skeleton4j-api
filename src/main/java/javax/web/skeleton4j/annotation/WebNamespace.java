@@ -27,7 +27,7 @@ public @interface WebNamespace {
     /**
      * 接口调用方式
      *
-     * @return
+     * @return 接口调用方式
      */
     InterfaceCall call() default InterfaceCall.DUBBO;
     /**

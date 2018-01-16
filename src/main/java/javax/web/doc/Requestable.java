@@ -11,14 +11,14 @@ public interface Requestable extends Serializable {
     /**
      * 接口模式
      *
-     * @return
+     * @return 接口模式
      */
     String getInterfaceMode();
 
     /**
      * 设置接口模式
      *
-     * @param interfaceMode
+     * @param interfaceMode 接口模式
      */
     void setInterfaceMode(String interfaceMode);
 }

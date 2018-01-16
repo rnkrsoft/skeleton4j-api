@@ -13,12 +13,12 @@ import java.lang.annotation.*;
 public @interface WebResultDisplay {
     /**
      * 展示方式
-     * @return
+     * @return 展示方式
      */
     WebDisplayType displayType() default WebDisplayType.DEFAULT;
     /**
      * 展示结果作用的Java字段名,默认无值
-     * @return
+     * @return 结果展示的目标字段
      */
     String column() default "";
 }

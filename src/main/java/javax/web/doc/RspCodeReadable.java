@@ -7,12 +7,14 @@ import java.io.Serializable;
  */
 public interface RspCodeReadable extends Serializable {
     /**
-     * 设置应答码
+     * 应答码
+     * @return 应答码
      */
     String getRspCode();
 
     /**
-     * 设置应答描述
+     * 应答描述
+     * @return 应答描述
      */
     String getRspDesc();
 }

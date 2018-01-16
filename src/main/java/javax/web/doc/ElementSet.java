@@ -49,7 +49,7 @@ public class ElementSet {
 
     /**
      * 获取所有字段元素
-     * @return
+     * @return 字段元素列表
      */
     public List<ElementInfo> getAllElements() {
         List<ElementInfo> list = new ArrayList();
@@ -66,7 +66,7 @@ public class ElementSet {
     /**
      * 根据字段完整名称查询
      * @param fullName 完整名称
-     * @return
+     * @return 字段信息
      */
     public ElementInfo lookupFullName(String fullName) {
         return fullNameElements.get(fullName);

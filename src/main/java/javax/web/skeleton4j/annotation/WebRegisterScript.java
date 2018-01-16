@@ -20,21 +20,21 @@ public @interface WebRegisterScript {
     /**
      * 版本号
      *
-     * @return
+     * @return 版本号
      */
     String version() default "1.0.0";
 
     /**
      * 引入脚本别名
      *
-     * @return
+     * @return 引入脚本别名
      */
     String value();
 
     /**
      * 依赖
      *
-     * @return
+     * @return 依赖
      */
     WebDependency[] dep() default {};
 }

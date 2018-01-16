@@ -10,15 +10,14 @@ import javax.web.skeleton4j.render.WebContext;
 public interface WebCompile {
     /**
      * 编译
-     *
-     * @return 编译失败返回假
+     * @param ctx 上下文
+     * @return 是否编译成功
      */
     boolean compile(WebContext ctx);
 
     /**
      * 获取编译好的代码
-     *
-     * @return
+     * @param ctx 上下文
      */
     void getCodes(WebContext ctx);
 }

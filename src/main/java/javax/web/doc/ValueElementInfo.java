@@ -112,7 +112,7 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
     /**
      * 判断该值元素是否为枚举
      *
-     * @return
+     * @return 是否为枚举
      */
     public boolean isEnum() {
         return !enums.isEmpty();
@@ -120,7 +120,7 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
 
     /**
      * 当前字段是否为应答码字段
-     * @return
+     * @return 是否为应答码字段
      */
     public boolean isRspCode(){
         if(RspCodeReadable.class.isAssignableFrom(getElementSet().getElementClass())){

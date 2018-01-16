@@ -9,40 +9,40 @@ import java.util.Collection;
 public interface WebConfirmBoxComponent extends WebComponent {
     /**
      * 对话框标题
-     * @return
+     * @return 对话框标题
      */
     String getTitle();
 
     /**
      * 对话框标题
-     * @param title
+     * @param title 对话框标题
      */
     void setTitle(String title);
 
     /**
      * 对话框中的内容是否为只读
-     * @return
+     * @return 是否为只读
      */
     boolean isReadonly();
 
     /**
      * 设置对话框为只读
-     * @param readonly
+     * @param readonly 是否为只读
      */
     void setReadonly(boolean readonly);
 
     /**
      * 增加工具栏
      *
-     * @param components
-     * @return
+     * @param components 组件
+     * @return  对话框
      */
     WebConfirmBoxComponent appendToolbar(WebFormableComponent... components);
 
     /**
      * 获取工具栏按钮
      *
-     * @return
+     * @return 工具栏按钮
      */
     Collection<WebFormableComponent> getToolbar();
 
@@ -50,14 +50,14 @@ public interface WebConfirmBoxComponent extends WebComponent {
      * 向对话框增加组件元素
      *
      * @param items 元素
-     * @return
+     * @return 对话框
      */
     WebConfirmBoxComponent appendItem(WebFormableComponent... items);
 
     /**
      * 获取对话框中的元素，可能为容器，也可能为组件元素
      *
-     * @return
+     * @return 对话框中的元素
      */
     Collection<WebFormableComponent> getItems();
 }

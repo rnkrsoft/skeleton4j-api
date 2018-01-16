@@ -13,14 +13,14 @@ public @interface WebRegisterComponent {
     /**
      * 组件实现的接口
      *
-     * @return
+     * @return 组件实现的接口
      */
     Class<?> componentInterface() default Class.class;
 
     /**
      * 组件实现类
      *
-     * @return
+     * @return 组件实现类
      */
     Class<?> value();
 }

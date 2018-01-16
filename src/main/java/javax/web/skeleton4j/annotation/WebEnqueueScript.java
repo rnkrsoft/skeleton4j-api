@@ -13,21 +13,21 @@ public @interface WebEnqueueScript {
     /**
      * 引入脚本别名
      *
-     * @return
+     * @return 脚本别名
      */
     String value();
 
     /**
      * 版本号
      *
-     * @return
+     * @return 版本号
      */
     String version() default "1.0.0";
 
     /**
      * 是否进行内联
      *
-     * @return
+     * @return 内联
      */
     boolean inline() default true;
 }

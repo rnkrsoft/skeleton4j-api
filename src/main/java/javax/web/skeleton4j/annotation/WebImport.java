@@ -17,7 +17,7 @@ public @interface WebImport {
     /**
      * 展示名称,如果不为空使用该字段的值展示，否则使用接口本身的名字
      *
-     * @return
+     * @return 展示名称
      */
     String displayName() default "";
 
@@ -30,12 +30,13 @@ public @interface WebImport {
 
     /**
      * 初始化的时候查询表格
-     * @return
+     * @return 是否进行初始化查询
      */
     boolean initQuery() default false;
 
     /**
-     * @return
+     * 布局
+     * @return 布局
      */
     WebLayout layout() default WebLayout.INLINE;
 
@@ -47,7 +48,7 @@ public @interface WebImport {
      * DEFAULT,则根据具体情况提供默认实现,在表单页面等价于{VIEW,UPDATE,DELETE}
      * 在查询页面等价于{CREATE}
      *
-     * @return
+     * @return 模式
      * @see WebMode
      */
     WebMode[] mode() default WebMode.OTHER;
@@ -56,7 +57,7 @@ public @interface WebImport {
      * 前一个接口有相同名称的字段作为级联接口的输入，第一个接口可以无输入
      * 格式别名=包名.类名.接口名:版本号，例如find=com.devops4j.skeleton.UserService.findUser:1.0.0
      *
-     * @return
+     * @return 导入接口
      */
     String[] value();
 }

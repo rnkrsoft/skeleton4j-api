@@ -11,7 +11,7 @@ public interface Nodeable extends Serializable {
     /**
      * 返回树形节点数据
      *
-     * @return
+     * @return 节点数据
      */
     List<Node> getNodes();
 

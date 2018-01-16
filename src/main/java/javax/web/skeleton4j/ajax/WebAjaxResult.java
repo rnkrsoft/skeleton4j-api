@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 public interface WebAjaxResult<T> {
     /**
      * 结果码
-     * @return
+     * @return 结果码
      */
     String getCode();
 
     /**
      * 结果描述
-     * @return
+     * @return 结果描述
      */
     String getDesc();
 

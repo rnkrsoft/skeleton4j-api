@@ -113,17 +113,25 @@ public class InterfaceInfo implements Comparable<InterfaceInfo> {
         return null;
     }
     /**
-     * 获取接口的完整名称
-     * @return
+     * 获取接口的完整类方法名
+     * @return 完整名称
      */
     public String getFullMethodName(){
         return serviceInfo.getServiceClassName() + "." + methodName;
     }
 
+    /**
+     * 获取接口的完整的接口名
+     * @return 完整的接口名
+     */
     public String getFullName(){
         return serviceInfo.getName() + "." + name + "." + version;
     }
 
+    /**
+     * 获取请求类对象
+     * @return 请求类对象
+     */
     public Class getRequestClass(){
         if(request == null){
             return null;
@@ -131,6 +139,10 @@ public class InterfaceInfo implements Comparable<InterfaceInfo> {
         return request.getElementClass();
     }
 
+    /**
+     * 获取应答类对象
+     * @return 应答类对象
+     */
     public Class getResponseClass(){
         if(response == null){
             return null;
@@ -142,14 +154,14 @@ public class InterfaceInfo implements Comparable<InterfaceInfo> {
      * 根据当前接口信息创建引用对象
      * @param namespace 命名空间
      * @param alias 别名
-     * @return
+     * @return 引用对象
      */
     public ReferenceInterface makeReference(String namespace, String alias){
         return new ReferenceInterface(docScanner, namespace, alias, serviceInfo.getServiceClassName(), name, version);
     }
     /**
      * 接口是否支持分页
-     * @return
+     * @return 是否支持分页
      */
     public boolean isPageable(){
         return request.isPageable() && response.isPageable();

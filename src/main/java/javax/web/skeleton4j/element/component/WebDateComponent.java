@@ -6,16 +6,16 @@ package javax.web.skeleton4j.element.component;
  */
 public interface WebDateComponent extends WebFormableComponent , WebGroupableComponent{
     /**
-     * 获取文本格式
+     * 获取日期格式
      *
-     * @return
+     * @return 日期格式
      */
     String getFormat();
 
     /**
      * 设置日期格式
      *
-     * @param format
+     * @param format 日期格式
      */
     void setFormat(String format);
 }

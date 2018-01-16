@@ -20,7 +20,7 @@ public @interface WebDependency {
     /**
      * 版本号
      *
-     * @return
+     * @return 版本号
      */
     String version() default "1.0.0";
 }

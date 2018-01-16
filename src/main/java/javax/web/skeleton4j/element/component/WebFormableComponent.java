@@ -12,137 +12,138 @@ import java.util.List;
 public interface WebFormableComponent extends WebComponent {
     /**
      * 表单中元素的标签
-     * @return
+     * @return 元素的标签
      */
     String getLabel();
 
     /**
      * 表单中元素的标签
-     * @param label
+     * @param label 元素的标签
      */
     void setLabel(String label);
     /**
      * 背景颜色
-     * @param color
+     * @param color 背景颜色
      */
     void setBackgroundColor(String color);
 
     /**
      * 背景颜色
-     * @return
+     * @return 背景颜色
      */
     String getBackgroundColor();
 
     /**
      * 字体颜色
-     * @param color
+     * @param color 字体颜色
      */
     void setFontColor(String color);
 
     /**
      * 字体颜色
-     * @return
+     * @return 字体颜色
      */
     String getFontColor();
     /**
      * 表单中元素的值
-     * @return
+     * @return 元素的值
      */
     String getValue();
 
     /**
      * 表单中元素的值
-     * @param value
+     * @param value 元素的值
      */
     void setValue(String value);
 
     /**
      * 允许最大长度
-     * @return
+     * @return 最大长度
      */
     int getMaxLen();
 
     /**
      * 允许最大长度
-     * @param maxLen
+     * @param maxLen 最大长度
      */
     void setMaxLen(int maxLen);
 
     /**
      * 允许最小长度
-     * @return
+     * @return 最小长度
      */
     int getMinLen();
 
     /**
      * 允许最小长度
+     * @param minLen 最小长度
      */
     void setMinLen(int minLen);
     /**
      * 获取默认值
      *
-     * @return
+     * @return 默认值
      */
     List<String> getDefaultValues();
 
     /**
-     * 是否为唯一键
+     * 是否为隐藏
      *
-     * @return
+     * @return 隐藏
      */
     boolean isHidden();
 
     /**
-     * 设置是否为唯一键
+     * 设置是否为隐藏
      *
-     * @param hidden
+     * @param hidden 隐藏
      */
     void setHidden(boolean hidden);
 
     /**
      * 获取文本框是否为只读
      *
-     * @return
+     * @return 否为只读
      */
     boolean isReadonly();
 
     /**
      * 设置文本框是否为只读
      *
-     * @param readonly
+     * @param readonly 否为只读
      */
     void setReadonly(boolean readonly);
 
     /**
      * 获取文本框是否为必输
      *
-     * @return
+     * @return 否为必输
      */
     boolean isRequired();
 
     /**
      * 设置文本框是否为必输
      *
-     * @param required
+     * @param required 否为必输
      */
     void setRequired(boolean required);
 
     /**
      * 校验表达式
      *
-     * @return
+     * @return 表达式
      */
     List<String> getPatterns();
 
     /**
      * 表达式类型
-     * @return
+     * @return 表达式类型
      */
     PatternType getPatternType();
 
     /**
      * 设置表达式类型
-     * @param patternType
+     * @param patternType 表达式类型
      */
     void setPatternType(PatternType patternType);
 
@@ -154,7 +155,7 @@ public interface WebFormableComponent extends WebComponent {
 
     /**
      * 获取占位文本
-     * @return
+     * @return 占位文本
      */
     String getPlaceholder();
 

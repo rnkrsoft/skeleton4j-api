@@ -9,25 +9,25 @@ import javax.web.skeleton4j.element.component.WebComponent;
 public interface WebChartComponent extends WebComponent {
     /**
      * 设置标题
-     * @param title
+     * @param title 标题
      */
     void setTitle(String title);
 
     /**
      * 标题
-     * @return
+     * @return 标题
      */
     String getTitle();
 
     /**
      * 配置项的JSON格式
-     * @return
+     * @return 配置项的JSON格式
      */
     String getOption();
 
     /**
      * 配置项的JSON格式
-     * @param option
+     * @param option 配置项的JSON格式
      */
     void setOption(String option);
 }

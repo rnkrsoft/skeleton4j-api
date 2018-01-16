@@ -10,14 +10,14 @@ public @interface WebResource {
     /**
      * 资源类型
      *
-     * @return
+     * @return 资源类型
      */
     ResourceType type() default ResourceType.AUTO;
 
     /**
      * 资源路径
      *
-     * @return
+     * @return 资源路径
      */
     String value();
 }

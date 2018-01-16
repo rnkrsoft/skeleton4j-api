@@ -9,28 +9,28 @@ public @interface WebTheme {
     /**
      * 主题名称
      *
-     * @return
+     * @return 主题名称
      */
     String name();
 
     /**
      * 主题描述
      *
-     * @return
+     * @return 主题描述
      */
     String desc();
 
     /**
      * 主题导入的脚本和样式
      *
-     * @return
+     * @return 脚本和样式
      */
     WebInit init();
 
     /**
      * 注册组件加入主题
      *
-     * @return
+     * @return 注册组件列表
      */
     WebRegisterComponent[] registerComponent();
 }

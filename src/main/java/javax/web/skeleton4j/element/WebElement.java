@@ -21,17 +21,18 @@ import java.util.Set;
 public interface WebElement extends Renderable {
     /**
      * 是否是编辑模式
-     * @return
+     * @return 是否是编辑模式
      */
     boolean isEditMode();
 
     /**
      * 设置为编辑模式
+     * @param editMode 是否是编辑模式
      */
     void setEditMode(boolean editMode);
     /**
      * 获取所属的页面对象
-     * @return
+     * @return 页面对象
      */
     WebPage getWebPage();
     /**
@@ -42,81 +43,81 @@ public interface WebElement extends Renderable {
     /**
      * 获取值元素的元信息
      *
-     * @return
+     * @return 值元素的元信息
      */
     ElementInfo getColumn();
 
     /**
      * 构建引用自身的引用对象
-     * @return
+     * @return 引用对象
      */
     ReferenceWebElement makeReference();
 
     /**
      * 当前组件的命名空间
-     * @return
+     * @return 命名空间
      */
     String getNamespace();
 
     /**
      * 当前组件的命名空间
-     * @param namespace
+     * @param namespace 命名空间
      */
     void setNamespace(String namespace);
 
     /**
      * 获取该元素的主题实现名字
      *
-     * @return
+     * @return 主题实现名字
      */
     String getTheme();
 
     /**
      * 获取容器内布局
      *
-     * @return
+     * @return 布局
      */
     WebLayout getLayout();
 
     /**
      * 设置布局
-     * @param layout
+     * @param layout 布局
      */
     void setLayout(WebLayout layout);
 
     /**
      * 获取组件HTML编号
-     * @return
+     * @return 组件HTML编号
      */
     String getId();
 
     /**
      * 获取组件上一级编号
-     * @return
+     * @return 组件上一级编号
      */
     String getParentId();
 
     /**
      * 获取组件HTML名称
-     * @return
+     * @return 组件HTML名称
      */
     String getName();
 
     /**
      * 获取当前组件的样式信息
-     * @return
+     * @return 样式信息
      */
     String getCss();
 
     /**
      * 设置当前组件的样式信息
-     * @param css
+     * @param css 样式信息
      */
     void setCss(String css);
 
     /**
      * 获取组件的html的class列表
-     * @return
+     * @return 组件的html的class列表
      */
     Set<String> getCssClasses();
 
@@ -205,7 +206,7 @@ public interface WebElement extends Renderable {
     /**
      * 获取绑定到当前元素的指定事件的触发源
      * @param event 事件
-     * @return
+     * @return 触发源列表
      */
     Collection<ReferenceWebElement> getTriggerSources(WebTriggerEvent event);
 
@@ -217,7 +218,7 @@ public interface WebElement extends Renderable {
 
     /**
      * 获取元素类型
-     * @return
+     * @return 元素类型
      */
     Class<? extends WebElement> getElementClass();
 }

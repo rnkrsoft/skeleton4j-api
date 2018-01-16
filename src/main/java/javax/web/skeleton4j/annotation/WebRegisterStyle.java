@@ -20,21 +20,21 @@ public @interface WebRegisterStyle {
     /**
      * 引入样式别名
      *
-     * @return
+     * @return 引入样式别名
      */
     String value();
 
     /**
      * 版本号
      *
-     * @return
+     * @return 版本号
      */
     String version() default "1.0.0";
 
     /**
      * 依赖
      *
-     * @return
+     * @return 依赖
      */
     WebDependency[] dep() default {};
 }

@@ -6,9 +6,9 @@ package javax.web.skeleton4j.compile;
  */
 public interface WebCompilable {
     /**
-     * 是否是可以编译的容器
+     * 是否可以编译的容器
      *
-     * @return
+     * @return 是否可以编译的容器
      */
     boolean isCompilable();
 }

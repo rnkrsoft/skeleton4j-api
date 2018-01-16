@@ -12,15 +12,14 @@ public interface DocScanner {
 
     /**
      * 注册过滤器
-     * @param filter
-     * @return
+     * @param filter 过滤器
+     * @return 文档扫描器
      */
     DocScanner register(DocScannerFilter filter);
     /**
      * 设置类加载器
      *
      * @param classLoader 类加载器
-     * @return 文档扫描器
      */
     void setClassLoader(ClassLoader classLoader);
 
@@ -32,8 +31,8 @@ public interface DocScanner {
     ClassLoader getClassLoader();
 
     /**
-     * 设置
-     * @param registry
+     * 设置组件注册类
+     * @param registry 组件注册类
      */
     void setComponentRegistry(WebComponentRegistry registry);
     /**
