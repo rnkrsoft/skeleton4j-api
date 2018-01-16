@@ -10,46 +10,58 @@ import javax.web.skeleton4j.style.WebStyle;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * 模块池
+ */
 public interface ModulePool {
-
-    WebScript script(String alias, String version);
-
-    WebStyle style(String alias, String version);
-
-    List<WebStyle> styles(String... names);
-
-    ModulePool addStyle(WebStyle style);
-
+    /**
+     * 查找脚本
+     * @param alias 别名
+     * @param version 版本号
+     * @return 脚本对象
+     */
+    WebScript lookupScript(String alias, String version);
+    ModulePool addScript(WebScript script);
     List<WebScript> scripts(String... names);
 
-    ModulePool addScript(WebScript script);
+    WebStyle lookupStyle(String alias, String version);
+    List<WebStyle> styles(String... names);
+    ModulePool addStyle(WebStyle style);
 
+    WebNode lookupNode(String mark);
+    List<WebNode> nodes();
     ModulePool addNode(WebNode node);
 
-    List<WebNode> nodes();
 
+    WebMenu lookupMenu(String mark);
+    List<WebMenu> menus();
     ModulePool addMenu(WebMenu menu);
 
-    List<WebMenu> menus();
 
-    WebMenu menu(String mark);
-
-    WebNode node(String mark);
-
-    ModulePool addModule(WebModule module);
 
     WebModule lookupModule(String name);
+    List<WebModule> modules();
+    ModulePool addModule(WebModule module);
 
+
+    WebInterfaceMetadata lookupInterface(String product, String action, String subAction, boolean ifNotExistsReturnNull);
+    List<WebInterfaceMetadata> importInterfaces();
     ModulePool addInterface(WebInterfaceMetadata remoteInterfaceMetadata);
 
-    WebInterfaceMetadata lookupInterface(String product, String action, String subAction);
 
     Map<InterfaceInfo, List<WebInterfaceMetadata>> listImportInterfaces();
 
-    List<WebInterfaceMetadata> getImportInterfaces();
-
-    List<WebModule> listModules();
-
+    /**
+     * 全部清理
+     * @return
+     */
     ModulePool clean();
+
+    ModulePool removeScript(String alias, String version);
+    ModulePool removeStyle(String alias, String version);
+    ModulePool removeNode(String product, String action, String version);
+    ModulePool removeMenu(String key);
+    ModulePool removeNode(String key);
+    ModulePool removeInterface(String product, String action, String subAction);
+
 }

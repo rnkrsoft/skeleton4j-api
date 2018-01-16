@@ -54,17 +54,6 @@ public class WebMenu extends WebNode{
          */
         String parent;
 
-        String app;
-
-        String product;
-
-        String action;
-
-        String subAction;
-        /**
-         * 版本号
-         */
-        String version;
         /**
          * 子菜单
          */
@@ -110,30 +99,6 @@ public class WebMenu extends WebNode{
             return this;
         }
 
-        public WebMenuBuilder app(String app) {
-            this.app = app;
-            return this;
-        }
-
-        public WebMenuBuilder product(String product) {
-            this.product = product;
-            return this;
-        }
-
-        public WebMenuBuilder action(String action) {
-            this.action = action;
-            return this;
-        }
-
-        public WebMenuBuilder subAction(String subAction) {
-            this.subAction = subAction;
-            return this;
-        }
-
-        public WebMenuBuilder version(String version) {
-            this.version = version;
-            return this;
-        }
 
         public WebMenuBuilder node(WebNode ... node) {
             this.nodes.addAll(Arrays.asList(node));
@@ -150,11 +115,6 @@ public class WebMenu extends WebNode{
             node.hidden = hidden;
             node.module = module;
             node.parent = parent;
-            node.app = app;
-            node.product = product;
-            node.action = action;
-            node.subAction = subAction;
-            node.version = version;
             node.nodes.addAll(nodes);
             return node;
         }

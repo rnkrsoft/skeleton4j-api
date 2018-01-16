@@ -9,6 +9,7 @@ import javax.web.skeleton4j.pool.ModulePool;
 import javax.web.skeleton4j.pool.PagePool;
 import java.io.File;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -30,6 +31,36 @@ public interface Skeleton4jService {
      * @return 配置对象
      */
     Skeleton4jConfig getConfig();
+
+    /**
+     * 文档扫描器
+     * @return 文档扫描器
+     */
+    DocScanner getDocScanner();
+
+    /**
+     * 模块池
+     * @return 模块池
+     */
+    ModulePool getModulePool();
+
+    /**
+     * 页面池
+     * @return 页面池
+     */
+    PagePool getPagePool();
+
+    /**
+     * 页面包路径
+     * @return 页面包路径
+     */
+    List<String> getPagePackages();
+
+    /**
+     * 主题包包路径
+     * @return 主题包包路径
+     */
+    List<String> getThemePackages();
     /**
      * 获取支持的Skeleton4j版本号
      *

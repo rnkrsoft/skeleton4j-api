@@ -57,11 +57,9 @@ public class WebNode {
     @Getter
     @Setter
     String parent;
-
-    @Getter
-    @Setter
-    String app;
-
+    /**
+     * product/action/version构成叶子菜单的最终访问路径，与Skeleton4jService的page方法入参一致
+     */
     @Getter
     @Setter
     String product;
@@ -69,10 +67,6 @@ public class WebNode {
     @Getter
     @Setter
     String action;
-
-    @Getter
-    @Setter
-    String subAction;
     /**
      * 版本号
      */
@@ -115,13 +109,9 @@ public class WebNode {
          */
         String parent;
 
-        String app;
-
         String product;
 
         String action;
-
-        String subAction;
         /**
          * 版本号
          */
@@ -167,11 +157,6 @@ public class WebNode {
             return this;
         }
 
-        public WebNodeBuilder app(String app) {
-            this.app = app;
-            return this;
-        }
-
         public WebNodeBuilder product(String product) {
             this.product = product;
             return this;
@@ -179,11 +164,6 @@ public class WebNode {
 
         public WebNodeBuilder action(String action) {
             this.action = action;
-            return this;
-        }
-
-        public WebNodeBuilder subAction(String subAction) {
-            this.subAction = subAction;
             return this;
         }
 
@@ -202,10 +182,8 @@ public class WebNode {
             node.hidden = hidden;
             node.module = module;
             node.parent = parent;
-            node.app = app;
             node.product = product;
             node.action = action;
-            node.subAction = subAction;
             node.version = version;
             return node;
         }
