@@ -28,12 +28,12 @@ public interface ModulePool {
     List<WebStyle> styles(String... names);
     ModulePool addStyle(WebStyle style);
 
-    WebNode lookupNode(String mark);
+    WebNode lookupNode(String name);
     List<WebNode> nodes();
     ModulePool addNode(WebNode node);
 
 
-    WebMenu lookupMenu(String mark);
+    WebMenu lookupMenu(String name);
     List<WebMenu> menus();
     ModulePool addMenu(WebMenu menu);
 

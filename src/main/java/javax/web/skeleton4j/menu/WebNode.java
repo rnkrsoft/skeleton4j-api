@@ -21,8 +21,7 @@ public class WebNode {
     /**
      * 菜单英文名称
      */
-    @Getter
-    String mark;
+    String name;
     /**
      * 菜单展示名称
      */
@@ -74,6 +73,14 @@ public class WebNode {
     @Setter
     String version;
 
+    public String getName(){
+        if(name == null){
+            return product + "/" + action + "/" + version;
+        }else {
+            return name;
+        }
+    }
+
     public static WebNodeBuilder nodeBuilder() {
         return new WebNodeBuilder();
     }
@@ -86,7 +93,7 @@ public class WebNode {
         /**
          * 菜单英文名称
          */
-        String mark;
+        String name;
         /**
          * 菜单展示名称
          */
@@ -119,11 +126,6 @@ public class WebNode {
 
         public WebNodeBuilder icon(String icon) {
             this.icon = icon;
-            return this;
-        }
-
-        public WebNodeBuilder mark(String mark) {
-            this.mark = mark;
             return this;
         }
 
@@ -175,7 +177,6 @@ public class WebNode {
         public WebNode build() {
             WebNode node = new WebNode();
             node.icon = icon;
-            node.mark = mark;
             node.title = title;
             node.status = status;
             node.useAuthority = useAuthority;

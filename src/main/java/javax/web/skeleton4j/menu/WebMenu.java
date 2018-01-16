@@ -31,7 +31,7 @@ public class WebMenu extends WebNode{
         /**
          * 菜单英文名称
          */
-        String mark;
+        String name;
         /**
          * 菜单展示名称
          */
@@ -64,8 +64,8 @@ public class WebMenu extends WebNode{
             return this;
         }
 
-        public WebMenuBuilder mark(String mark) {
-            this.mark = mark;
+        public WebMenuBuilder name(String name) {
+            this.name = name;
             return this;
         }
 
@@ -108,7 +108,7 @@ public class WebMenu extends WebNode{
         public WebMenu build() {
             WebMenu node = new WebMenu();
             node.icon = icon;
-            node.mark = mark;
+            node.name = name;
             node.title = title;
             node.status = status;
             node.useAuthority = useAuthority;
