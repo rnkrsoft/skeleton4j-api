@@ -59,11 +59,6 @@ public interface WebPage extends WebCompilable, WebCompile {
     Class getWebPageClass();
 
     /**
-     * 应用
-     */
-    String getApp();
-
-    /**
      * 产品
      */
     String getProduct();
@@ -79,11 +74,6 @@ public interface WebPage extends WebCompilable, WebCompile {
     String getAction();
 
     /**
-     * 子功能
-     */
-    String getSubAction();
-
-    /**
      * 页面版本号,如果存在多个版本号，则会生成多个菜单；页面名称的唯一标识为name + ":" + version
      */
     String getVersion();
@@ -91,7 +81,7 @@ public interface WebPage extends WebCompilable, WebCompile {
     /**
      * 页面对应的子菜单
      */
-    WebNode getSubMenu();
+    WebNode getNode();
 
     /**
      * 作者

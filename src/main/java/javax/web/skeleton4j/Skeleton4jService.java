@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.web.doc.DocScanner;
 import javax.web.skeleton4j.config.Skeleton4jConfig;
 import javax.web.skeleton4j.pool.ModulePool;
-import javax.web.skeleton4j.pool.PagePool;
 import java.io.File;
 import java.util.Collection;
 import java.util.List;
@@ -45,12 +44,6 @@ public interface Skeleton4jService {
     ModulePool getModulePool();
 
     /**
-     * 页面池
-     * @return 页面池
-     */
-    PagePool getPagePool();
-
-    /**
      * 页面包路径
      * @return 页面包路径
      */
@@ -73,11 +66,10 @@ public interface Skeleton4jService {
      * @param config        配置对象
      * @param docScanner    文档扫描器 如果不存在，则自动使用DocScannerFactory创建实例
      * @param modulePool    模块池 如果模块池不存在则自动创建
-     * @param pagePool      页面池 如果页面池不存在则自动创建
      * @param pagePackages  页面包路径 页面路径默认需要包含javax.web.skeleton4j.page
      * @param themePackages 主题包路径 主题路径默认需要包含javax.web.skeleton4j.theme
      */
-    void init(Skeleton4jConfig config, DocScanner docScanner, ModulePool modulePool, PagePool pagePool, Collection<String> pagePackages, Collection<String> themePackages);
+    void init(Skeleton4jConfig config, DocScanner docScanner, ModulePool modulePool, Collection<String> pagePackages, Collection<String> themePackages);
 
     /**
      * 扫描所有页面类

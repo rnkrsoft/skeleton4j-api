@@ -28,7 +28,7 @@ public interface WebModule {
     /**
      * 子菜单
      */
-    List<WebNode> getSubMenus();
+    List<WebNode> getNodes();
 
     /**
      * 页面列表，包含的页面对象，一般为编译好的页面，只需要进行权限渲染
@@ -55,5 +55,4 @@ public interface WebModule {
      * @return
      */
     WebModule addPage(WebPage webPage);
-
 }

@@ -4,6 +4,7 @@ import javax.web.doc.InterfaceInfo;
 import javax.web.skeleton4j.menu.WebMenu;
 import javax.web.skeleton4j.menu.WebNode;
 import javax.web.skeleton4j.module.WebModule;
+import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.remote.WebInterfaceMetadata;
 import javax.web.skeleton4j.script.WebScript;
 import javax.web.skeleton4j.style.WebStyle;
@@ -14,6 +15,29 @@ import java.util.Map;
  * 模块池
  */
 public interface ModulePool {
+    /**
+     * 查询页面类
+     * @param product 产品编号
+     * @param action 功能编号
+     * @param version 版本号
+     * @param ifNotExistsReturnNull 不存在是否返回null
+     * @return 页面类
+     */
+    WebPage lookupPage(String product, String action, String version, boolean ifNotExistsReturnNull);
+
+    /**
+     * 获取所有页面类
+     * @return 页面类
+     */
+    List<WebPage> pages();
+
+    /**
+     * 增加页面类
+     * @param webPage 页面类
+     * @return 页面池
+     */
+    ModulePool addPage(WebPage webPage);
+
     /**
      * 查找脚本
      * @param alias 别名
@@ -60,8 +84,16 @@ public interface ModulePool {
     ModulePool removeScript(String alias, String version);
     ModulePool removeStyle(String alias, String version);
     ModulePool removeNode(String product, String action, String version);
+    ModulePool removeModule(String key);
     ModulePool removeMenu(String key);
     ModulePool removeNode(String key);
     ModulePool removeInterface(String product, String action, String subAction);
-
+    /**
+     * 移除指定的页面
+     * @param product 产品编号
+     * @param action 功能编号
+     * @param version 版本号
+     * @return 页面池
+     */
+    ModulePool removePage(String product, String action, String version);
 }

@@ -6,7 +6,7 @@ import java.util.Collection;
  * Created by devops4j on 2017/10/18.
  * 分组组件
  */
-public interface WebGroupComponent extends WebFormableComponent {
+public interface WebGroupComponent extends WebFormableComponent, WebGroupableComponent {
     /**
      * 获取选项
      *
