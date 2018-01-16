@@ -134,7 +134,7 @@ public interface WebPage extends WebCompilable, WebCompile {
      */
     ByteBuffer getCodes();
 
-    WebPage getodes(ByteBuffer buffer);
+    WebPage getCodes(ByteBuffer buffer);
 
     String getUrl();
 
