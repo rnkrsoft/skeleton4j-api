@@ -1,5 +1,6 @@
 package javax.web.skeleton4j.annotation;
 
+import javax.web.skeleton4j.element.component.*;
 import java.lang.annotation.*;
 
 /**
@@ -15,12 +16,12 @@ public @interface WebRegisterComponent {
      *
      * @return 组件实现的接口
      */
-    Class<?> componentInterface() default Class.class;
+    Class<? extends javax.web.skeleton4j.element.WebElement> componentInterface() default javax.web.skeleton4j.element.WebElement.class;
 
     /**
      * 组件实现类
      *
      * @return 组件实现类
      */
-    Class<?> value();
+    Class<? extends javax.web.skeleton4j.element.WebElement> value();
 }
