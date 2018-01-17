@@ -45,5 +45,9 @@ public enum ValueDisplayType {
     /**
      * 可供选择的类型，多选或者单选
      */
-    Selection
+    Selection,
+    /**
+     * JSON数据
+     */
+    Json
 }
