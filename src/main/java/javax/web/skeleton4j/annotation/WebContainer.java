@@ -1,5 +1,6 @@
 package javax.web.skeleton4j.annotation;
 
+import javax.web.skeleton4j.element.WebElement;
 import java.lang.annotation.*;
 
 /**
@@ -14,7 +15,7 @@ public @interface WebContainer {
      * 容器实现的接口
      * @return 组件实现的接口数组
      */
-    Class[] componentInterface() default {};
+    Class<? extends WebElement>[] componentInterface() default {};
 
     /**
      * 容器版本

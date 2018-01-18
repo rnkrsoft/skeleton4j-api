@@ -33,7 +33,7 @@ public @interface WebPage {
     String version() default "1.0.0";
 
     /**
-     * 插件作者
+     * 作者
      *
      * @return 作者
      */

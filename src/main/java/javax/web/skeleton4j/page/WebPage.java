@@ -22,130 +22,160 @@ import java.util.Map;
 
 public interface WebPage extends WebCompilable, WebCompile {
     /**
+     * 获取这个页面类可以访问的URL地址
+     * 一般为product=xxxx&action=xxxx&version=1.0.0
+     * @return URL地址
+     */
+    String getUrl();
+
+    /**
      * Web组件注册表
      *
      * @return 注册表对象
      */
     WebComponentRegistry getComponentRegistry();
 
+    /**
+     * 获取当前页面关联的文档扫描器
+     * @return 文档扫描器
+     */
     DocScanner getDocScanner();
     /**
-     * 获取页面上注册的所有Ajax接口
+     * 获取页面上注册的所有接口
      *
-     * @return
+     * @return 接口列表
      */
     List<AjaxInterface> getAjaxInterfaces();
 
     /**
-     * 获取当前页面所有的web元素引用，通过ID查询引用时，从发起字段查询的组件开始进行同一级查询，如果不存在则进行上一级查询
+     * 获取当前页面所有的web元素引用，通过ID查询引用时
      *
-     * @return
+     * @return 所有的web元素引用
      */
     Map<String, WebElement> getElements();
 
     /**
-     * 包路径
+     * 包路径，如果非WebPage类生成，则该包名为服务类所在包路径
+     * @return 包路径
      */
     String getPackagePath();
 
     /**
-     * 标注@WebPlugin注解的类名
+     * 标注@WebPage注解的类名
+     * @return 类名
      */
     String getWebPageClassName();
 
     /**
-     *
+     * 标注@WebPage注解的类
+     * @return 类
      */
     Class getWebPageClass();
 
     /**
-     * 产品
+     * 产品代码
+     * @return 产品代码
      */
     String getProduct();
 
     /**
-     * 模块描述
+     *  产品描述
+     * @return  产品描述
      */
     String getProductDesc();
 
     /**
-     * 功能（页面）
+     * 功能代码
+     * @return 功能代码
      */
     String getAction();
 
     /**
-     * 页面版本号,如果存在多个版本号，则会生成多个菜单；页面名称的唯一标识为name + ":" + version
+     * 页面版本号,如果存在多个版本号，则会生成多个菜单；页面name的唯一标识为name + ":" + version,展示菜单名称为name(version)
+     * @return 版本号
      */
     String getVersion();
 
     /**
      * 页面对应的子菜单
+     * @return 子菜单
      */
     WebNode getNode();
 
     /**
      * 作者
+     * @return 作者
      */
     String getAuthor();
 
     /**
      * 页面显示在浏览器栏的标题
+     * @return 浏览器栏的标题
      */
     String getTitle();
 
     /**
-     * 页面中引用的样式,引用来源为插件
+     * 页面中引用的样式,分别来自两部分，组件导入的样式和组件渲染生成的样式
+     * @return 样式
      */
     Collection<WebStyle> getStyles();
 
     /**
-     * 页面中引用的脚本,引用来源为插件
+     * 页面中引用的脚本,分别来自两部分，组件导入的脚本和组件渲染生成的脚本
+     * @return 脚本
      */
     Collection<WebScript> getScripts();
 
     /**
-     * 获取主题下页面需要的脚本，包含插件引用来的和组件引用来的
-     *
-     * @param theme
-     * @return
+     * 页面中引用的脚本,分别来自两部分，组件导入的脚本和组件渲染生成的脚本，所有脚本都是与主题有关的
+     * @param theme 主题名
+     * @return 脚本
      */
     Collection<WebScript> getScripts(String theme);
 
+
     /**
-     * 获取主题下页面需要的样式，包含插件引用来的和组件引用来的
-     *
-     * @param theme
-     * @return
+     * 页面中引用的样式,分别来自两部分，组件导入的样式和组件渲染生成的样式，所有样式都是与主题有关的
+     * @param theme 主题名
+     * @return 样式
      */
     Collection<WebStyle> getStyles(String theme);
 
     /**
      * 页面中的容器
+     * @return 容器
      */
     Collection<WebContainer> getContainers();
 
     /**
      * 导入的接口
+     * @return 接口列表
      */
     Collection<ImportInterfaceMetadata> getImports();
 
     /**
-     * 用于缓存生成的HTML代码，将直接缓存在直接内存中
+     * 获取渲染生成的HTML代码
+     * @return ByteBuffer对象
      */
     ByteBuffer getCodes();
 
+    /**
+     * 获取渲染生成的HTML代码
+     * @param buffer ByteBuffer对象
+     * @return 页面类
+     */
     WebPage getCodes(ByteBuffer buffer);
 
-    String getUrl();
 
     /**
      * 通过HTML ID或者字段ID查询组件
      *
      * @param id           HTML ID或者字段ID
      * @param elementClass 组件类型
+     * @param <T> 组件类型
      * @return 组件
      */
-    WebElement lookup(String id, Class elementClass);
+    <T extends WebElement> T lookup(String id, Class<T> elementClass);
 
     /**
      * 通过HTML ID或者字段ID查询组件,查询从source开始平级查起，组件向外
@@ -153,29 +183,14 @@ public interface WebPage extends WebCompilable, WebCompile {
      * @param source       起点元素
      * @param id           HTML ID或者字段ID
      * @param elementClass 组件类型
+     * @param <T> 组件类型
      * @return 组件
      */
-    WebElement lookup(WebElement source, String id, Class elementClass);
+    <T extends WebElement> T lookup(WebElement source, String id, Class<T> elementClass);
 
-
+    /**
+     * 是否使用权限访问
+     * @return 返回真，则不使用权限校验
+     */
     boolean isNotUseAuthority();
-//
-//    void visit(WebElement element);
-//    void visit(WebComponent element);
-//    void visit(WebTextComponent element);
-//    void visit(WebDateComponent element);
-//    void visit(WebGroupComponent element);
-//    void visit(WebGroupableComponent element);
-//    void visit(WebFormableComponent element);
-//    void visit(WebSelectItemComponent element);
-//    void visit(WebRadioComponent element);
-//    void visit(WebTreeComponent element);
-//    void visit(WebTableComponent element);
-//    void visit(WebButtonComponent element);
-//    void visit(WebHintComponent element);
-//    void visit(WebMsgBoxComponent element);
-//    void visit(WebDialogBoxComponent element);
-//    void visit(WebHeaderContainer element);
-//    void visit(WebMenuContainer element);
-//    void visit(WebFormContainer element);
 }

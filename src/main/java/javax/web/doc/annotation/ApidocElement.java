@@ -67,8 +67,9 @@ public @interface ApidocElement {
      * ValueDisplayType.Date将数据展示为日期选择框，字段必须为String
      * ValueDisplayType.Image将数据展示为图片，字段必须为String
      * ValueDisplayType.Tree将数据展示为Tree，单选时字段为String,复选时字段为Set或者List
-     * ValueDisplayType.Markdown将数据展示为Markdown，字段必须为String
-     * ValueDisplayType.RichText将数据展示为富文本，字段必须为String
+     * ValueDisplayType.Markdown将数据展示为Markdown编辑器，字段必须为String
+     * ValueDisplayType.RichText将数据展示为富文本编辑器，字段必须为String
+     * ValueDisplayType.Json将数据展示为Json编辑器，字段必须为String
      * ValueDisplayType.Selection将数据展示为可以选择的单选或则复选，单选时字段为String,复选时字段为Set或者List
      *
      * @return 字段类型
