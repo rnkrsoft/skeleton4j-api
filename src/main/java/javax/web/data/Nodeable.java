@@ -9,6 +9,17 @@ import java.util.List;
  */
 public interface Nodeable extends Serializable {
     /**
+     * 设置节点值
+     * @param selected 节点值
+     */
+    void setSelected(Node selected);
+
+    /**
+     * 获取选中的节点值
+     * @return 节点值
+     */
+    Node getSelected();
+    /**
      * 返回树形节点数据
      *
      * @return 节点数据
