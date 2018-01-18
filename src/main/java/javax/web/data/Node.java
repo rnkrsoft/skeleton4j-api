@@ -25,6 +25,11 @@ public class Node implements Serializable {
     @Getter
     String value;
     /**
+     * 是否选中
+     */
+    @Getter
+    boolean selected;
+    /**
      * 子节点
      */
     List<Node> nodes;

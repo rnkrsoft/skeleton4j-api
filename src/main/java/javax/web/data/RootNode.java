@@ -15,10 +15,6 @@ import java.util.List;
  *
  */
 public class RootNode extends AbstractResponse implements Nodeable {
-    @Setter
-    @Getter
-    @ApidocElement("选中的节点值")
-    Node selected;
     @ApidocElement("节点")
     List<Node> nodes;
 
