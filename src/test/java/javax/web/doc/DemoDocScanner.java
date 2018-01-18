@@ -4,7 +4,7 @@ import javax.web.skeleton4j.registry.WebComponentRegistry;
 import java.util.List;
 
 /**
- * Created by 面试1 on 2018/1/11.
+ * Created by devops4j on 2018/1/11.
  */
 public class DemoDocScanner implements DocScanner{
     @Override
@@ -50,6 +50,26 @@ public class DemoDocScanner implements DocScanner{
     @Override
     public void scan(Class<?> serviceClass) {
 
+    }
+
+    @Override
+    public DocScanner define(ColumnDefineMetadata metadata) {
+        return null;
+    }
+
+    @Override
+    public List<ColumnDefineMetadata> listDefinedColumns(String... names) {
+        return null;
+    }
+
+    @Override
+    public List<String> listDefinedColumnNames() {
+        return null;
+    }
+
+    @Override
+    public List<KeywordResult> lookupKeyword(String... keywords) {
+        return null;
     }
 
     @Override

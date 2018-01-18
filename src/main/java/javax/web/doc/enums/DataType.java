@@ -1,0 +1,30 @@
+package javax.web.doc.enums;
+
+import com.devops4j.interfaces.EnumStringCode;
+
+/**
+ * Created by devops4j on 2018/1/19.
+ */
+public enum DataType implements EnumStringCode{
+    String("java.lang.String","字符串"),
+    Integer("java.lang.Integer","整数"),
+    Decimal("java.lang.BigDecimal","浮点数"),
+    Date("java.util.Date","日期");
+    String code;
+    String desc;
+
+    DataType(String code, String desc) {
+        this.code = code;
+        this.desc = desc;
+    }
+
+    @Override
+    public String getCode() {
+        return code;
+    }
+
+    @Override
+    public String getDesc() {
+        return desc;
+    }
+}

@@ -91,19 +91,18 @@ public @interface ApidocElement {
     String[] defaults() default {};
 
     /**
-     * 表达式类型，默认正则表达式
-     *
-     * @return 表达式类型
-     */
-    PatternType patternType() default PatternType.AUTO;
-
-    /**
      * 占位符，如果为空，则默认使用desc
      *
      * @return 占位符
      */
     String placeholder() default "";
 
+    /**
+     * 表达式类型，默认正则表达式
+     *
+     * @return 表达式类型
+     */
+    PatternType patternType() default PatternType.AUTO;
     /**
      * 表达式
      *
