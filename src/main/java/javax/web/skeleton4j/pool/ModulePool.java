@@ -1,6 +1,8 @@
 package javax.web.skeleton4j.pool;
 
+import javax.web.doc.DocScanner;
 import javax.web.doc.InterfaceInfo;
+import javax.web.skeleton4j.enums.InterfaceCall;
 import javax.web.skeleton4j.menu.WebMenu;
 import javax.web.skeleton4j.menu.WebNode;
 import javax.web.skeleton4j.module.WebModule;
@@ -15,6 +17,28 @@ import java.util.Map;
  * 模块池
  */
 public interface ModulePool {
+    /**
+     * 获取模块池
+     * @return 模块池
+     */
+    DocScanner getDocScanner();
+
+    /**
+     * 设置扫描器
+     * @param docScanner 扫描器
+     * @return 模块池
+     */
+    ModulePool docScanner(DocScanner docScanner);
+    /**
+     * 创建一个接口
+     * @param product 产品代码
+     * @param action 功能代码
+     * @param name 接口名
+     * @param call 调用方式
+     * @param interfaceInfo 接口信息
+     * @return 接口元信息
+     */
+    WebInterfaceMetadata createInterface(String product, String action, String name, InterfaceCall call, InterfaceInfo interfaceInfo);
     /**
      * 创建一个页面对象
      * @param webPageClass 页面类
