@@ -80,6 +80,13 @@ public interface Skeleton4jConfig {
     Skeleton4jConfig param(String paramName, String paramValue);
 
     /**
+     * 向字符串型用分号分割的参数追加参数
+     * @param paramName  参数名
+     * @param paramValue 参数值
+     * @return 配置对象
+     */
+    Skeleton4jConfig appendItem(String paramName, String paramValue);
+    /**
      * 获取参数
      *
      * @param paramName  参数名
@@ -106,6 +113,7 @@ public interface Skeleton4jConfig {
      * @return 参数值
      */
     Integer getInteger(String paramName, Integer defaultValue);
+
 
     /**
      * 获取布尔值形式的参数
