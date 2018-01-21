@@ -16,7 +16,7 @@ public class ElementSet {
      * 类对象
      */
     @Getter
-    Class elementClass;
+    Class<?> elementClass;
     /**
      * 是否允许分页
      * 只要实现分页接口，则有分页功能
@@ -45,7 +45,7 @@ public class ElementSet {
      *
      * @param elementClass
      */
-    ElementSet(Class elementClass) {
+    ElementSet(Class<?> elementClass) {
         this.elementClass = elementClass;
     }
 
