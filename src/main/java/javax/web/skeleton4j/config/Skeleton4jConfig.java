@@ -8,6 +8,62 @@ import java.util.Collection;
  */
 public interface Skeleton4jConfig {
     /**
+     * 临时输出路径
+     */
+    String TEMP_OUTPUT_PATH = "tempOutputPath";
+    /**
+     * 系统编号
+     */
+    String APP = "app";
+    /**
+     * 系统描述
+     */
+    String APP_DESC = "appDesc";
+    /**
+     * 主题包路径，多个;分割
+     */
+    String THEME_PACKAGES = "themePackages";
+    /**
+     * 主题包路径，多个;分割
+     */
+    String PAGE_PACKAGES = "pagePackages";
+    /**
+     * 是否扫描子包
+     */
+    String SCAN_SUB_PACKAGE = "scanSubPackage";
+    /**
+     * 是否使用本地缓存
+     */
+    String USE_CACHE = "useCache";
+    /**
+     * 是否使用开发模式
+     */
+    String DEV_MODE = "devMode";
+    /**
+     * 默认主题名
+     */
+    String DEFAULT_THEME = "defaultTheme";
+    /**
+     * 是否内联脚本
+     */
+    String INLINE_SCRIPT = "inlineScript";
+    /**
+     * 是否内联样式
+     */
+    String INLINE_STYLE = "inlineStyle";
+    /**
+     * 权限管理器名
+     */
+    String AUTHORITY = "authority";
+    /**
+     * 服务器地址,默认为空
+     */
+    String SERVER_HOST = "serverHost";
+    /**
+     * 服务器端口，默认为80
+     */
+    String SERVER_PORT = "serverPort";
+    /**
      * 列出所有参数的参数名
      *
      * @return 参数名集合
