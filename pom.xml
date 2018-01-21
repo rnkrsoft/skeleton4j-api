@@ -54,7 +54,7 @@
             <version>1.16.10</version>
             <scope>provided</scope>
         </dependency>
-		<dependency>
+        <dependency>
             <groupId>com.devops4j.groundwork</groupId>
             <artifactId>groundwork</artifactId>
             <version>${groundwork.version}</version>

@@ -16,9 +16,10 @@ public interface DocScannerFilter {
 
     /**
      * 判断是否能够使用当前过滤器进行处理
+     *
      * @param serviceClass 正在处理@ApidocService服务类
-     * @param method 方法对象
-     * @param paramClass 参数类对象
+     * @param method       方法对象
+     * @param paramClass   参数类对象
      * @return 是否能够处理
      */
     boolean accept(Class serviceClass, Method method, Class paramClass);
@@ -27,8 +28,8 @@ public interface DocScannerFilter {
      * 过滤正在处理的对象
      *
      * @param serviceClass 正在处理@ApidocService服务类
-     * @param method 方法对象
-     * @param paramClass 参数类对象
+     * @param method       方法对象
+     * @param paramClass   参数类对象
      * @return 处理完成的参数类对象
      */
     Class filter(Class serviceClass, Method method, Class paramClass);

@@ -1,6 +1,8 @@
 package javax.web.skeleton4j.interfaces;
 
-
+/**
+ * 设置请求能够获取登录用户机构信息
+ */
 public interface LoginUserOrgable {
     /**
      * 获取登录用户所属机构号

@@ -12,7 +12,6 @@ import javax.web.doc.ReferenceInterface;
  * doing1=com.devops4j.xxx.DemoService.doing1
  * com.devops4j.xxx.DemoService.doing1:1.0.0
  * com.devops4j.xxx.DemoService.doing1
- *
  */
 public class ReferenceInterfaceUtils {
     /**

@@ -25,7 +25,6 @@ public class ColumnDefineMetadata {
      * Integer
      * Decimal
      * Date
-     *
      */
     DataType type;
     /**

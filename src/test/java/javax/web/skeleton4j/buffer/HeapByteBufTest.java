@@ -1,16 +1,18 @@
-package javax.web.skeleton4j.utils.buffer;
+package javax.web.skeleton4j.buffer;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import javax.web.skeleton4j.buffer.ByteBuf;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.math.BigDecimal;
 
-/**
- * Created by devops4j on 2017/11/30.
- */
-public class ByteBufTest {
+import static org.junit.Assert.*;
 
+/**
+ * Created by devops4j on 2018/1/21.
+ */
+public class HeapByteBufTest {
     @Test
     public void testCapacity() throws Exception {
         ByteBuf byteBuf = ByteBuf.allocate(1);
@@ -34,7 +36,7 @@ public class ByteBufTest {
             Assert.assertEquals(0, byteBuf.readableLength());
             Assert.assertEquals(0, byteBuf.writableLength());
         }
-        byteBuf.setAutoExpand(true);
+        byteBuf.autoExpand(true);
         byteBuf.put((byte) (11));
         Assert.assertEquals(2, byteBuf.capacity());
     }
@@ -58,7 +60,7 @@ public class ByteBufTest {
         } catch (Exception e) {
 
         }
-        byteBuf.setAutoExpand(true);
+        byteBuf.autoExpand(true);
         byteBuf.put((byte) (112));
         Assert.assertEquals(4, byteBuf.capacity());
     }
@@ -129,149 +131,23 @@ public class ByteBufTest {
             System.out.println(buf.getInt());
         }
     }
-
     @Test
-    public void testSetAutoExpand() throws Exception {
-
+    public void testWrite() throws Exception {
+        ByteBuf byteBuf = ByteBuf.allocate(1024);
+        byteBuf.put("UTF-8", "this is a test");
+        FileOutputStream outputStream = new FileOutputStream("./target/demo.txt");
+        byteBuf.write(outputStream);
     }
 
     @Test
-    public void testIsReadOnly() throws Exception {
-
-    }
-
-    @Test
-    public void testSetReadOnly() throws Exception {
-
-    }
-
-    @Test
-    public void testClear() throws Exception {
-
-    }
-
-    @Test
-    public void testPut() throws Exception {
-
-    }
-
-    @Test
-    public void testPut1() throws Exception {
-
-    }
-
-    @Test
-    public void testPut2() throws Exception {
-
-    }
-
-    @Test
-    public void testPut3() throws Exception {
-
-    }
-
-    @Test
-    public void testPut4() throws Exception {
-
-    }
-
-    @Test
-    public void testPut5() throws Exception {
-
-    }
-
-    @Test
-    public void testPut6() throws Exception {
-
-    }
-
-    @Test
-    public void testPut7() throws Exception {
-
-    }
-
-    @Test
-    public void testPut8() throws Exception {
-
-    }
-
-    @Test
-    public void testGet() throws Exception {
-
-    }
-
-    @Test
-    public void testGetByteBuffer() throws Exception {
-
-    }
-
-    @Test
-    public void testGet1() throws Exception {
-
-    }
-
-    @Test
-    public void testGetString() throws Exception {
-
-    }
-
-    @Test
-    public void testGetByte() throws Exception {
-
-    }
-
-    @Test
-    public void testGetShort() throws Exception {
-
-    }
-
-    @Test
-    public void testGetInt() throws Exception {
-
-    }
-
-    @Test
-    public void testGetLong() throws Exception {
-
-    }
-
-    @Test
-    public void testGetFloat() throws Exception {
-
-    }
-
-    @Test
-    public void testGetDouble() throws Exception {
-
-    }
-
-    @Test
-    public void testGetBytes() throws Exception {
-
-    }
-
-    @Test
-    public void testGetBytes1() throws Exception {
-
-    }
-
-    @Test
-    public void testReadableLength() throws Exception {
-
-    }
-
-    @Test
-    public void testWritableLength() throws Exception {
-
-    }
-
-    @Test
-    public void testAllocate1() throws Exception {
-
-    }
-
-    @Test
-    public void testAllocate2() throws Exception {
-
+    public void testRead() throws Exception {
+        ByteBuf byteBuf = ByteBuf.allocate(1024).autoExpand(true).readOnly(false);
+        byteBuf.put("UTF-8", "this is a test");
+        FileOutputStream outputStream = new FileOutputStream("./target/demo.txt");
+        byteBuf.write(outputStream);
+        byteBuf.clear();
+        byteBuf.read(new FileInputStream("./target/demo.txt"));
+        System.out.println(byteBuf.asString("UTF-8"));
+        System.out.println(byteBuf.asString("UTF-8"));
     }
 }

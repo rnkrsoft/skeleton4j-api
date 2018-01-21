@@ -103,6 +103,7 @@ public @interface ApidocElement {
      * @return 表达式类型
      */
     PatternType patternType() default PatternType.AUTO;
+
     /**
      * 表达式
      *
@@ -112,6 +113,7 @@ public @interface ApidocElement {
 
     /**
      * 级联接口，用于定义元素的级联接口事件
+     *
      * @return 级联接口列表
      */
     WebCascadeInterface[] interfaces() default {};

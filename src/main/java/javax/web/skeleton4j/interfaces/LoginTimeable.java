@@ -2,6 +2,9 @@ package javax.web.skeleton4j.interfaces;
 
 import java.util.Date;
 
+/**
+ * 设置请求能够获取登录时间有关信息
+ */
 public interface LoginTimeable {
     /**
      * 获取上次用户活动时间

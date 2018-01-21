@@ -13,6 +13,7 @@ import java.lang.annotation.*;
 public @interface WebComponent {
     /**
      * 组件实现的接口
+     *
      * @return 组件实现的接口数组
      */
     Class<? extends WebElement>[] componentInterface() default {};

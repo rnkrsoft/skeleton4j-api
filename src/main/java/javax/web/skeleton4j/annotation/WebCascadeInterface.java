@@ -18,9 +18,11 @@ public @interface WebCascadeInterface {
 
     /**
      * 是否在进行事件触发前进行确认操作
+     *
      * @return 确认操作
      */
     boolean confirm() default false;
+
     /**
      * 生成的模态框的元素布局，会覆盖接口定义中的布局
      *
@@ -37,9 +39,11 @@ public @interface WebCascadeInterface {
 
     /**
      * 当前级联接口调用时需要的级联入参数组，填入的时当前接口的Java字段名
+     *
      * @return 级联字段数组
      */
     String[] cascadeColumn() default {};
+
     /**
      * 级联接口调用后结果如何展示
      *

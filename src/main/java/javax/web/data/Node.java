@@ -1,6 +1,9 @@
 package javax.web.data;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -47,5 +50,10 @@ public class Node implements Serializable {
         }
         this.nodes.add(node);
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return value + ":" + text + "(" + (selected ? "selected" : "") + ")";
     }
 }

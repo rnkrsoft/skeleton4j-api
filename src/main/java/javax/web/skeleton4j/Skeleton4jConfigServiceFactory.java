@@ -3,7 +3,6 @@ package javax.web.skeleton4j;
 import com.devops4j.logtrace4j.ErrorContext;
 import com.devops4j.logtrace4j.ErrorContextFactory;
 
-import javax.web.skeleton4j.registry.WebComponentRegistry;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

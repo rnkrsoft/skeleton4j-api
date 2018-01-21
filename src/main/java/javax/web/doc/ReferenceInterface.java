@@ -1,7 +1,6 @@
 package javax.web.doc;
 
 import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Created by devops4j on 2017/12/5.

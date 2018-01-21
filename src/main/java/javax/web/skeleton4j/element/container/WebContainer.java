@@ -1,10 +1,10 @@
 package javax.web.skeleton4j.element.container;
 
-import javax.web.skeleton4j.render.Renderable;
 import javax.web.skeleton4j.compile.WebCompilable;
 import javax.web.skeleton4j.compile.WebCompile;
 import javax.web.skeleton4j.element.WebElement;
-import javax.web.skeleton4j.page.ImportInterfaceMetadata;
+import javax.web.skeleton4j.page.NamespaceInterfaceMetadata;
+import javax.web.skeleton4j.render.Renderable;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,26 +15,32 @@ import java.util.List;
 public interface WebContainer extends WebCompilable, WebCompile, Renderable, WebElement {
     /**
      * 设置页面提示信息
+     *
      * @param hintMessages 提示信息
      */
-    void setHintMessages(String ... hintMessages);
+    void setHintMessages(String... hintMessages);
 
     /**
      * 获取容器提示信息
+     *
      * @return 提示信息
      */
     List<String> getHintMessages();
+
     /**
      * 缓存路径
+     *
      * @return
      */
     String getCachePath();
 
     /**
      * 缓存路径
+     *
      * @param cachePath
      */
     void setCachePath(String cachePath);
+
     /**
      * 获取缓存文件路径
      *
@@ -47,5 +53,5 @@ public interface WebContainer extends WebCompilable, WebCompile, Renderable, Web
      *
      * @return
      */
-    Collection<ImportInterfaceMetadata> getImports();
+    Collection<NamespaceInterfaceMetadata> getImports();
 }

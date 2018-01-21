@@ -92,48 +92,53 @@ public class InterfaceInfo implements Comparable<InterfaceInfo> {
         }
         return this.name.equals(((InterfaceInfo) obj).name) && this.version.equals(((InterfaceInfo) obj).getVersion());
     }
-    public ElementInfo lookup(String fullName){
+
+    public ElementInfo lookup(String fullName) {
         ColumnType columnType = ColumnType.REQUEST;
         if (fullName.startsWith("request.")) {
             columnType = ColumnType.REQUEST;
             fullName = fullName.substring("request.".length());
-        }else if(fullName.startsWith("response.")) {
+        } else if (fullName.startsWith("response.")) {
             columnType = ColumnType.RESPONSE;
             fullName = fullName.substring("response.".length());
         }
         return lookup(columnType, fullName);
     }
 
-    public ElementInfo lookup(ColumnType columnType, String fullName){
-        if(columnType == ColumnType.REQUEST){
+    public ElementInfo lookup(ColumnType columnType, String fullName) {
+        if (columnType == ColumnType.REQUEST) {
             return request.lookupFullName(fullName);
-        }else if(columnType == ColumnType.RESPONSE) {
+        } else if (columnType == ColumnType.RESPONSE) {
             return response.lookupFullName(fullName);
         }
         return null;
     }
+
     /**
      * 获取接口的完整类方法名
+     *
      * @return 完整名称
      */
-    public String getFullMethodName(){
+    public String getFullMethodName() {
         return serviceInfo.getServiceClassName() + "." + methodName;
     }
 
     /**
      * 获取接口的完整的接口名
+     *
      * @return 完整的接口名
      */
-    public String getFullName(){
+    public String getFullName() {
         return serviceInfo.getName() + "." + name + "." + version;
     }
 
     /**
      * 获取请求类对象
+     *
      * @return 请求类对象
      */
-    public Class getRequestClass(){
-        if(request == null){
+    public Class getRequestClass() {
+        if (request == null) {
             return null;
         }
         return request.getElementClass();
@@ -141,10 +146,11 @@ public class InterfaceInfo implements Comparable<InterfaceInfo> {
 
     /**
      * 获取应答类对象
+     *
      * @return 应答类对象
      */
-    public Class getResponseClass(){
-        if(response == null){
+    public Class getResponseClass() {
+        if (response == null) {
             return null;
         }
         return response.getElementClass();
@@ -152,18 +158,21 @@ public class InterfaceInfo implements Comparable<InterfaceInfo> {
 
     /**
      * 根据当前接口信息创建引用对象
+     *
      * @param namespace 命名空间
-     * @param alias 别名
+     * @param alias     别名
      * @return 引用对象
      */
-    public ReferenceInterface makeReference(String namespace, String alias){
+    public ReferenceInterface makeReference(String namespace, String alias) {
         return new ReferenceInterface(docScanner, namespace, alias, serviceInfo.getServiceClassName(), name, version);
     }
+
     /**
      * 接口是否支持分页
+     *
      * @return 是否支持分页
      */
-    public boolean isPageable(){
+    public boolean isPageable() {
         return request.isPageable() && response.isPageable();
     }
 }

@@ -93,7 +93,7 @@ public interface Skeleton4jService {
     File compile(Class pageClass);
 
     /**
-     * @param devMode   是否为开发模式
+     * @param devMode  是否为开发模式
      * @param product  模块名称 模块名即权限中的product
      * @param action   页面名称 模块名即权限中的action
      *                 ，例如com.devops4j.page.demo.TestPlugin{
@@ -110,6 +110,7 @@ public interface Skeleton4jService {
 
     /**
      * 调用异步接口不进行权限校验和输入校验
+     *
      * @param product   模块名称 包名(product)
      * @param action    类名缩写(action)
      * @param subAction 交易别名(subAction).通过模块中得接口定义原始类找到真实得接口，接口别名能够转换为接口名字和版本号
@@ -119,6 +120,7 @@ public interface Skeleton4jService {
      * @return WebAjaxResult
      */
     WebAjaxResult test(String product, String action, String subAction, String data, HttpServletRequest request, HttpServletResponse response);
+
     /**
      * 调用异步接口，所有暴露的接口都要依托于页面，没有页面就无法管理权限
      *
@@ -134,6 +136,7 @@ public interface Skeleton4jService {
 
     /**
      * 导入文件预览，返回解析出的数据页面
+     *
      * @param devMode   是否为开发模式
      * @param product   模块名称 包名(product)
      * @param action    类名缩写(action)
@@ -147,6 +150,7 @@ public interface Skeleton4jService {
 
     /**
      * 导入文件
+     *
      * @param devMode   是否为开发模式
      * @param product   模块名称 包名(product)
      * @param action    类名缩写(action)
@@ -160,6 +164,7 @@ public interface Skeleton4jService {
 
     /**
      * 导出文件
+     *
      * @param devMode   是否为开发模式
      * @param product   模块名称 包名(product)
      * @param action    类名缩写(action)

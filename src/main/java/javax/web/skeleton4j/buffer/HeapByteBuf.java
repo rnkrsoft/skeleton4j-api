@@ -1,6 +1,6 @@
 package javax.web.skeleton4j.buffer;
 
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.nio.ByteBuffer;
 
 /**
@@ -78,7 +78,7 @@ class HeapByteBuf extends ByteBuf {
     }
 
     @Override
-    public ByteBuf setAutoExpand(boolean expand) {
+    public ByteBuf autoExpand(boolean expand) {
         this.autoExpand = expand;
         return this;
     }
@@ -89,7 +89,7 @@ class HeapByteBuf extends ByteBuf {
     }
 
     @Override
-    public ByteBuf setReadOnly(boolean readOnly) {
+    public ByteBuf readOnly(boolean readOnly) {
         this.readonly = readOnly;
         return this;
     }
@@ -109,12 +109,15 @@ class HeapByteBuf extends ByteBuf {
 
     @Override
     public ByteBuf put(byte v) {
+        if(readonly){
+            throw new IllegalArgumentException("buffer is readonly!");
+        }
         if (writableLength() < 1) {
             if (this.autoExpand) {
                 double newCap = Math.round((double) this.data.length * 1.75);
                 expendData(Math.max((int) newCap, this.data.length + 1));
             } else {
-                throw new ArrayIndexOutOfBoundsException("数组越界");
+                throw new ArrayIndexOutOfBoundsException("buffer is out of bounds!");
             }
         }
         this.data[writeBegin] = v;
@@ -125,6 +128,9 @@ class HeapByteBuf extends ByteBuf {
 
     @Override
     public ByteBuf put(short v) {
+        if(readonly){
+            throw new IllegalArgumentException("buffer is readonly!");
+        }
         if (bigEndian) {
             put(Bits.short1(v));
             put(Bits.short0(v));
@@ -137,6 +143,9 @@ class HeapByteBuf extends ByteBuf {
 
     @Override
     public ByteBuf put(int v) {
+        if(readonly){
+            throw new IllegalArgumentException("buffer is readonly!");
+        }
         if (bigEndian) {
             put(Bits.int3(v));
             put(Bits.int2(v));
@@ -153,7 +162,9 @@ class HeapByteBuf extends ByteBuf {
 
     @Override
     public ByteBuf put(long v) {
-
+        if(readonly){
+            throw new IllegalArgumentException("buffer is readonly!");
+        }
         if (bigEndian) {
             put(Bits.long7(v));
             put(Bits.long6(v));
@@ -178,18 +189,27 @@ class HeapByteBuf extends ByteBuf {
 
     @Override
     public ByteBuf put(float v) {
+        if(readonly){
+            throw new IllegalArgumentException("buffer is readonly!");
+        }
         put(Float.floatToRawIntBits(v));
         return this;
     }
 
     @Override
     public ByteBuf put(double v) {
+        if(readonly){
+            throw new IllegalArgumentException("buffer is readonly!");
+        }
         put(Double.doubleToRawLongBits(v));
         return this;
     }
 
     @Override
     public ByteBuf put(byte[] bytes) {
+        if(readonly){
+            throw new IllegalArgumentException("buffer is readonly!");
+        }
         int length = bytes.length;
         //检测是否越界
         if (writableLength() < length) {
@@ -197,7 +217,7 @@ class HeapByteBuf extends ByteBuf {
                 int newCap = (int) ((double) this.data.length * 1.75);
                 expendData(Math.max(newCap, this.data.length + length));
             } else {
-                throw new ArrayIndexOutOfBoundsException("数组越界");
+                throw new ArrayIndexOutOfBoundsException("buffer is out of bounds!");
             }
         }
         System.arraycopy(bytes, 0, this.data, this.writeBegin, length);
@@ -209,6 +229,9 @@ class HeapByteBuf extends ByteBuf {
 
     @Override
     public ByteBuf put(String charset, String... strings) {
+        if(readonly){
+            throw new IllegalArgumentException("buffer is readonly!");
+        }
         for (String str : strings) {
             try {
                 byte[] temp = str.getBytes(charset);
@@ -222,6 +245,10 @@ class HeapByteBuf extends ByteBuf {
 
     @Override
     public ByteBuf put(ByteBuffer buffer) {
+        if(readonly){
+            throw new IllegalArgumentException("buffer is readonly!");
+        }
+        put(buffer.array());
         return this;
     }
 
@@ -244,7 +271,7 @@ class HeapByteBuf extends ByteBuf {
         }
         int length = data.length;
         if (readableLength() < length) {
-            throw new ArrayIndexOutOfBoundsException("数组越界");
+            throw new ArrayIndexOutOfBoundsException("buffer is out of bounds!");
         }
         System.arraycopy(this.data, this.readBegin, data, 0, length);
         this.readBegin += length;
@@ -256,6 +283,51 @@ class HeapByteBuf extends ByteBuf {
         byte[] temp = new byte[readableLength()];
         get(temp);
         return ByteBuffer.wrap(temp);
+    }
+
+    @Override
+    public ByteArrayInputStream asInputStream() {
+        return new ByteArrayInputStream(getBytes(readableLength()));
+    }
+
+    @Override
+    public int read(InputStream is) throws IOException {
+        if (is == null) {
+            throw new NullPointerException("InputStream is null!");
+        }
+        if(readonly){
+            throw new IllegalArgumentException("buffer is readonly!");
+        }
+        int byteLen = 0;
+        int byteReadLen = 0;
+        byte[] data = new byte[1024];
+        while ((byteReadLen = is.read(data)) != -1) {
+            if(byteReadLen == 1024){
+                put(data);
+            }else{
+                byte[] data0 = new byte[byteReadLen];
+                System.arraycopy(data, 0, data0, 0, byteReadLen);
+                put(data0);
+            }
+            byteLen += byteReadLen;
+        }
+        return byteLen;
+    }
+
+    @Override
+    public int write(OutputStream os) throws IOException {
+        if (os == null) {
+            throw new NullPointerException("OutputStream is null!");
+        }
+        int byteLen = 0;
+        int byteWriteLen = 0;
+        while ((byteWriteLen = readableLength()) > 0) {
+            byte[] data = new byte[Math.min(1024, byteWriteLen)];
+            byteLen += data.length;
+            get(data);
+            os.write(data);
+        }
+        return byteLen;
     }
 
 
@@ -272,12 +344,17 @@ class HeapByteBuf extends ByteBuf {
     public ByteBuf get(ByteBuffer buffer) {
         int length = readableLength();
         if (buffer.remaining() < length) {
-            throw new ArrayIndexOutOfBoundsException("空间不足");
+            throw new ArrayIndexOutOfBoundsException("spaces is not enough!");
         }
         byte[] temp = new byte[length];
         get(temp);
         buffer.put(temp);
         return this;
+    }
+
+    @Override
+    public String asString(String charset) {
+        return getString(charset, readableLength());
     }
 
 

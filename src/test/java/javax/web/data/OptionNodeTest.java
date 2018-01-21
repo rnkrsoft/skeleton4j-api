@@ -4,9 +4,6 @@ import com.google.gson.GsonBuilder;
 import lombok.Data;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by devops4j on 2017/12/5.
  */

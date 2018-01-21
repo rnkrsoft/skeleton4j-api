@@ -2,7 +2,7 @@ package javax.web.validate;
 
 import com.devops4j.interfaces.EnumIntegerCode;
 
-public enum ValidateCause implements EnumIntegerCode{
+public enum ValidateCause implements EnumIntegerCode {
     SUCCESS(0, "校验通过"),
     IS_NULL_DATA(1, "校验数据为空"),
     IS_REQUIRED(2, "字段为必输"),

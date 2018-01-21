@@ -10,6 +10,7 @@ import javax.web.skeleton4j.render.WebContext;
 public interface WebCompile {
     /**
      * 编译
+     *
      * @param ctx 上下文
      * @return 是否编译成功
      */
@@ -17,6 +18,7 @@ public interface WebCompile {
 
     /**
      * 获取编译好的代码
+     *
      * @param ctx 上下文
      */
     void getCodes(WebContext ctx);

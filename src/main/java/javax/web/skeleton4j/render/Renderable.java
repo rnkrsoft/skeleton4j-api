@@ -7,8 +7,9 @@ package javax.web.skeleton4j.render;
 public interface Renderable {
     /**
      * 渲染
-     * @param ctx 上下文
-     * @param renderHtml 渲染HTML
+     *
+     * @param ctx          上下文
+     * @param renderHtml   渲染HTML
      * @param renderScript 渲染脚本
      */
     void render(WebContext ctx, boolean renderHtml, boolean renderScript);

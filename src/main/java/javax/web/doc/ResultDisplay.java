@@ -3,13 +3,11 @@ package javax.web.doc;
 import lombok.Getter;
 
 import javax.web.doc.enums.WebDisplayType;
-import javax.web.skeleton4j.enums.ColumnType;
 
 /**
  * Created by devops4j on 2017/12/7.
- *
  */
-public class ResultDisplay{
+public class ResultDisplay {
     @Getter
     WebDisplayType displayType;
 

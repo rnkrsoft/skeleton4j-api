@@ -1,6 +1,8 @@
 package javax.web.skeleton4j.interfaces;
 
-
+/**
+ * 设置请求能够获取登录用户信息
+ */
 public interface LoginUserable {
     /**
      * 获取登录用户号

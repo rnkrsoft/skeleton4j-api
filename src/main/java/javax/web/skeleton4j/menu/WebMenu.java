@@ -1,6 +1,7 @@
 package javax.web.skeleton4j.menu;
 
 import lombok.Getter;
+import lombok.ToString;
 
 import javax.web.skeleton4j.module.WebModule;
 import java.util.Arrays;
@@ -10,7 +11,8 @@ import java.util.LinkedList;
 /**
  * Created by devops4j on 2017/10/9.
  */
-public class WebMenu extends WebNode{
+@ToString
+public class WebMenu extends WebNode {
     @Getter
     final Collection<WebNode> nodes = new LinkedList();
 
@@ -100,7 +102,7 @@ public class WebMenu extends WebNode{
         }
 
 
-        public WebMenuBuilder node(WebNode ... node) {
+        public WebMenuBuilder node(WebNode... node) {
             this.nodes.addAll(Arrays.asList(node));
             return this;
         }

@@ -46,6 +46,7 @@ public class CascadeInterface {
      * 展示出的名称，通常为按钮
      */
     String displayName;
+
     private CascadeInterface() {
 
     }
@@ -63,12 +64,15 @@ public class CascadeInterface {
         ReferenceInterface ref;
         WebLayout layout = WebLayout.INLINE;
         String displayName;
+
         private CascadeInterfaceBuilder() {
         }
+
         public CascadeInterfaceBuilder ref(ReferenceInterface ref) {
             this.ref = ref;
             return this;
         }
+
         public CascadeInterfaceBuilder confirm(boolean confirm) {
             this.confirm = confirm;
             return this;

@@ -1,11 +1,5 @@
 package javax.web.skeleton4j.element;
 
-import org.junit.Test;
-
-import javax.web.skeleton4j.element.component.WebButtonComponent;
-
-import static org.junit.Assert.*;
-
 /**
  * Created by devops4j on 2017/12/15.
  */

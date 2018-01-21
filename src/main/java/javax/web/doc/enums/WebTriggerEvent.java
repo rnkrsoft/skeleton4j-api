@@ -11,7 +11,7 @@ public enum WebTriggerEvent implements EnumStringCode {
     CLICK("CLICK", "当用户点击某个对象时调用的事件句柄"),
     DBLCLICK("DBLCLICK", "当用户双击某个对象时调用的事件句柄"),
     CHANGE("CHANGE", "值变化"),
-    INIT("INIT","页面初始化"),
+    INIT("INIT", "页面初始化"),
     BLUR("BLUR", "元素失去焦点"),
     FOCUS("FOCUS", "元素获得焦点"),
     KEYDOWN("KEYDOWN", "某个键盘按键被按下"),

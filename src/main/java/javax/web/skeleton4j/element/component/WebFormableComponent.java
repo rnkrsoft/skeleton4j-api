@@ -12,73 +12,88 @@ import java.util.List;
 public interface WebFormableComponent extends WebComponent {
     /**
      * 表单中元素的标签
+     *
      * @return 元素的标签
      */
     String getLabel();
 
     /**
      * 表单中元素的标签
+     *
      * @param label 元素的标签
      */
     void setLabel(String label);
+
     /**
      * 背景颜色
+     *
      * @param color 背景颜色
      */
     void setBackgroundColor(String color);
 
     /**
      * 背景颜色
+     *
      * @return 背景颜色
      */
     String getBackgroundColor();
 
     /**
      * 字体颜色
+     *
      * @param color 字体颜色
      */
     void setFontColor(String color);
 
     /**
      * 字体颜色
+     *
      * @return 字体颜色
      */
     String getFontColor();
+
     /**
      * 表单中元素的值
+     *
      * @return 元素的值
      */
     String getValue();
 
     /**
      * 表单中元素的值
+     *
      * @param value 元素的值
      */
     void setValue(String value);
 
     /**
      * 允许最大长度
+     *
      * @return 最大长度
      */
     int getMaxLen();
 
     /**
      * 允许最大长度
+     *
      * @param maxLen 最大长度
      */
     void setMaxLen(int maxLen);
 
     /**
      * 允许最小长度
+     *
      * @return 最小长度
      */
     int getMinLen();
 
     /**
      * 允许最小长度
+     *
      * @param minLen 最小长度
      */
     void setMinLen(int minLen);
+
     /**
      * 获取默认值
      *
@@ -137,30 +152,35 @@ public interface WebFormableComponent extends WebComponent {
 
     /**
      * 表达式类型
+     *
      * @return 表达式类型
      */
     PatternType getPatternType();
 
     /**
      * 设置表达式类型
+     *
      * @param patternType 表达式类型
      */
     void setPatternType(PatternType patternType);
 
     /**
      * 获取字段元信息
-     * @return  字段信息
+     *
+     * @return 字段信息
      */
     ValueElementInfo getColumnMetadata();
 
     /**
      * 获取占位文本
+     *
      * @return 占位文本
      */
     String getPlaceholder();
 
     /**
      * 设置占位文本
+     *
      * @param placeholder 占位文本
      */
     void setPlaceholder(String placeholder);

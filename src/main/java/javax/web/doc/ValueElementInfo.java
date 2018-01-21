@@ -1,12 +1,10 @@
 package javax.web.doc;
 
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.web.doc.enums.ElementType;
 import javax.web.doc.enums.PatternType;
 import javax.web.doc.enums.ValueDisplayType;
-import javax.web.skeleton4j.element.WebElement;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
 import java.util.*;
 
@@ -120,15 +118,17 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
 
     /**
      * 当前字段是否为应答码字段
+     *
      * @return 是否为应答码字段
      */
-    public boolean isRspCode(){
-        if(RspCodeReadable.class.isAssignableFrom(getElementSet().getElementClass())){
+    public boolean isRspCode() {
+        if (RspCodeReadable.class.isAssignableFrom(getElementSet().getElementClass())) {
             return "rspCode".equals(this.name) || "rspDesc".equals(this.name);
-        }else{
+        } else {
             return false;
         }
     }
+
     @Getter
     public static class ValueElementInfoBuilder {
         WebComponentRegistry componentRegistry;

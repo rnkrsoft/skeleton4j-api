@@ -59,6 +59,7 @@ public class WebThemePack {
 
     /**
      * 注册组件
+     *
      * @param componentInterface 组件接口
      * @param componentImplement 组件实现类
      */
@@ -68,6 +69,7 @@ public class WebThemePack {
 
     /**
      * 列出组件包中的组件
+     *
      * @return 组件接口列表
      */
     public List<Class> listComponents() {
@@ -76,6 +78,7 @@ public class WebThemePack {
 
     /**
      * 获取指定组件接口对应的实现类
+     *
      * @param componentInterface 组件接口
      * @return 组件实现类
      */
@@ -85,8 +88,9 @@ public class WebThemePack {
 
     /**
      * 注册脚本
+     *
      * @param componentInterface 组件接口
-     * @param scripts1 脚本列表
+     * @param scripts1           脚本列表
      */
     public void registerScripts(Class componentInterface, Collection<WebScript> scripts1) {
         Set<WebScript> scriptSet = this.scripts.get(componentInterface);
@@ -104,6 +108,7 @@ public class WebThemePack {
 
     /**
      * 获取指定组件注册的脚本
+     *
      * @param componentInterface 组件接口
      * @return 脚本列表
      */
@@ -114,8 +119,9 @@ public class WebThemePack {
 
     /**
      * 注册样式表
+     *
      * @param componentInterface 组件接口
-     * @param styles1 样式表列表
+     * @param styles1            样式表列表
      */
     public void registerStyles(Class componentInterface, Collection<WebStyle> styles1) {
         Set<WebStyle> styleSet = this.styles.get(componentInterface);
@@ -133,6 +139,7 @@ public class WebThemePack {
 
     /**
      * 获取指定组件注册的样式表
+     *
      * @param componentInterface 组件接口
      * @return 样式表列表
      */

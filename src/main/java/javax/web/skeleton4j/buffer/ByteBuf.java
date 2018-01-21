@@ -1,9 +1,14 @@
 package javax.web.skeleton4j.buffer;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.ByteBuffer;
 
 /**
  * Created by devops4j on 2017/11/30.
+ * 字节缓冲区
  */
 public abstract class ByteBuf {
     public static ByteBuf allocate(int capacity) {
@@ -26,11 +31,11 @@ public abstract class ByteBuf {
 
     public abstract boolean isAutoExpand();
 
-    public abstract ByteBuf setAutoExpand(boolean autoExpand);
+    public abstract ByteBuf autoExpand(boolean autoExpand);
 
     public abstract boolean isReadOnly();
 
-    public abstract ByteBuf setReadOnly(boolean readOnly);
+    public abstract ByteBuf readOnly(boolean readOnly);
 
     public abstract ByteBuf clear();
 
@@ -54,10 +59,41 @@ public abstract class ByteBuf {
 
     public abstract ByteBuf get(byte[] data);
 
+    /**
+     * 将缓冲区中的内容作为ByteBuffer缓冲区
+     * @return ByteBuffer缓冲区
+     */
     public abstract ByteBuffer asByteBuffer();
+
+    /**
+     * 将缓冲区中的内容作为输入流
+     * @return 字节数组输入流
+     */
+    public abstract ByteArrayInputStream asInputStream();
+
+    /**
+     * 从输入流读取
+     * @param is 输入流
+     * @return 读取字节数
+     * @throws IOException 异常
+     */
+    public abstract int read(InputStream is)throws IOException;
+    /**
+     * 向输出流写入
+     * @param os 输入流
+     * @return 写入字节数
+     * @throws IOException 异常
+     */
+    public abstract int write(OutputStream os) throws IOException;
 
     public abstract ByteBuf get(ByteBuffer buffer);
 
+    /**
+     * 将所有内容作为字符串输出
+     * @param charset 字符集
+     * @return 字符串
+     */
+    public abstract String asString(String charset);
     public abstract String getString(String charset, int length);
 
     public abstract byte getByte();

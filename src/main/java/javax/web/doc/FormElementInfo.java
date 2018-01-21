@@ -47,12 +47,12 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
      */
     boolean required;
 
-    private FormElementInfo(WebComponentRegistry componentRegistry,InterfaceInfo interfaceInfo, ElementSet elementSet, String fullName) {
+    private FormElementInfo(WebComponentRegistry componentRegistry, InterfaceInfo interfaceInfo, ElementSet elementSet, String fullName) {
         super(componentRegistry, interfaceInfo, elementSet, fullName);
     }
 
-    public static FormElementInfoBuilder builder(WebComponentRegistry componentRegistry,InterfaceInfo interfaceInfo, ElementSet elementSet, String fullName) {
-        return new FormElementInfoBuilder(componentRegistry,interfaceInfo, elementSet, fullName);
+    public static FormElementInfoBuilder builder(WebComponentRegistry componentRegistry, InterfaceInfo interfaceInfo, ElementSet elementSet, String fullName) {
+        return new FormElementInfoBuilder(componentRegistry, interfaceInfo, elementSet, fullName);
     }
 
     public String getTypeName() {
@@ -80,6 +80,7 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
         String desc;
         String usage;
         boolean required;
+
         private FormElementInfoBuilder(WebComponentRegistry componentRegistry, InterfaceInfo interfaceInfo, ElementSet elementSet, String fullName) {
             this.componentRegistry = componentRegistry;
             this.interfaceInfo = interfaceInfo;

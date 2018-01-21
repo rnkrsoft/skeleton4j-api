@@ -3,8 +3,8 @@ package javax.web.skeleton4j.element;
 import lombok.Getter;
 
 import javax.web.doc.ElementInfo;
-import javax.web.skeleton4j.registry.WebComponentRegistry;
 import javax.web.skeleton4j.page.WebPage;
+import javax.web.skeleton4j.registry.WebComponentRegistry;
 
 /**
  * Created by devops4j on 2017/12/8.

@@ -12,10 +12,12 @@ public interface DocScanner {
 
     /**
      * 注册过滤器
+     *
      * @param filter 过滤器
      * @return 文档扫描器
      */
     DocScanner register(DocScannerFilter filter);
+
     /**
      * 设置类加载器
      *
@@ -32,9 +34,11 @@ public interface DocScanner {
 
     /**
      * 设置组件注册类
+     *
      * @param registry 组件注册类
      */
     void setComponentRegistry(WebComponentRegistry registry);
+
     /**
      * 获取组件注册类
      *
@@ -62,19 +66,21 @@ public interface DocScanner {
     /**
      * 扫描类
      *
-     * @param ifThrow 如果发生异常，是否抛出异常
-     * @param serviceClass   类，需要标注@ApidocService和@ApidocInterface
+     * @param ifThrow      如果发生异常，是否抛出异常
+     * @param serviceClass 类，需要标注@ApidocService和@ApidocInterface
      */
     void scan(boolean ifThrow, Class<?> serviceClass);
 
     /**
      * 扫描类
-     * @param serviceClass   类，需要标注@ApidocService和@ApidocInterface
+     *
+     * @param serviceClass 类，需要标注@ApidocService和@ApidocInterface
      */
     void scan(Class<?> serviceClass);
 
     /**
      * 定义字段元信息
+     *
      * @param metadata 元信息
      * @return 文档扫描器
      */
@@ -82,22 +88,27 @@ public interface DocScanner {
 
     /**
      * 查询已经定义的字段，不输入则查询所有，输入则进行匹配，如果只有一个输入不能匹配则返回空列表
+     *
      * @param names 字段名
      * @return 定义字段元信息列表
      */
-    List<ColumnDefineMetadata> listDefinedColumns(String ... names);
+    List<ColumnDefineMetadata> listDefinedColumns(String... names);
 
     /**
      * 列出所有的定义的字段名
+     *
      * @return 字段名
      */
     List<String> listDefinedColumnNames();
+
     /**
      * 查询所有关键词，不输入则查询所有，输入则进行匹配，如果只有一个输入不能匹配则返回空列表
+     *
      * @param keywords 关键词数组
      * @return 关键词封装列表
      */
-    List<KeywordResult> lookupKeyword(String ... keywords);
+    List<KeywordResult> lookupKeyword(String... keywords);
+
     /**
      * 列出已扫描的服务
      *

@@ -35,6 +35,7 @@ public class BeanElementInfo extends AbstractElementInfo implements ElementInfo 
     String desc;
 
     String usage;
+
     private BeanElementInfo(WebComponentRegistry componentRegistry, InterfaceInfo interfaceInfo, ElementSet elementSet, String fullName) {
         super(componentRegistry, interfaceInfo, elementSet, fullName);
     }
@@ -61,6 +62,7 @@ public class BeanElementInfo extends AbstractElementInfo implements ElementInfo 
         Class<?> javaClass;
         String desc;
         String usage;
+
         private BeanElementInfoBuilder(WebComponentRegistry componentRegistry, InterfaceInfo interfaceInfo, ElementSet elementSet, String fullName) {
             this.componentRegistry = componentRegistry;
             this.interfaceInfo = interfaceInfo;

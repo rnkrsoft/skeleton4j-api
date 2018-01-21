@@ -8,72 +8,246 @@ import javax.web.skeleton4j.script.WebScript;
 import javax.web.skeleton4j.style.WebStyle;
 import java.nio.ByteBuffer;
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * Created by devops4j on 2017/9/30.
  * 上下文
  */
 public interface WebContext {
+    /**
+     * 渲染时传入的参数
+     *
+     * @return 参数
+     */
+    Map<String, Object> getParams();
 
+    /**
+     * 模块池
+     *
+     * @return 模块池
+     */
     ModulePool getModulePool();
 
-    String getApp();
-
+    /**
+     * 产品编号
+     *
+     * @return 产品编号
+     */
     String getProduct();
 
+    /**
+     * 产品描述
+     *
+     * @return 产品描述
+     */
     String getProductDesc();
 
+    /**
+     * 功能编号
+     *
+     * @return 功能编号
+     */
     String getAction();
 
+    /**
+     * 功能描述
+     *
+     * @return 功能描述
+     */
     String getActionDesc();
 
+    /**
+     * 操作编号
+     *
+     * @return 操作编号
+     */
     String getSubAction();
 
+    /**
+     * 操作描述
+     *
+     * @return 操作描述
+     */
+    String getSubActionDesc();
+
+    /**
+     * 主题名
+     *
+     * @return 主题名
+     */
     String getTheme();
 
-    String getAjaxUrl();
+    /**
+     * 服务器根路径
+     *
+     * @return 服务器根路径
+     */
+    String getServerRootPath();
 
-    String getPageUrl();
+    /**
+     * 系统代码
+     *
+     * @return 系统代码
+     */
+    String getApp();
 
-    String getSystemDesc();
+    /**
+     * 系统描述
+     *
+     * @return 系统描述
+     */
+    String getAppDesc();
 
+    /**
+     * 用户编号
+     *
+     * @return 用户编号
+     */
     String getUserId();
 
+    /**
+     * 用户名
+     *
+     * @return 用户名
+     */
     String getUserName();
 
+    /**
+     * 用户昵称
+     *
+     * @return 用户昵称
+     */
     String getNickName();
 
+    /**
+     * 用户所在组织编号
+     *
+     * @return 组织编号
+     */
     String getGroup();
 
+    /**
+     * 用户所在组织描述
+     *
+     * @return 组织描述
+     */
+    String getGroupDesc();
+
+    /**
+     * 用户头像
+     *
+     * @return 用户头像
+     */
     String getUserAvatar();
 
+    /**
+     * 渲染产生的脚本对象
+     *
+     * @return 脚本对象
+     */
     Collection<WebScript> getScripts();
 
+    /**
+     * 渲染产生的样式对象
+     *
+     * @return 样式对象
+     */
     Collection<WebStyle> getStyles();
 
+    /**
+     * 当前菜单
+     *
+     * @return 当前菜单
+     */
     Collection<WebMenu> getMenus();
 
+    /**
+     * 容器列表
+     *
+     * @return 容器列表
+     */
     Collection<WebContainer> getContainers();
 
+    /**
+     * 渲染产生的代码
+     *
+     * @return 代码
+     */
     ByteBuf getCodes();
 
+    /**
+     * 增加代码
+     *
+     * @param data 代码
+     * @return 上下文
+     */
     WebContext codes(byte[] data);
 
-
+    /**
+     * 增加代码
+     *
+     * @param newBuffer 代码
+     * @return 上下文
+     */
     WebContext codes(ByteBuffer newBuffer);
 
+    /**
+     * 增加代码
+     *
+     * @param lines 代码
+     * @return 上下文
+     */
     WebContext codes(String... lines);
 
+    /**
+     * 使用模块池中已注册的脚本
+     *
+     * @param alias 别名
+     * @return 上下文
+     */
     WebContext enqueueScript(String alias);
 
+    /**
+     * 使用模块池中已注册的样式
+     *
+     * @param alias 别名
+     * @return 上下文
+     */
     WebContext enqueueStyle(String alias);
 
+    /**
+     * 使用模块池中已注册的脚本
+     *
+     * @param alias   别名
+     * @param version 版本号
+     * @return 上下文
+     */
     WebContext enqueueScript(String alias, String version);
 
+    /**
+     * 使用模块池中已注册的样式
+     *
+     * @param alias   别名
+     * @param version 版本号
+     * @return 上下文
+     */
     WebContext enqueueStyle(String alias, String version);
 
+    /**
+     * 向上下文增加渲染产生的脚本对象，不向模块池注册
+     *
+     * @param script 脚本对象
+     * @return 上下文
+     */
     WebContext enqueueScript(WebScript script);
 
+    /**
+     * 向上下文增加渲染产生的样式对象，不向模块池注册
+     *
+     * @param style 样式对象
+     * @return 上下文
+     */
     WebContext enqueueStyle(WebStyle style);
 
     /**

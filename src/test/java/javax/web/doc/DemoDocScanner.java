@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by devops4j on 2018/1/11.
  */
-public class DemoDocScanner implements DocScanner{
+public class DemoDocScanner implements DocScanner {
     @Override
     public DocScanner register(DocScannerFilter filter) {
         return null;

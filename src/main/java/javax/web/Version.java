@@ -7,17 +7,19 @@ package javax.web;
 public class Version {
     /**
      * 版本信息
+     *
      * @return 版本号
      */
-    public static String version(){
+    public static String version() {
         return "1.0.0";
     }
 
     /**
      * 是否为正式版本
+     *
      * @return
      */
-    public static boolean release(){
+    public static boolean release() {
         return false;
     }
 }

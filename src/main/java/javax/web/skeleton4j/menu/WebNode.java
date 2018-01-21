@@ -9,6 +9,16 @@ import javax.web.skeleton4j.module.WebModule;
  * Created by devops4j on 2017/10/9.
  */
 public class WebNode {
+    @Override
+    public String toString() {
+        return "WebNode{" +
+                "no=" + no +
+                ", name='" + getName() + '\'' +
+                ", title='" + title + '\'' +
+                ", parent='" + parent + '\'' +
+                '}';
+    }
+
     @Getter
     @Setter
     int no = 0;
@@ -73,10 +83,10 @@ public class WebNode {
     @Setter
     String version;
 
-    public String getName(){
-        if(name == null){
+    public String getName() {
+        if (name == null) {
             return product + "/" + action + "/" + version;
-        }else {
+        } else {
             return name;
         }
     }

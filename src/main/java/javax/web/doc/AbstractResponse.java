@@ -1,11 +1,12 @@
 package javax.web.doc;
 
 
+import com.devops4j.interfaces.EnumIntegerCode;
+import com.devops4j.interfaces.EnumStringCode;
 import lombok.ToString;
 
 import javax.web.doc.annotation.ApidocElement;
-import com.devops4j.interfaces.EnumIntegerCode;
-import com.devops4j.interfaces.EnumStringCode;
+
 @ToString
 public abstract class AbstractResponse implements RspCodeReadable, RspCodeWritable {
     @ApidocElement("应答码")

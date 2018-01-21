@@ -2,8 +2,6 @@ package javax.web.validate;
 
 import com.devops4j.reflection4j.GlobalSystemMetadata;
 import com.devops4j.reflection4j.MetaObject;
-import com.devops4j.reflection4j.meta.DefaultMetaObject;
-import com.devops4j.reflection4j.property.PropertyTokenizer;
 import lombok.Data;
 
 import java.util.HashMap;
@@ -56,7 +54,7 @@ public class ValidateContext {
         register(ValidateCause.NOT_DEFINE_ENUM_FACTORY_METHOD, ValidateCause.NOT_DEFINE_ENUM_FACTORY_METHOD.getDesc());
     }
 
-    public ValidateContext(ValidateContext validateContext , MetaObject metaObject) {
+    public ValidateContext(ValidateContext validateContext, MetaObject metaObject) {
         this.causes.clear();
         this.causes.putAll(validateContext.getCauses());
         this.metaObject = metaObject;
@@ -64,15 +62,15 @@ public class ValidateContext {
         this.throwException = validateContext.isThrowException();
     }
 
-    public void register(ValidateCause cause, String desc){
+    public void register(ValidateCause cause, String desc) {
         causes.put(cause, desc);
     }
 
-    public static ValidateContextBuilder builder(){
+    public static ValidateContextBuilder builder() {
         return new ValidateContextBuilder();
     }
 
-    public static class ValidateContextBuilder{
+    public static class ValidateContextBuilder {
         Object value;
         boolean throwException;
 
@@ -86,7 +84,7 @@ public class ValidateContext {
             return this;
         }
 
-        public ValidateContext build(){
+        public ValidateContext build() {
             ValidateContext context = new ValidateContext();
             context.metaObject = GlobalSystemMetadata.forObject(value.getClass(), value);
             context.value = value;

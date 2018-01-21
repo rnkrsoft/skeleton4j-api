@@ -2,14 +2,12 @@ package javax.web.validate;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by devops4j on 2018/1/4.
  */
 public class Skeleton4jValidatorFactoryTest {
 
-    static class DemoBean{
+    static class DemoBean {
         String name;
 
         @Override

@@ -8,7 +8,6 @@ import javax.web.doc.enums.WebDisplayType;
 import javax.web.doc.enums.WebTriggerEvent;
 import javax.web.skeleton4j.element.ReferenceWebElement;
 import javax.web.skeleton4j.element.component.WebComponent;
-import javax.web.skeleton4j.element.component.WebConfirmBoxComponent;
 import java.util.List;
 
 /**

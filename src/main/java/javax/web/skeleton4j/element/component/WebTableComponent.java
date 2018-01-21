@@ -16,6 +16,7 @@ public interface WebTableComponent extends WebComponent {
 
     /**
      * 获取唯一键字段
+     *
      * @return
      */
     Collection<WebFormableComponent> getUniqueColumns();
@@ -29,6 +30,7 @@ public interface WebTableComponent extends WebComponent {
 
     /**
      * 增加唯一键
+     *
      * @param column
      * @return
      */
@@ -60,12 +62,14 @@ public interface WebTableComponent extends WebComponent {
 
     /**
      * 是否可以进行分页
+     *
      * @return
      */
     boolean isPageable();
 
     /**
      * 是否可以进行分页
+     *
      * @param pageable
      */
     void setPageable(boolean pageable);
@@ -73,12 +77,14 @@ public interface WebTableComponent extends WebComponent {
 
     /**
      * 是否初始化查询数据
+     *
      * @return
      */
     boolean isInitQuery();
 
     /**
      * 是否初始化查询数据
+     *
      * @param initQuery
      */
     void setInitQuery(boolean initQuery);

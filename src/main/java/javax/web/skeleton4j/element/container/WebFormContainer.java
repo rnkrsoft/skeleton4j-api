@@ -46,11 +46,12 @@ public interface WebFormContainer extends WebContentContainer {
 
     /**
      * 获取消息框
+     *
      * @return
      */
     Collection<WebMsgBoxComponent> getMsgBoxes();
+
     /**
-     *
      * @param components
      * @return
      */
@@ -77,6 +78,7 @@ public interface WebFormContainer extends WebContentContainer {
      * @return
      */
     Collection<WebConfirmBoxComponent> getConfirmBoxes();
+
     /**
      * 向容器中增加确认对话框
      *
@@ -91,8 +93,10 @@ public interface WebFormContainer extends WebContentContainer {
      * @return
      */
     Collection<WebDialogBoxComponent> getDialogBoxes();
+
     /**
      * 增加对话框
+     *
      * @param components
      * @return
      */

@@ -1,15 +1,13 @@
 package javax.web.doc;
 
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.web.doc.enums.ElementType;
 import javax.web.skeleton4j.element.DefaultReferenceWebElement;
 import javax.web.skeleton4j.element.ReferenceWebElement;
-import javax.web.skeleton4j.element.WebElement;
+import javax.web.skeleton4j.enums.ColumnType;
 import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
-import javax.web.skeleton4j.enums.ColumnType;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,7 +1,6 @@
 package javax.web.doc;
 
 import lombok.Getter;
-import lombok.ToString;
 
 import javax.web.skeleton4j.enums.ColumnType;
 
@@ -16,13 +15,13 @@ public class CascadeColumn {
     @Getter
     String columnName;
 
-    public CascadeColumn(InterfaceInfo interfaceInfo,  ColumnType columnType, String columnName) {
+    public CascadeColumn(InterfaceInfo interfaceInfo, ColumnType columnType, String columnName) {
         this.interfaceInfo = interfaceInfo;
         this.columnType = columnType;
         this.columnName = columnName;
     }
 
-    public ElementInfo get(){
+    public ElementInfo get() {
         ElementInfo column = this.interfaceInfo.lookup(columnType, columnName);
         return column;
     }

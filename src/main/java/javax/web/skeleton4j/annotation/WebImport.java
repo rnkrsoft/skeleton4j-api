@@ -1,7 +1,6 @@
 package javax.web.skeleton4j.annotation;
 
 import javax.web.doc.enums.WebLayout;
-import javax.web.skeleton4j.enums.InterfaceCall;
 import javax.web.skeleton4j.enums.WebGui;
 import javax.web.skeleton4j.enums.WebMode;
 import java.lang.annotation.*;
@@ -30,12 +29,14 @@ public @interface WebImport {
 
     /**
      * 初始化的时候查询表格
+     *
      * @return 是否进行初始化查询
      */
     boolean initQuery() default false;
 
     /**
      * 布局
+     *
      * @return 布局
      */
     WebLayout layout() default WebLayout.INLINE;
@@ -52,6 +53,7 @@ public @interface WebImport {
      * @see WebMode
      */
     WebMode[] mode() default WebMode.OTHER;
+
     /**
      * 导入接口,顺序生成不同的选项卡，如果没有指定stageDisplay则从阶段1开始
      * 前一个接口有相同名称的字段作为级联接口的输入，第一个接口可以无输入

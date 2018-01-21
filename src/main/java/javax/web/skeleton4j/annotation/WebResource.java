@@ -3,6 +3,10 @@ package javax.web.skeleton4j.annotation;
 import javax.web.skeleton4j.enums.ResourceType;
 import java.lang.annotation.*;
 
+/**
+ * 用于声明资源文件
+ * Created by devops4j on 2017/11/30.
+ */
 @Target({ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

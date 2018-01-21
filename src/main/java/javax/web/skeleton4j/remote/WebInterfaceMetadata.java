@@ -9,19 +9,16 @@ import javax.web.skeleton4j.enums.InterfaceCall;
  */
 public interface WebInterfaceMetadata {
     /**
-     *
      * @return
      */
     String getUrl();
 
     /**
-     *
      * @param url
      */
     void setUrl(String url);
 
     /**
-     *
      * @return
      */
     String getProduct();

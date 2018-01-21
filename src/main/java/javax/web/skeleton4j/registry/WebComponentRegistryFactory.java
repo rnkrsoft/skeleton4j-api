@@ -3,7 +3,6 @@ package javax.web.skeleton4j.registry;
 import com.devops4j.logtrace4j.ErrorContext;
 import com.devops4j.logtrace4j.ErrorContextFactory;
 
-import javax.web.doc.DocScanner;
 import javax.web.doc.ElementInfo;
 import javax.web.skeleton4j.element.WebElement;
 import javax.web.skeleton4j.page.WebPage;

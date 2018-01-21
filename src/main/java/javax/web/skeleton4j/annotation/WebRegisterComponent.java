@@ -1,6 +1,5 @@
 package javax.web.skeleton4j.annotation;
 
-import javax.web.skeleton4j.element.component.*;
 import java.lang.annotation.*;
 
 /**

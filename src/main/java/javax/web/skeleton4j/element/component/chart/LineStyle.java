@@ -7,14 +7,16 @@ import java.util.List;
  * Created by devops4j on 2017/12/15.
  */
 public class LineStyle {
-    static enum Type{
+    static enum Type {
         linear,
         radial
     }
-    static class ColorStop{
+
+    static class ColorStop {
         int offset = 0;
 
     }
+
     Type type;
     int x;
     int y;

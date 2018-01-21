@@ -31,10 +31,11 @@ public class KeywordResult {
 
     /**
      * 增加字段
+     *
      * @param column 字段
      * @return 关键词封装
      */
-    public KeywordResult addColumn(ElementInfo column){
+    public KeywordResult addColumn(ElementInfo column) {
         this.columns.put(column.getInterfaceInfo().getFullName() + "." + column.getFullName(), column);
         return this;
     }

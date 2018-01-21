@@ -2,7 +2,6 @@ package javax.web.skeleton4j.registry;
 
 import javax.web.doc.ElementInfo;
 import javax.web.skeleton4j.element.WebElement;
-import javax.web.skeleton4j.element.component.WebComponent;
 import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.script.WebScript;
 import javax.web.skeleton4j.style.WebStyle;
@@ -96,7 +95,7 @@ public interface WebComponentRegistry {
     /**
      * 根据输入的组件元素构建出一个新的组件
      *
-     * @param theme              主题名
+     * @param theme     主题名
      * @param component 组件
      * @param <T>       组件
      * @return 组件

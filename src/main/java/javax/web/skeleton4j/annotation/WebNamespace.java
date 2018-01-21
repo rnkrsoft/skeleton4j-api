@@ -17,6 +17,7 @@ public @interface WebNamespace {
      * @return 提示文本数组
      */
     String[] hints() default {};
+
     /**
      * 命名空间名称
      *
@@ -30,6 +31,7 @@ public @interface WebNamespace {
      * @return 接口调用方式
      */
     InterfaceCall call() default InterfaceCall.DUBBO;
+
     /**
      * 在该插件引入的接口,有顺序性，与stageDisplay有关联，
      *

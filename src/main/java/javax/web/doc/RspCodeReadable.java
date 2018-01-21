@@ -8,12 +8,14 @@ import java.io.Serializable;
 public interface RspCodeReadable extends Serializable {
     /**
      * 应答码
+     *
      * @return 应答码
      */
     String getRspCode();
 
     /**
      * 应答描述
+     *
      * @return 应答描述
      */
     String getRspDesc();
