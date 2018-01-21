@@ -16,6 +16,43 @@ import java.util.Map;
  */
 public interface ModulePool {
     /**
+     * 创建一个页面对象
+     * @param webPageClass 页面类
+     * @param title 标题
+     * @param product 产品代码
+     * @param action 功能代码
+     * @param version 版本号
+     * @param node 菜单节点
+     * @param author 作者
+     * @return 页面类
+     */
+    WebPage createPage(Class webPageClass, String title, String product, String action, String version, WebNode node, String author);
+
+    /**
+     * 创建一个模块
+     * @param packagePath 包路径
+     * @param name 模块名
+     * @param desc 模块描述
+     * @return 模块
+     */
+    WebModule createModule(String packagePath, String name, String desc);
+
+    /**
+     * 船建一个样式对象
+     * @param alias 别名
+     * @param version 版本号
+     * @return 样式对象
+     */
+    WebStyle createStyle(String alias, String version);
+
+    /**
+     * 船建一个脚本对象
+     * @param alias 别名
+     * @param version 版本号
+     * @return 脚本对象
+     */
+    WebScript createScript(String alias, String version);
+    /**
      * 查询页面类
      *
      * @param product               产品编号

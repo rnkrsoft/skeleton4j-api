@@ -147,13 +147,36 @@ public interface WebPage extends WebCompilable, WebCompile {
     Collection<WebScript> getScripts();
 
     /**
+     * 增加脚本
+     * @param script 脚本
+     * @return 页面类
+     */
+    WebPage append(WebScript script);
+    /**
+     * 增加样式
+     * @param style 样式
+     * @return 页面类
+     */
+    WebPage append(WebStyle style);
+    /**
+     * 增加容器
+     * @param container 容器
+     * @return 页面类
+     */
+    WebPage append(WebContainer container);
+    /**
+     * 增加接口元信息
+     * @param metadata 接口元信息
+     * @return 页面类
+     */
+    WebPage append(NamespaceInterfaceMetadata metadata);
+    /**
      * 页面中引用的脚本,分别来自两部分，组件导入的脚本和组件渲染生成的脚本，所有脚本都是与主题有关的
      *
      * @param theme 主题名
      * @return 脚本
      */
     Collection<WebScript> getScripts(String theme);
-
 
     /**
      * 页面中引用的样式,分别来自两部分，组件导入的样式和组件渲染生成的样式，所有样式都是与主题有关的
@@ -183,15 +206,6 @@ public interface WebPage extends WebCompilable, WebCompile {
      * @return ByteBuffer对象
      */
     ByteBuffer getCodes();
-
-    /**
-     * 获取渲染生成的HTML代码
-     *
-     * @param buffer ByteBuffer对象
-     * @return 页面类
-     */
-    WebPage getCodes(ByteBuffer buffer);
-
 
     /**
      * 通过HTML ID或者字段ID查询组件
