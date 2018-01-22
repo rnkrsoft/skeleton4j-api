@@ -279,6 +279,12 @@ class HeapByteBuf extends ByteBuf {
     }
 
     @Override
+    public ByteBuf resetRead() {
+        this.readBegin = 0;
+        return this;
+    }
+
+    @Override
     public ByteBuffer asByteBuffer() {
         byte[] temp = new byte[readableLength()];
         get(temp);

@@ -7,7 +7,7 @@ import javax.web.skeleton4j.menu.WebMenu;
 import javax.web.skeleton4j.menu.WebNode;
 import javax.web.skeleton4j.module.WebModule;
 import javax.web.skeleton4j.page.WebPage;
-import javax.web.skeleton4j.remote.WebInterfaceMetadata;
+import javax.web.skeleton4j.remote.InterfaceMetadata;
 import javax.web.skeleton4j.script.WebScript;
 import javax.web.skeleton4j.style.WebStyle;
 import java.util.List;
@@ -38,7 +38,7 @@ public interface ModulePool {
      * @param interfaceInfo 接口信息
      * @return 接口元信息
      */
-    WebInterfaceMetadata createInterface(String product, String action, String name, InterfaceCall call, InterfaceInfo interfaceInfo);
+    InterfaceMetadata createInterface(String product, String action, String name, InterfaceCall call, InterfaceInfo interfaceInfo);
     /**
      * 创建一个页面对象
      * @param webPageClass 页面类
@@ -142,14 +142,14 @@ public interface ModulePool {
     ModulePool addModule(WebModule module);
 
 
-    WebInterfaceMetadata lookupInterface(String product, String action, String subAction, boolean ifNotExistsReturnNull);
+    InterfaceMetadata lookupInterface(String product, String action, String subAction, boolean ifNotExistsReturnNull);
 
-    List<WebInterfaceMetadata> importInterfaces();
+    List<InterfaceMetadata> importInterfaces();
 
-    ModulePool addInterface(WebInterfaceMetadata remoteInterfaceMetadata);
+    ModulePool addInterface(InterfaceMetadata interfaceMetadata);
 
 
-    Map<InterfaceInfo, List<WebInterfaceMetadata>> listImportInterfaces();
+    Map<InterfaceInfo, List<InterfaceMetadata>> listImportInterfaces();
 
     /**
      * 全部清理

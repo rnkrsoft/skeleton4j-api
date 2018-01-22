@@ -39,7 +39,7 @@ public class Skeleton4jValidatorFactory {
             }
         }
         if (validator == null) {
-            throw new RuntimeException("未发现'" + Skeleton4jValidator.class.getName() + "' 实现类'" + impClassName + "'");
+            throw new RuntimeException("not found'" + Skeleton4jValidator.class.getName() + "' implement class '" + impClassName + "'");
         }
         return validator;
     }

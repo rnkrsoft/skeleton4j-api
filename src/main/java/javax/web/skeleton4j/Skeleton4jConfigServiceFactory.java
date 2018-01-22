@@ -13,35 +13,17 @@ import java.util.ServiceLoader;
  * 配置服务工厂
  */
 public final class Skeleton4jConfigServiceFactory {
-
-    static final Map<String, Skeleton4jConfigService> INSTANCES = new HashMap();
-
-    static {
-        INSTANCES.put("default", newInstance());
-        ServiceLoader<Skeleton4jConfigService> serviceLoader = ServiceLoader.load(Skeleton4jConfigService.class);
-        Iterator<Skeleton4jConfigService> serviceIterator = serviceLoader.iterator();
-        while (serviceIterator.hasNext()) {
-            Skeleton4jConfigService service0 = serviceIterator.next();
-            INSTANCES.put(service0.getClass().getName(), service0);
-        }
-    }
+    static Skeleton4jConfigService INSTANCE = newInstance();
 
     private Skeleton4jConfigServiceFactory() {
 
     }
 
-    public static Skeleton4jConfigService getInstance(String impClassName) {
-        if (impClassName == null) {
-            if (INSTANCES.isEmpty()) {
-                throw new RuntimeException("未发现'" + Skeleton4jConfigService.class.getName() + "' 实现");
-            } else {
-                return INSTANCES.values().iterator().next();
-            }
-        }
-        if (INSTANCES.containsKey(impClassName)) {
-            return INSTANCES.get(impClassName);
-        } else {
-            throw new RuntimeException("未发现'" + Skeleton4jConfigService.class.getName() + "' 实现类'" + impClassName + "'");
+    public static Skeleton4jConfigService getInstance() {
+        if (INSTANCE == null) {
+            return newInstance();
+        }else{
+            return INSTANCE;
         }
     }
 

@@ -14,20 +14,6 @@ import java.util.List;
  */
 public interface WebContainer extends WebCompilable, WebCompile, Renderable, WebElement {
     /**
-     * 设置页面提示信息
-     *
-     * @param hintMessages 提示信息
-     */
-    void setHintMessages(String... hintMessages);
-
-    /**
-     * 获取容器提示信息
-     *
-     * @return 提示信息
-     */
-    List<String> getHintMessages();
-
-    /**
      * 缓存路径
      *
      * @return
@@ -49,9 +35,8 @@ public interface WebContainer extends WebCompilable, WebCompile, Renderable, Web
     String getCachedFilePath(String fileName, String theme);
 
     /**
-     * 同其中需要导入的接口
-     *
-     * @return
+     * 获取容器中导入的命名空间接口元信息，有可能最终多个命名空间接口元信息对应一个接口元信息
+     * @return 命名空间接口元信息集合
      */
-    Collection<NamespaceInterfaceMetadata> getImports();
+    Collection<NamespaceInterfaceMetadata> getInterfaces();
 }

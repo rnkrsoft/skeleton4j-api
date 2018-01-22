@@ -1,6 +1,7 @@
 package javax.web.skeleton4j.remote;
 
 /**
+ * Created by devops4j on 2017/12/8.
  * 接口执行器
  */
 public interface InterfaceInvoker {
@@ -12,6 +13,6 @@ public interface InterfaceInvoker {
      * @param <T>      应答对象
      * @return 应答对象
      */
-    <T> T invoke(WebInterfaceMetadata metadata, Object request);
+    <T> T invoke(InterfaceMetadata metadata, Object request);
 
 }

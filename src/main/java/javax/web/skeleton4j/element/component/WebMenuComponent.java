@@ -7,22 +7,28 @@ import java.util.Collection;
  * Created by devops4j on 2017/12/15.
  */
 public interface WebMenuComponent extends WebComponent, WebFormableComponent {
+    /**
+     * 图标 字体或者图片路径classpath*:com.devops4j.xxx.png
+     * @param icon 图标
+     */
     void setIcon(String icon);
 
     /**
      * 图标 字体或者图片路径classpath*:com.devops4j.xxx.png
+     * @return 图标
      */
     String getIcon();
 
     /**
      * 设置显示名称
      *
-     * @param title
+     * @param title 显示名称
      */
     void setText(String title);
 
     /**
      * 菜单展示名称
+     * @return 显示名称
      */
     String getText();
 

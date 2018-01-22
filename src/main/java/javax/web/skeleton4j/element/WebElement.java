@@ -6,7 +6,7 @@ import javax.web.doc.enums.WebLayout;
 import javax.web.doc.enums.WebTriggerEvent;
 import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
-import javax.web.skeleton4j.remote.AjaxInterface;
+import javax.web.skeleton4j.remote.WebInterface;
 import javax.web.skeleton4j.render.Renderable;
 import javax.web.skeleton4j.script.WebScript;
 import javax.web.skeleton4j.style.WebStyle;
@@ -151,7 +151,7 @@ public interface WebElement extends Renderable {
      * @param event 事件
      * @return 接口列表
      */
-    Collection<AjaxInterface> getAjaxInterfaces(WebTriggerEvent event);
+    Collection<WebInterface> getAjaxInterfaces(WebTriggerEvent event);
 
     /**
      * 获取组件定义时的样式表信息
@@ -219,10 +219,10 @@ public interface WebElement extends Renderable {
      * 注册事件
      *
      * @param event         事件类型
-     * @param ajaxInterface 接口信息
+     * @param webInterface 接口信息
      * @return Web元组件
      */
-    WebElement registerEvent(WebTriggerEvent event, AjaxInterface ajaxInterface);
+    WebElement registerEvent(WebTriggerEvent event, WebInterface webInterface);
 
     /**
      * 增加该组件触发源

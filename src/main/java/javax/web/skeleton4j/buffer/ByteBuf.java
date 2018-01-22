@@ -60,6 +60,11 @@ public abstract class ByteBuf {
     public abstract ByteBuf get(byte[] data);
 
     /**
+     * 重置读指针
+     * @return 缓冲区对象
+     */
+    public abstract ByteBuf resetRead();
+    /**
      * 将缓冲区中的内容作为ByteBuffer缓冲区
      * @return ByteBuffer缓冲区
      */

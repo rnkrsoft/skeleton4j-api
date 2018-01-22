@@ -6,8 +6,9 @@ import javax.web.skeleton4j.compile.WebCompile;
 import javax.web.skeleton4j.element.WebElement;
 import javax.web.skeleton4j.element.container.WebContainer;
 import javax.web.skeleton4j.menu.WebNode;
+import javax.web.skeleton4j.pool.ModulePool;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
-import javax.web.skeleton4j.remote.AjaxInterface;
+import javax.web.skeleton4j.remote.WebInterface;
 import javax.web.skeleton4j.script.WebScript;
 import javax.web.skeleton4j.style.WebStyle;
 import java.nio.ByteBuffer;
@@ -21,6 +22,11 @@ import java.util.Map;
  */
 
 public interface WebPage extends WebCompilable, WebCompile {
+    /**
+     * 获取页面类所在的模块池
+     * @return 模块池
+     */
+    ModulePool getModulePool();
     /**
      * 获取这个页面类可以访问的URL地址
      * 一般为product=xxxx&action=xxxx&version=1.0.0
@@ -48,7 +54,7 @@ public interface WebPage extends WebCompilable, WebCompile {
      *
      * @return 接口列表
      */
-    List<AjaxInterface> getAjaxInterfaces();
+    List<WebInterface> getAjaxInterfaces();
 
     /**
      * 获取当前页面所有的web元素引用，通过ID查询引用时

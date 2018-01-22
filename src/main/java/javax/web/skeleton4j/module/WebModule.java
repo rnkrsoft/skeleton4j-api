@@ -2,7 +2,8 @@ package javax.web.skeleton4j.module;
 
 import javax.web.skeleton4j.menu.WebNode;
 import javax.web.skeleton4j.page.WebPage;
-import javax.web.skeleton4j.remote.WebInterfaceMetadata;
+import javax.web.skeleton4j.pool.ModulePool;
+import javax.web.skeleton4j.remote.InterfaceMetadata;
 import java.util.List;
 
 /**
@@ -10,6 +11,11 @@ import java.util.List;
  * 模块封装
  */
 public interface WebModule {
+    /**
+     * 获取模块类所在的模块池
+     * @return 模块池
+     */
+    ModulePool getModulePool();
     /**
      * 模块描述
      *
@@ -50,15 +56,15 @@ public interface WebModule {
      *
      * @return 接口列表
      */
-    List<WebInterfaceMetadata> getInterfaces();
+    List<InterfaceMetadata> getInterfaces();
 
     /**
      * 增加接口信息
      *
-     * @param remoteInterfaceMetadata 接口信息
+     * @param interfaceMetadata 接口信息
      * @return 模块封装
      */
-    WebModule addInterface(WebInterfaceMetadata remoteInterfaceMetadata);
+    WebModule addInterface(InterfaceMetadata interfaceMetadata);
 
     /**
      * 增加页面
