@@ -10,7 +10,7 @@ import javax.web.doc.annotation.ApidocElement;
 @ToString
 public abstract class AbstractResponse implements RspCodeReadable, RspCodeWritable {
     @ApidocElement("应答码")
-    String rspCode = "AAAAAAA";
+    String rspCode = "0000";
     @ApidocElement("应答描述")
     String rspDesc = "成功";
 
