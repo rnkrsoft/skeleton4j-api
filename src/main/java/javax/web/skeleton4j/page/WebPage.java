@@ -54,7 +54,7 @@ public interface WebPage extends WebCompilable, WebCompile {
      *
      * @return 接口列表
      */
-    List<WebInterface> getAjaxInterfaces();
+    List<WebInterface> getInterfaces();
 
     /**
      * 获取当前页面所有的web元素引用，通过ID查询引用时

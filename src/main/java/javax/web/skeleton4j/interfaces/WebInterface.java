@@ -9,6 +9,7 @@ import javax.web.skeleton4j.element.ReferenceWebElement;
 import javax.web.skeleton4j.element.component.WebComponent;
 import javax.web.skeleton4j.enums.WebCallType;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -70,7 +71,7 @@ public class WebInterface {
     public static WebInterfaceBuilder builder(){
         return new WebInterfaceBuilder();
     }
-    static class WebInterfaceBuilder{
+    public static class WebInterfaceBuilder{
         /**
          * 执行前显示的界面
          */
@@ -115,8 +116,8 @@ public class WebInterface {
          * 执行后结果需要影响的组件引用
          */
         ReferenceWebElement target;
-        public WebInterfaceBuilder appendPreExecute(ReferenceWebElement element) {
-            this.preExecutes.add(element);
+        public WebInterfaceBuilder appendPreExecutes(ReferenceWebElement ... element) {
+            this.preExecutes.addAll(Arrays.asList(element));
             return this;
         }
 
@@ -155,8 +156,8 @@ public class WebInterface {
             return this;
         }
 
-        public WebInterfaceBuilder appendParam(ReferenceWebElement element) {
-            this.params.add(element);
+        public WebInterfaceBuilder appendParams(ReferenceWebElement ... element) {
+            this.params.addAll(Arrays.asList(element));
             return this;
         }
 
