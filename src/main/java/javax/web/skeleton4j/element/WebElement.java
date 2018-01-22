@@ -6,7 +6,7 @@ import javax.web.doc.enums.WebLayout;
 import javax.web.doc.enums.WebTriggerEvent;
 import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
-import javax.web.skeleton4j.remote.WebInterface;
+import javax.web.skeleton4j.interfaces.WebInterface;
 import javax.web.skeleton4j.render.Renderable;
 import javax.web.skeleton4j.script.WebScript;
 import javax.web.skeleton4j.style.WebStyle;

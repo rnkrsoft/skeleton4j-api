@@ -8,7 +8,7 @@ import javax.web.skeleton4j.element.container.WebContainer;
 import javax.web.skeleton4j.menu.WebNode;
 import javax.web.skeleton4j.pool.ModulePool;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
-import javax.web.skeleton4j.remote.WebInterface;
+import javax.web.skeleton4j.interfaces.WebInterface;
 import javax.web.skeleton4j.script.WebScript;
 import javax.web.skeleton4j.style.WebStyle;
 import java.nio.ByteBuffer;

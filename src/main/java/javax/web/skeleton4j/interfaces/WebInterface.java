@@ -1,4 +1,4 @@
-package javax.web.skeleton4j.remote;
+package javax.web.skeleton4j.interfaces;
 
 import lombok.Getter;
 
@@ -20,7 +20,7 @@ public class WebInterface {
     /**
      * 执行前显示的界面
      */
-    List<ReferenceWebElement> preExecutes;
+    final List<ReferenceWebElement> preExecutes;
     /**
      * URL地址
      */
@@ -52,7 +52,7 @@ public class WebInterface {
     /**
      * 提供参数的组件引用
      */
-    List<ReferenceWebElement> params;
+    final List<ReferenceWebElement> params;
     /**
      * 执行后结果展示类型
      */
@@ -62,6 +62,14 @@ public class WebInterface {
      */
     ReferenceWebElement target;
 
+    WebInterface(List<ReferenceWebElement> preExecutes, List<ReferenceWebElement> params) {
+        this.preExecutes = preExecutes;
+        this.params = params;
+    }
+
+    public static WebInterfaceBuilder builder(){
+        return new WebInterfaceBuilder();
+    }
     static class WebInterfaceBuilder{
         /**
          * 执行前显示的界面
@@ -160,6 +168,20 @@ public class WebInterface {
         public WebInterfaceBuilder target(ReferenceWebElement target) {
             this.target = target;
             return this;
+        }
+
+        public WebInterface build(){
+            WebInterface webInterface = new WebInterface(preExecutes, params);
+            webInterface.url = url;
+            webInterface.callType = callType;
+            webInterface.product = product;
+            webInterface.action = action;
+            webInterface.source = source;
+            webInterface.event = event;
+            webInterface.nativeInterface = nativeInterface;
+            webInterface.displayType = displayType;
+            webInterface.target = target;
+            return webInterface;
         }
     }
 }
