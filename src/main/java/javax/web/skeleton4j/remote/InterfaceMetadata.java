@@ -39,6 +39,11 @@ public interface InterfaceMetadata {
     String getSubAction();
 
     /**
+     * 当前接口是否使用权限
+     * @return 是否使用权限
+     */
+    boolean isUseAuthority();
+    /**
      * 执行该后端接口的方式，具体是本地Bean还是Dubbo
      *
      * @return 接口执行方式

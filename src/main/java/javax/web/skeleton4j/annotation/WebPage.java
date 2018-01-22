@@ -47,6 +47,13 @@ public @interface WebPage {
     boolean apiDocGenerateGui() default true;
 
     /**
+     * 是否使用权限校验，如果为假，则不需要权限
+     *
+     * @return 是否使用权限校验
+     */
+    boolean useAuthority() default true;
+
+    /**
      * 将需要的脚本加入渲染队列
      *
      * @return 脚本数组

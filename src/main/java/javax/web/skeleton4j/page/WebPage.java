@@ -36,6 +36,11 @@ public interface WebPage extends WebCompilable, WebCompile {
     String getUrl();
 
     /**
+     * 当前页面是否使用权限，包含该页面导入的接口
+     * @return 是否使用权限
+     */
+    boolean isUseAuthority();
+    /**
      * Web组件注册表
      *
      * @return 注册表对象
@@ -233,11 +238,4 @@ public interface WebPage extends WebCompilable, WebCompile {
      * @return 组件
      */
     <T extends WebElement> T lookup(WebElement source, String id, Class<T> elementClass);
-
-    /**
-     * 是否使用权限访问
-     *
-     * @return 返回真，则不使用权限校验
-     */
-    boolean isNotUseAuthority();
 }

@@ -3,8 +3,8 @@ package javax.web.doc.enums;
 import com.devops4j.interfaces.EnumStringCode;
 
 public enum RspCode implements EnumStringCode {
-    FAIL("9999999", "失败"),
-    SUCCESS("AAAAAAA", "成功");
+    FAIL("0001", "失败"),
+    SUCCESS("0000", "成功");
     String code;
     String desc;
 

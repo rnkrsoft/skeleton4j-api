@@ -86,6 +86,13 @@ public interface Skeleton4jConfig {
      * @return 配置对象
      */
     Skeleton4jConfig appendItem(String paramName, String paramValue);
+
+    /**
+     * 获取数组形式的参数值
+     * @param paramName 参数名
+     * @return 对参数为用;进行分割的进行拆分
+     */
+    String[] getArray(String paramName);
     /**
      * 获取参数
      *

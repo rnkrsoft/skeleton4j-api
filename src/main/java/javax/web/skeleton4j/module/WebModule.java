@@ -12,6 +12,11 @@ import java.util.List;
  */
 public interface WebModule {
     /**
+     * 当前模块是否使用权限，包含旗下接口
+     * @return 是否使用权限
+     */
+    boolean isUseAuthority();
+    /**
      * 获取模块类所在的模块池
      * @return 模块池
      */

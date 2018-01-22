@@ -34,11 +34,12 @@ public interface ModulePool {
      * @param product 产品代码
      * @param action 功能代码
      * @param name 接口名
+     * @param page 页面
      * @param call 调用方式
      * @param interfaceInfo 接口信息
      * @return 接口元信息
      */
-    InterfaceMetadata createInterface(String product, String action, String name, InterfaceCall call, InterfaceInfo interfaceInfo);
+    InterfaceMetadata createInterface(String product, String action, String name, WebPage page, InterfaceCall call, InterfaceInfo interfaceInfo);
     /**
      * 创建一个页面对象
      * @param webPageClass 页面类

@@ -151,7 +151,7 @@ public interface WebElement extends Renderable {
      * @param event 事件
      * @return 接口列表
      */
-    Collection<WebInterface> getAjaxInterfaces(WebTriggerEvent event);
+    Collection<WebInterface> getInterfaces(WebTriggerEvent event);
 
     /**
      * 获取组件定义时的样式表信息
