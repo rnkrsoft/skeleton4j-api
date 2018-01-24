@@ -43,6 +43,10 @@ public class WebInterface {
      */
     WebComponent source;
     /**
+     * 执行接口的代码
+     */
+    String script;
+    /**
      * 事件类型
      */
     WebTriggerEvent event;
@@ -93,6 +97,10 @@ public class WebInterface {
          */
         String action;
         /**
+         * 执行接口的代码
+         */
+        String script;
+        /**
          * 触发事件的源组件
          */
         WebComponent source;
@@ -141,6 +149,11 @@ public class WebInterface {
             return this;
         }
 
+        public WebInterfaceBuilder script(String script) {
+            this.script = script;
+            return this;
+        }
+
         public WebInterfaceBuilder source(WebComponent source) {
             this.source = source;
             return this;
@@ -177,6 +190,7 @@ public class WebInterface {
             webInterface.callType = callType;
             webInterface.product = product;
             webInterface.action = action;
+            webInterface.script = script;
             webInterface.source = source;
             webInterface.event = event;
             webInterface.nativeInterface = nativeInterface;
