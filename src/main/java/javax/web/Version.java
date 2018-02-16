@@ -11,7 +11,7 @@ public class Version {
      * @return 版本号
      */
     public static String version() {
-        return "1.0.0";
+        return "1.0.1";
     }
 
     /**

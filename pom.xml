@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <groupId>com.devops4j.skeleton4j</groupId>
     <artifactId>skeleton4j-api</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>skeleton4j-api</name>
     <description>skeleton4j application interface</description>
     <url>https://github.com/devops4j/skeleton4j-api.git</url>
@@ -23,6 +23,7 @@
         <groundwork.version>1.0.0</groundwork.version>
         <logtrace4j.version>1.0.0</logtrace4j.version>
         <reflection4j.version>1.0.0</reflection4j.version>
+        <devops4j-io.version>0.0.1-alpha</devops4j-io.version>
     </properties>
     <scm>
         <connection>git@github.com:devops4j/skeleton4j-api.git</connection>
@@ -59,6 +60,11 @@
             <artifactId>groundwork</artifactId>
             <version>${groundwork.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.devops4j.io</groupId>
+            <artifactId>devops4j-io</artifactId>
+            <version>${devops4j-io.version}</version>
         </dependency>
         <dependency>
             <groupId>com.devops4j.logtrace4j</groupId>

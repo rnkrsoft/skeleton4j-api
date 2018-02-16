@@ -1,6 +1,7 @@
 package javax.web.skeleton4j.render;
 
-import javax.web.skeleton4j.buffer.ByteBuf;
+import com.devops4j.io.buffer.ByteBuf;
+
 import javax.web.skeleton4j.element.container.WebContainer;
 import javax.web.skeleton4j.menu.WebMenu;
 import javax.web.skeleton4j.pool.ModulePool;
