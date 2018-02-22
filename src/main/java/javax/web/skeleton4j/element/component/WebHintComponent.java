@@ -36,11 +36,14 @@ public interface WebHintComponent extends WebComponent {
     void setMessage(String message);
 
     /**
-     * 生成基于当前提示框的脚本对象
-     *
-     * @param title   标题
-     * @param message 消息
+     * 超时自动关闭时间秒数
+     * @param timeoutSec 秒数
+     */
+    void setTimeoutSec(int timeoutSec);
+
+    /**
+     * 获取超时自动关闭时间秒数
      * @return
      */
-    WebScript make(String title, String message);
+    int getTimeoutSec();
 }
