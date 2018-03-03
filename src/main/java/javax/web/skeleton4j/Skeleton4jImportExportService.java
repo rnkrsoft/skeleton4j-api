@@ -20,19 +20,21 @@ public interface Skeleton4jImportExportService {
      * 解析接口对应的文件
      * @param interfaceInfo 接口元信息
      * @param file 文件
+     * @param object 对象
      * @param <T> 解析出的对象
      * @return 解析出的对象
      */
-    <T> T parse(InterfaceInfo interfaceInfo, File file) throws IOException;
+    <T> T parse(InterfaceInfo interfaceInfo, File file, Object object) throws IOException;
 
     /**
      * 解析接口对应的输入流
      * @param interfaceInfo 接口元信息
      * @param is 输入流
+     * @param object 对象
      * @param <T> 解析出的对象
      * @return 解析出的对象
      */
-    <T> T parse(InterfaceInfo interfaceInfo, InputStream is) throws IOException;
+    <T> T parse(InterfaceInfo interfaceInfo, InputStream is, Object object) throws IOException;
 
     /**
      * 根据接口和输入的对象生成导出文件

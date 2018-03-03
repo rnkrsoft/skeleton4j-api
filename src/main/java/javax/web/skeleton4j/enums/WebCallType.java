@@ -8,6 +8,7 @@ import com.devops4j.interfaces.EnumStringCode;
  */
 public enum WebCallType implements EnumStringCode {
     AJAX("AJAX", "AJAX调用"),
+    SHOW("SHOW", "显示"),
     URL("URL", "URL调用");
     String code;
     String desc;
