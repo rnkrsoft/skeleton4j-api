@@ -103,10 +103,11 @@ public interface Skeleton4jService {
      *                 usbAction(page)//固定写法
      * @param version  版本号
      * @param theme    主题
+     * @param sidebar  是否显示侧边栏
      * @param request  HTTP请求对象
      * @param response HTTP应答对象
      */
-    void page(boolean devMode, String product, String action, String version, String theme, HttpServletRequest request, HttpServletResponse response);
+    void page(boolean devMode, String product, String action, String version, String theme, Boolean sidebar, HttpServletRequest request, HttpServletResponse response);
 
     /**
      * 调用异步接口不进行权限校验和输入校验

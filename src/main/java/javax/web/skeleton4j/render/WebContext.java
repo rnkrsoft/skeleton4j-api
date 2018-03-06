@@ -80,6 +80,12 @@ public interface WebContext {
     String getTheme();
 
     /**
+     * 是否显示侧边栏
+     * @return
+     */
+    boolean isSidebar();
+
+    /**
      * 服务器根路径
      *
      * @return 服务器根路径
