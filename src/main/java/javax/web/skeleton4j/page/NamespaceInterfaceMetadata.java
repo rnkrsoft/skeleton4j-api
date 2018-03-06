@@ -43,6 +43,12 @@ public interface NamespaceInterfaceMetadata {
     WebGui getGui();
 
     /**
+     * 在接口事件触发前，是否展示确认框
+     * @return 是否展示确认框
+     */
+    boolean isConfirm();
+
+    /**
      * 是否初始化查询数据
      *
      * @return 是否初始化查询数据

@@ -33,7 +33,12 @@ public @interface WebImport {
      * @return 是否进行初始化查询
      */
     boolean initQuery() default false;
-
+    /**
+     * 是否在进行事件触发前进行确认操作
+     *
+     * @return 确认操作
+     */
+    boolean confirm() default false;
     /**
      * 布局
      *
