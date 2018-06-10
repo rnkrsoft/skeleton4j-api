@@ -1,7 +1,7 @@
 package javax.web.doc;
 
-import com.devops4j.logtrace4j.ErrorContext;
-import com.devops4j.logtrace4j.ErrorContextFactory;
+import com.rnkrsoft.logtrace4j.ErrorContext;
+import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 
 import java.util.Iterator;
 import java.util.ServiceLoader;

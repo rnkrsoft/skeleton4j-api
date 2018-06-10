@@ -1,6 +1,6 @@
 package javax.web.skeleton4j.enums;
 
-import com.devops4j.interfaces.EnumStringCode;
+import com.rnkrsoft.interfaces.EnumStringCode;
 
 /**
  * 接口调用方式

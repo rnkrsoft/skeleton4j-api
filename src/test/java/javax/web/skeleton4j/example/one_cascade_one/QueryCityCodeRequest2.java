@@ -24,7 +24,7 @@ public class QueryCityCodeRequest2 {
             interfaces = {
                     @WebCascadeInterface(
                             cascadeEvent = WebTriggerEvent.BLUR,
-                            value = "com.devops4j.service.queryDistinctCode",
+                            value = "com.rnkrsoft.service.queryDistinctCode",
                             cascadeColumn = {"countyCode"},//任何情况默认入参包括自身
                             //调用后结果影响到distinctCode字段的值，获取单选数据
                             resultDisplay = @WebResultDisplay(displayType = WebDisplayType.DATA_SOURCE, column = "distinctCode1")
@@ -45,7 +45,7 @@ public class QueryCityCodeRequest2 {
             interfaces = {
                     @WebCascadeInterface(
                             cascadeEvent = WebTriggerEvent.BLUR,
-                            value = "com.devops4j.service.queryDistinctCode",
+                            value = "com.rnkrsoft.service.queryDistinctCode",
                             cascadeColumn = {"countyCode"},//任何情况默认入参包括自身
                             //调用后结果影响到distinctCode2字段的,distinctCode2为多选，则结果影响类型必须为RELOAD_OPTIONS或者INNER_HTML
                             resultDisplay = @WebResultDisplay(displayType = WebDisplayType.DATA_SOURCE, column = "distinctCode2")
@@ -66,7 +66,7 @@ public class QueryCityCodeRequest2 {
             interfaces = {
                     @WebCascadeInterface(
                             cascadeEvent = WebTriggerEvent.BLUR,
-                            value = "com.devops4j.service.queryDistinctCode",
+                            value = "com.rnkrsoft.service.queryDistinctCode",
                             cascadeColumn = {"countyCode"},//任何情况默认入参包括自身
                             //调用后结果为URL地址，则自动开一个新窗口
                             resultDisplay = @WebResultDisplay(displayType = WebDisplayType.OPEN_URL_WINDOW)
@@ -81,7 +81,7 @@ public class QueryCityCodeRequest2 {
             interfaces = {
                     @WebCascadeInterface(
                             cascadeEvent = WebTriggerEvent.BLUR,
-                            value = "com.devops4j.service.queryDistinctCode",
+                            value = "com.rnkrsoft.service.queryDistinctCode",
                             cascadeColumn = {"countyCode"},//任何情况默认入参包括自身
                             //调用后结果为RSP_CODE和RSP_DESC，则用消息框展示
                             resultDisplay = @WebResultDisplay(displayType = WebDisplayType.MSG_BOX)
@@ -96,7 +96,7 @@ public class QueryCityCodeRequest2 {
             interfaces = {
                     @WebCascadeInterface(
                             cascadeEvent = WebTriggerEvent.BLUR,
-                            value = "com.devops4j.service.queryDistinctCode",
+                            value = "com.rnkrsoft.service.queryDistinctCode",
                             cascadeColumn = {"countyCode"},//任何情况默认入参包括自身
                             //调用后结果为RSP_CODE和RSP_DESC，则在column指定的字段进行文本提示
                             resultDisplay = @WebResultDisplay(displayType = WebDisplayType.HINT, column = "cityCode4")
@@ -111,7 +111,7 @@ public class QueryCityCodeRequest2 {
             interfaces = {
                     @WebCascadeInterface(
                             cascadeEvent = WebTriggerEvent.BLUR,
-                            value = "com.devops4j.service.queryDistinctCode",
+                            value = "com.rnkrsoft.service.queryDistinctCode",
                             cascadeColumn = {"countyCode"},//任何情况默认入参包括自身
                             //调用后结果为级联接口的应答以表单方式展示
                             resultDisplay = @WebResultDisplay(displayType = WebDisplayType.DIALOG_BOX)

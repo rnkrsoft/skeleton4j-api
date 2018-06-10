@@ -23,7 +23,7 @@ public class WebNode {
     @Setter
     int no = 0;
     /**
-     * 图标 字体或者图片路径classpath*:com.devops4j.xxx.png
+     * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
      */
     @Getter
     @Setter
@@ -97,7 +97,7 @@ public class WebNode {
 
     public static class WebNodeBuilder {
         /**
-         * 图标 字体或者图片路径classpath*:com.devops4j.xxx.png
+         * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
          */
         String icon;
         /**

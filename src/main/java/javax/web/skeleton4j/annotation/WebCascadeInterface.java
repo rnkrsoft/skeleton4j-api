@@ -10,7 +10,7 @@ import javax.web.doc.enums.WebTriggerEvent;
 public @interface WebCascadeInterface {
     /**
      * 级联接口
-     * 格式别名=包名.类名.接口名:版本号，例如find=com.devops4j.skeleton.UserService.findUser:1.0.0
+     * 格式别名=包名.类名.接口名:版本号，例如find=com.rnkrsoft.skeleton.UserService.findUser:1.0.0
      *
      * @return 接口引用格式
      */

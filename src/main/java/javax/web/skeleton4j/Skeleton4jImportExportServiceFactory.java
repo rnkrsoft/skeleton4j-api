@@ -1,7 +1,7 @@
 package javax.web.skeleton4j;
 
-import com.devops4j.logtrace4j.ErrorContext;
-import com.devops4j.logtrace4j.ErrorContextFactory;
+import com.rnkrsoft.logtrace4j.ErrorContext;
+import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Iterator;

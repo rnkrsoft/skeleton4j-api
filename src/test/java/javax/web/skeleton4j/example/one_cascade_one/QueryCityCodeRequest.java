@@ -17,7 +17,7 @@ public class QueryCityCodeRequest {
             interfaces = {
                     @WebCascadeInterface(
                             cascadeEvent = WebTriggerEvent.CHANGE,
-                            value = "com.devops4j.service.queryCity",
+                            value = "com.rnkrsoft.service.queryCity",
                             resultDisplay = @WebResultDisplay(displayType = WebDisplayType.DATA_SOURCE, column = "distinctCode")
                     )
             })
@@ -28,13 +28,13 @@ public class QueryCityCodeRequest {
     @ApidocElement(value = "区", interfaces = {
             @WebCascadeInterface(
                     cascadeEvent = WebTriggerEvent.VALIDATE_BUTTON,
-                    value = "com.devops4j.service.check",
+                    value = "com.rnkrsoft.service.check",
                     //校验结果有两种提示MSG_BOX和HINT
                     resultDisplay = @WebResultDisplay(displayType = WebDisplayType.MSG_BOX)
             ),
             @WebCascadeInterface(
                     cascadeEvent = WebTriggerEvent.CHANGE,
-                    value = "com.devops4j.service.queryCity",
+                    value = "com.rnkrsoft.service.queryCity",
                     //校验结果有两种提示MSG_BOX和HINT
                     resultDisplay = @WebResultDisplay(displayType = WebDisplayType.DATA_SOURCE)
             )

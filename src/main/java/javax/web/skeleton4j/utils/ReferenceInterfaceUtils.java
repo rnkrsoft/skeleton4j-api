@@ -8,10 +8,10 @@ import javax.web.doc.ReferenceInterface;
  * Created by devops4j on 2017/10/18.
  * 引用接口表达式工具类
  * 支持如下格式的表达式
- * doing1=com.devops4j.xxx.DemoService.doing1:1.0.0
- * doing1=com.devops4j.xxx.DemoService.doing1
- * com.devops4j.xxx.DemoService.doing1:1.0.0
- * com.devops4j.xxx.DemoService.doing1
+ * doing1=com.rnkrsoft.xxx.DemoService.doing1:1.0.0
+ * doing1=com.rnkrsoft.xxx.DemoService.doing1
+ * com.rnkrsoft.xxx.DemoService.doing1:1.0.0
+ * com.rnkrsoft.xxx.DemoService.doing1
  */
 public class ReferenceInterfaceUtils {
     /**
@@ -29,7 +29,7 @@ public class ReferenceInterfaceUtils {
 
     /**
      * 根据输入的引用接口字符串获取接口信息
-     * doing1=com.devops4j.xxx.DemoService.doing1:1.0.0
+     * doing1=com.rnkrsoft.xxx.DemoService.doing1:1.0.0
      *
      * @param inter
      * @return {接口别名,接口服务名，接口名， 版本号}
@@ -48,7 +48,7 @@ public class ReferenceInterfaceUtils {
         if (colonPos > 0) {
             version = inter.substring(colonPos + 1);
             if (version.isEmpty()) {
-                throw new IllegalArgumentException("引用接口版本号不正确,格式为'" + inter + "',正确格式如：doing1=com.devops4j.xxx.DemoService.doing1:1.0.0");
+                throw new IllegalArgumentException("引用接口版本号不正确,格式为'" + inter + "',正确格式如：doing1=com.rnkrsoft.xxx.DemoService.doing1:1.0.0");
             }
         } else {
             version = "1.0.0";

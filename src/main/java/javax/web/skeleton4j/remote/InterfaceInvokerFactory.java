@@ -1,7 +1,7 @@
 package javax.web.skeleton4j.remote;
 
-import com.devops4j.logtrace4j.ErrorContext;
-import com.devops4j.logtrace4j.ErrorContextFactory;
+import com.rnkrsoft.logtrace4j.ErrorContext;
+import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 
 import javax.web.skeleton4j.enums.InterfaceCall;
 import java.util.Hashtable;

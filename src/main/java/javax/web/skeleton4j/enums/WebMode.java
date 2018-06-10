@@ -1,6 +1,6 @@
 package javax.web.skeleton4j.enums;
 
-import com.devops4j.interfaces.EnumStringCode;
+import com.rnkrsoft.interfaces.EnumStringCode;
 
 public enum WebMode implements EnumStringCode {
     CREATE("CREATE", "新建"),

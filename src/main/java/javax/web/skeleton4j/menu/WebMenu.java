@@ -27,7 +27,7 @@ public class WebMenu extends WebNode {
 
     public static class WebMenuBuilder {
         /**
-         * 图标 字体或者图片路径classpath*:com.devops4j.xxx.png
+         * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
          */
         String icon;
         /**

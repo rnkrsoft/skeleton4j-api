@@ -62,7 +62,7 @@ public @interface WebImport {
     /**
      * 导入接口,顺序生成不同的选项卡，如果没有指定stageDisplay则从阶段1开始
      * 前一个接口有相同名称的字段作为级联接口的输入，第一个接口可以无输入
-     * 格式别名=包名.类名.接口名:版本号，例如find=com.devops4j.skeleton.UserService.findUser:1.0.0
+     * 格式别名=包名.类名.接口名:版本号，例如find=com.rnkrsoft.skeleton.UserService.findUser:1.0.0
      *
      * @return 导入接口
      */

@@ -1,6 +1,6 @@
 package javax.web.doc.enums;
 
-import com.devops4j.interfaces.EnumIntegerCode;
+import com.rnkrsoft.interfaces.EnumIntegerCode;
 
 /**
  * Created by devops4j on 2017/12/5.

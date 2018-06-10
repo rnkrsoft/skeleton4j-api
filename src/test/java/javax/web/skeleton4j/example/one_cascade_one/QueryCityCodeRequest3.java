@@ -22,7 +22,7 @@ public class QueryCityCodeRequest3 {
     @ApidocElement(value = "城市",
             interfaces = {
                     @WebCascadeInterface(
-                            value = "com.devops4j.service.queryCity",
+                            value = "com.rnkrsoft.service.queryCity",
                             cascadeColumn = {"countyCode"},//任何情况默认入参包括自身
                             //调用后结果影响到distinctCode字段为多选，则展示方式为RELOAD_OPTIONS,不支持VALUE
                             resultDisplay = @WebResultDisplay(displayType = WebDisplayType.DATA_SOURCE, column = "distinctCode")
