@@ -1,7 +1,7 @@
 package javax.web.validate;
 
-import com.devops4j.reflection4j.GlobalSystemMetadata;
-import com.devops4j.reflection4j.MetaObject;
+import com.rnkrsoft.reflection4j.GlobalSystemMetadata;
+import com.rnkrsoft.reflection4j.MetaObject;
 import lombok.Data;
 
 import java.util.HashMap;

@@ -1,8 +1,8 @@
 package javax.web.doc;
 
 
-import com.devops4j.interfaces.EnumIntegerCode;
-import com.devops4j.interfaces.EnumStringCode;
+import com.rnkrsoft.interfaces.EnumIntegerCode;
+import com.rnkrsoft.interfaces.EnumStringCode;
 import lombok.ToString;
 
 import javax.web.doc.annotation.ApidocElement;

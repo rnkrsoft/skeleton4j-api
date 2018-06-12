@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <groupId>com.devops4j.skeleton4j</groupId>
     <artifactId>skeleton4j-api</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>skeleton4j-api</name>
     <description>skeleton4j application interface</description>
     <url>https://github.com/devops4j/skeleton4j-api.git</url>
@@ -20,15 +20,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
         <sourceEncoding>UTF-8</sourceEncoding>
-        <groundwork.version>1.0.0</groundwork.version>
-        <logtrace4j.version>1.0.0</logtrace4j.version>
-        <reflection4j.version>1.0.0</reflection4j.version>
+        <groundwork.version>1.0.1-SNAPSHOT</groundwork.version>
+        <logtrace4j.version>1.0.1-SNAPSHOT</logtrace4j.version>
+        <reflection4j.version>1.0.1-SNAPSHOT</reflection4j.version>
     </properties>
-    <scm>
-        <connection>git@github.com:devops4j/skeleton4j-api.git</connection>
-        <developerConnection>https://github.com/devops4j/skeleton4j-api.git</developerConnection>
-        <url>https://github.com/devops4j/skeleton4j-api.git</url>
-    </scm>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -55,19 +50,19 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.devops4j.groundwork</groupId>
+            <groupId>com.rnkrsoft.groundwork</groupId>
             <artifactId>groundwork</artifactId>
             <version>${groundwork.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.devops4j.logtrace4j</groupId>
+            <groupId>com.rnkrsoft.logtrace4j</groupId>
             <artifactId>logtrace4j</artifactId>
             <version>${logtrace4j.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.devops4j.reflection4j</groupId>
+            <groupId>com.rnkrsoft.reflection4j</groupId>
             <artifactId>reflection4j</artifactId>
             <version>${reflection4j.version}</version>
             <scope>provided</scope>
@@ -186,16 +181,28 @@
                     </plugin>
                 </plugins>
             </build>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>oss</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-                <repository>
-                    <id>oss</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-                </repository>
-            </distributionManagement>
         </profile>
     </profiles>
+    <scm>
+        <connection>http://admin@git.rnkrsoft.com/r/skeleton4j.git </connection>
+        <developerConnection>http://admin@git.rnkrsoft.com/r/skeleton4j.git </developerConnection>
+        <url>https://www.rnkrsoft.com</url>
+    </scm>
+    <repositories>
+        <repository>
+            <id>rnkrsoft</id>
+            <name>RnKrSoft Repository</name>
+            <url>http://nexus.rnkrsoft.com/content/groups/public/</url>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>rnkrsoft</id>
+            <url>http://nexus.rnkrsoft.com/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>rnkrsoft</id>
+            <url>http://nexus.rnkrsoft.com/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
 </project>

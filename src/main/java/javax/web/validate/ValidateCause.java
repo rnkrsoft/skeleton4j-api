@@ -1,6 +1,6 @@
 package javax.web.validate;
 
-import com.devops4j.interfaces.EnumIntegerCode;
+import com.rnkrsoft.interfaces.EnumIntegerCode;
 
 public enum ValidateCause implements EnumIntegerCode {
     SUCCESS(0, "校验通过"),
