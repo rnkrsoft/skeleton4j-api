@@ -20,10 +20,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
         <sourceEncoding>UTF-8</sourceEncoding>
+        <io4j.version>1.0.1-SNAPSHOT</io4j.version>
         <groundwork.version>1.0.1-SNAPSHOT</groundwork.version>
         <logtrace4j.version>1.0.1-SNAPSHOT</logtrace4j.version>
         <reflection4j.version>1.0.1-SNAPSHOT</reflection4j.version>
-        <rnkrsoft-io.version>1.0.0-SNAPSHOT</rnkrsoft-io.version>
     </properties>
     <dependencies>
         <dependency>
@@ -56,9 +56,9 @@
             <version>${groundwork.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.rnkrsoft.io</groupId>
-            <artifactId>io</artifactId>
-            <version>${rnkrsoft-io.version}</version>
+            <groupId>com.rnkrsoft.io4j</groupId>
+            <artifactId>io4j</artifactId>
+            <version>${io4j.version}</version>
         </dependency>
         <dependency>
             <groupId>com.rnkrsoft.logtrace4j</groupId>
