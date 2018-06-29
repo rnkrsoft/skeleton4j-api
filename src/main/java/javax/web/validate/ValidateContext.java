@@ -31,7 +31,7 @@ public class ValidateContext {
     /**
      * 校验发生错误的代码
      */
-    int code = ValidateCause.SUCCESS.getCode();
+    String code = ValidateCause.SUCCESS.getCode();
     /**
      * 校验发生错误的描述
      */
