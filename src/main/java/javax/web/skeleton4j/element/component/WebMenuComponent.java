@@ -4,7 +4,7 @@ import javax.web.skeleton4j.element.ReferenceWebElement;
 import java.util.Collection;
 
 /**
- * Created by devops4j on 2017/12/15.
+ * Created by rnkrsoft.com on 2017/12/15.
  */
 public interface WebMenuComponent extends WebComponent, WebFormableComponent {
     /**

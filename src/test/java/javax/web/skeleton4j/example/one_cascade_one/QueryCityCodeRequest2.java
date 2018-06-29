@@ -9,7 +9,7 @@ import javax.web.skeleton4j.annotation.WebResultDisplay;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/7.
+ * Created by rnkrsoft.com on 2017/12/7.
  */
 public class QueryCityCodeRequest2 {
     /**

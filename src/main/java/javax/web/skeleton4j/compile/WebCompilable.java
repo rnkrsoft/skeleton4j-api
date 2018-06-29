@@ -1,7 +1,7 @@
 package javax.web.skeleton4j.compile;
 
 /**
- * Created by devops4j on 2017/10/18.
+ * Created by rnkrsoft.com on 2017/10/18.
  * 可编译接口
  */
 public interface WebCompilable {

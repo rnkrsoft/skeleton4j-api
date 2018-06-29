@@ -3,7 +3,7 @@ package javax.web.skeleton4j.element.component;
 import java.util.Collection;
 
 /**
- * Created by devops4j on 2017/11/9.
+ * Created by rnkrsoft.com on 2017/11/9.
  * 对话框组件
  */
 public interface WebDialogBoxComponent extends WebComponent {

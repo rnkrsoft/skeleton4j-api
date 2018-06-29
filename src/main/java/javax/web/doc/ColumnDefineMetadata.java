@@ -6,7 +6,7 @@ import javax.web.doc.enums.DataType;
 import javax.web.doc.enums.PatternType;
 
 /**
- * Created by devops4j on 2018/1/19.
+ * Created by rnkrsoft.com on 2018/1/19.
  * 字段定义元信息，用于约束字段
  */
 @Data

@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2017/12/12.
+ * Created by rnkrsoft.com on 2017/12/12.
  */
 public final class WebComponentRegistryFactory {
     static final WebComponentRegistry INSTANCE = newInstance();

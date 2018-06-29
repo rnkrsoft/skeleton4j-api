@@ -3,7 +3,7 @@ package javax.web.doc.enums;
 import com.rnkrsoft.interfaces.EnumStringCode;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 结果展示类型，定义了接口结果的展示方式
  */
 public enum WebDisplayType implements EnumStringCode {

@@ -3,7 +3,7 @@ package javax.web.skeleton4j;
 import javax.web.skeleton4j.config.Skeleton4jConfig;
 
 /**
- * Created by devops4j on 2017/12/16.
+ * Created by rnkrsoft.com on 2017/12/16.
  * 配置服务
  */
 public interface Skeleton4jConfigService {

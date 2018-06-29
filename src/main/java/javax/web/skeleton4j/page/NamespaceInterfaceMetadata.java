@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by devops4j on 2017/10/13
+ * Created by rnkrsoft.com on 2017/10/13
  * 导入带有命名空间的接口元信息.
  */
 public interface NamespaceInterfaceMetadata {

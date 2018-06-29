@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by devops4j on 2018/1/4.
+ * Created by rnkrsoft.com on 2018/1/4.
  */
 @Data
 public class ValidateContext {

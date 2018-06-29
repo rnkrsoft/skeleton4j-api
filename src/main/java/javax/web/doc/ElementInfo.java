@@ -7,7 +7,7 @@ import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 字段信息父接口
  */
 public interface ElementInfo {

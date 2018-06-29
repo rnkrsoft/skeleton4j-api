@@ -4,7 +4,7 @@ package javax.web.skeleton4j.style;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/10/12.
+ * Created by rnkrsoft.com on 2017/10/12.
  * HTML 样式表封装对象接口
  */
 public interface WebStyle {

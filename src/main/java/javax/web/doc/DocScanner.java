@@ -4,7 +4,7 @@ import javax.web.skeleton4j.registry.WebComponentRegistry;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 文档扫描器接口
  */
 public interface DocScanner {

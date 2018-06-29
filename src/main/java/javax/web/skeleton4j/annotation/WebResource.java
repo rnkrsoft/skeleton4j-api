@@ -5,7 +5,7 @@ import java.lang.annotation.*;
 
 /**
  * 用于声明资源文件
- * Created by devops4j on 2017/11/30.
+ * Created by rnkrsoft.com on 2017/11/30.
  */
 @Target({ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)

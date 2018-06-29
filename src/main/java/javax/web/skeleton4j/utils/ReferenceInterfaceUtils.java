@@ -5,7 +5,7 @@ import javax.web.doc.DocScanner;
 import javax.web.doc.ReferenceInterface;
 
 /**
- * Created by devops4j on 2017/10/18.
+ * Created by rnkrsoft.com on 2017/10/18.
  * 引用接口表达式工具类
  * 支持如下格式的表达式
  * doing1=com.rnkrsoft.xxx.DemoService.doing1:1.0.0

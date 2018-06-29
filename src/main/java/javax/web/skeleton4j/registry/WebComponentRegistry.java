@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by devops4j on 2017/12/12.
+ * Created by rnkrsoft.com on 2017/12/12.
  * web组件注册表
  */
 public interface WebComponentRegistry {

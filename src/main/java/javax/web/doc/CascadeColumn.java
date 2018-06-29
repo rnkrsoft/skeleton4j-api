@@ -5,7 +5,7 @@ import lombok.Getter;
 import javax.web.skeleton4j.enums.ColumnType;
 
 /**
- * Created by devops4j on 2017/12/7.
+ * Created by rnkrsoft.com on 2017/12/7.
  */
 public class CascadeColumn {
     @Getter

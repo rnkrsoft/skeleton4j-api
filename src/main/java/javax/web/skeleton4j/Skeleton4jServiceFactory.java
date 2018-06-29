@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2017/12/16.
+ * Created by rnkrsoft.com on 2017/12/16.
  * Skeleton4j服务工厂类
  */
 public final class Skeleton4jServiceFactory {

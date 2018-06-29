@@ -4,7 +4,7 @@ package javax.web.skeleton4j.enums;
 import com.rnkrsoft.interfaces.EnumStringCode;
 
 /**
- * Created by devops4j on 2017/12/12.
+ * Created by rnkrsoft.com on 2017/12/12.
  */
 public enum ColumnType implements EnumStringCode {
     REQUEST("request", "请求"),

@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2018/1/4.
+ * Created by rnkrsoft.com on 2018/1/4.
  */
 public class Skeleton4jValidatorFactory {
 

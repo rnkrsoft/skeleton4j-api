@@ -3,7 +3,7 @@ package javax.web.skeleton4j.annotation;
 import java.lang.annotation.*;
 
 /**
- * Created by devops4j on 2017/12/7.
+ * Created by rnkrsoft.com on 2017/12/7.
  * 组件或者页面类初始化时进行全局注册脚本和样式的定义注解
  */
 @Target({ElementType.METHOD, ElementType.TYPE})

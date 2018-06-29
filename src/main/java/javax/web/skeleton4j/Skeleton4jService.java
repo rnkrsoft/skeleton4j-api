@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by devops4j on 2017/12/16.
+ * Created by rnkrsoft.com on 2017/12/16.
  * 核心服务
  */
 public interface Skeleton4jService {

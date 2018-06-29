@@ -4,7 +4,7 @@ import javax.web.skeleton4j.config.Skeleton4jConfig;
 import javax.web.skeleton4j.enums.InterfaceCall;
 
 /**
- * Created by devops4j on 2017/12/8.
+ * Created by rnkrsoft.com on 2017/12/8.
  * 接口执行器
  */
 public interface InterfaceInvoker {

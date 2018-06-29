@@ -9,7 +9,7 @@
     <version>1.0.1-SNAPSHOT</version>
     <name>skeleton4j-api</name>
     <description>skeleton4j application interface</description>
-    <url>https://github.com/devops4j/skeleton4j-api.git</url>
+    <url>https://github.com/rnkrsoft.com/skeleton4j-api.git</url>
     <licenses>
         <license>
             <name>Apache License Version 2.0</name>
@@ -73,12 +73,12 @@
     </dependencies>
     <developers>
         <developer>
-            <id>devops4j</id>
-            <name>devops4j</name>
-            <email>devops4j@devops4j.com</email>
-            <url>http://www.devops4j.com</url>
-            <organization>devops4j</organization>
-            <organizationUrl>http://www.devops4j.com</organizationUrl>
+            <id>rnkrsoft.com</id>
+            <name>rnkrsoft.com</name>
+            <email>rnkrsoft.com@rnkrsoft.com.com</email>
+            <url>http://www.rnkrsoft.com.com</url>
+            <organization>rnkrsoft.com</organization>
+            <organizationUrl>http://www.rnkrsoft.com.com</organizationUrl>
             <roles>
                 <role>architect</role>
                 <role>developer</role>

@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/8.
+ * Created by rnkrsoft.com on 2017/12/8.
  * 远端接口调用信息类，定义Web前端交互的信息
  */
 @Getter

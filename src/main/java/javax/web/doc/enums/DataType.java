@@ -3,7 +3,7 @@ package javax.web.doc.enums;
 import com.rnkrsoft.interfaces.EnumStringCode;
 
 /**
- * Created by devops4j on 2018/1/19.
+ * Created by rnkrsoft.com on 2018/1/19.
  */
 public enum DataType implements EnumStringCode {
     String("java.lang.String", "字符串"),

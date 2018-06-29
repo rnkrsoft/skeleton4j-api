@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2017/12/18.
+ * Created by rnkrsoft.com on 2017/12/18.
  * 配置服务工厂
  */
 public final class Skeleton4jConfigServiceFactory {

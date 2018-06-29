@@ -6,7 +6,7 @@ import lombok.Setter;
 import javax.web.skeleton4j.module.WebModule;
 
 /**
- * Created by devops4j on 2017/10/9.
+ * Created by rnkrsoft.com on 2017/10/9.
  */
 public class WebNode {
     @Override

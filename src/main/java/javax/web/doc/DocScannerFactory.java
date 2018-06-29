@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 文档扫描器工厂类
  */
 public final class DocScannerFactory {
