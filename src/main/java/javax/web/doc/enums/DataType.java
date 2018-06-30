@@ -4,6 +4,7 @@ import com.rnkrsoft.interfaces.EnumStringCode;
 
 /**
  * Created by rnkrsoft.com on 2018/1/19.
+ * 数据类型
  */
 public enum DataType implements EnumStringCode {
     String("java.lang.String", "字符串"),
