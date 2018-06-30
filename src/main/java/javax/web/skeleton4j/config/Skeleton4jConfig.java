@@ -64,6 +64,10 @@ public interface Skeleton4jConfig {
      */
     String SERVER_PORT = "serverPort";
     /**
+     * 默认是否显示折叠菜单
+     */
+    String DEFAULT_SIDEBAR = "sidebar";
+    /**
      * 列出所有参数的参数名
      *
      * @return 参数名集合

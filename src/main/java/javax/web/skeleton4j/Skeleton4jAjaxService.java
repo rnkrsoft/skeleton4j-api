@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by rnkrsoft.com on 2018/6/30.
  */
-public interface Skeleton4jAjaxService {
+public interface Skeleton4jAjaxService extends Skeleton4jDependency {
     /**
      * 调用异步接口，所有暴露的接口都要依托于页面，没有页面就无法管理权限
      *
