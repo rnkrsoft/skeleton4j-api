@@ -1,6 +1,8 @@
 package javax.web.skeleton4j.utils;
 
 
+import com.rnkrsoft.logtrace4j.ErrorContextFactory;
+
 import javax.web.doc.DocScanner;
 import javax.web.doc.ReferenceInterface;
 
@@ -57,7 +59,7 @@ public class ReferenceInterfaceUtils {
         String temp = inter.substring(equalPos + 1, colonPos);
         int lastDotPos = temp.lastIndexOf(".");
         if (lastDotPos == -1) {
-            //TODO命名存在问题
+           throw ErrorContextFactory.instance().message("接口名称格式不正确").runtimeException();
         }
         String serviceName = temp.substring(0, lastDotPos);
         String interfaceName = temp.substring(lastDotPos + 1);

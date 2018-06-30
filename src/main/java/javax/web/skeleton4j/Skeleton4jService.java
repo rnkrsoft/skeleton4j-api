@@ -1,10 +1,7 @@
 package javax.web.skeleton4j;
 
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.web.doc.DocScanner;
-import javax.web.skeleton4j.ajax.WebAjaxResult;
 import javax.web.skeleton4j.config.Skeleton4jConfig;
 import javax.web.skeleton4j.pool.ModulePool;
 import java.io.File;
@@ -16,7 +13,7 @@ import java.util.Set;
  * Created by rnkrsoft.com on 2017/12/16.
  * 核心服务
  */
-public interface Skeleton4jService {
+public interface Skeleton4jService extends Skeleton4jPageService, Skeleton4jAjaxService, Skeleton4jImpService, Skeleton4jExpService{
     /**
      * 默认页面类存放包路径
      */
@@ -91,89 +88,4 @@ public interface Skeleton4jService {
      * @return 生成页面文件路径
      */
     File compile(Class pageClass);
-
-    /**
-     * @param devMode  是否为开发模式
-     * @param product  模块名称 模块名即权限中的product
-     * @param action   页面名称 模块名即权限中的action
-     *                 ，例如com.rnkrsoft.page.demo.TestPlugin{
-     *                 }s
-     *                 modelName = 包名(product)
-     *                 pageName = 类名缩写(action)
-     *                 usbAction(page)//固定写法
-     * @param version  版本号
-     * @param theme    主题
-     * @param sidebar  是否显示侧边栏
-     * @param request  HTTP请求对象
-     * @param response HTTP应答对象
-     */
-    void page(boolean devMode, String product, String action, String version, String theme, Boolean sidebar, HttpServletRequest request, HttpServletResponse response);
-
-    /**
-     * 调用异步接口不进行权限校验和输入校验
-     *
-     * @param product   模块名称 包名(product)
-     * @param action    类名缩写(action)
-     * @param subAction 交易别名(subAction).通过模块中得接口定义原始类找到真实得接口，接口别名能够转换为接口名字和版本号
-     * @param data      JSON 报文
-     * @param request   HTTP请求对象
-     * @param response  HTTP应答对象
-     * @return WebAjaxResult
-     */
-    WebAjaxResult test(String product, String action, String subAction, String data, HttpServletRequest request, HttpServletResponse response);
-
-    /**
-     * 调用异步接口，所有暴露的接口都要依托于页面，没有页面就无法管理权限
-     *
-     * @param devMode   是否为开发模式
-     * @param product   模块名称 包名(product)
-     * @param action    类名缩写(action)
-     * @param subAction 交易别名(subAction).通过模块中得接口定义原始类找到真实得接口，接口别名能够转换为接口名字和版本号
-     * @param data      JSON 报文
-     * @param request   HTTP请求对象
-     * @param response  HTTP应答对象
-     */
-    void ajax(boolean devMode, String product, String action, String subAction, String data, HttpServletRequest request, HttpServletResponse response);
-
-    /**
-     * 导入文件预览，返回解析出的数据页面
-     *
-     * @param devMode   是否为开发模式
-     * @param product   模块名称 包名(product)
-     * @param action    类名缩写(action)
-     * @param subAction 交易别名(subAction).通过模块中得接口定义原始类找到真实得接口，接口别名能够转换为接口名字和版本号
-     * @param data      JSON 报文
-     * @param file      导入文件
-     * @param request   HTTP请求对象
-     * @param response  HTTP应答对象
-     */
-    void impPreview(boolean devMode, String product, String action, String subAction, String data, File file, HttpServletRequest request, HttpServletResponse response);
-
-    /**
-     * 导入文件
-     *
-     * @param devMode   是否为开发模式
-     * @param product   模块名称 包名(product)
-     * @param action    类名缩写(action)
-     * @param subAction 交易别名(subAction).通过模块中得接口定义原始类找到真实得接口，接口别名能够转换为接口名字和版本号
-     * @param data      JSON 报文
-     * @param file      导入文件
-     * @param request   HTTP请求对象
-     * @param response  HTTP应答对象
-     */
-    void imp(boolean devMode, String product, String action, String subAction, String data, File file, HttpServletRequest request, HttpServletResponse response);
-
-    /**
-     * 导出文件
-     *
-     * @param devMode   是否为开发模式
-     * @param product   模块名称 包名(product)
-     * @param action    类名缩写(action)
-     * @param subAction 交易别名(subAction).通过模块中得接口定义原始类找到真实得接口，接口别名能够转换为接口名字和版本号
-     * @param data      JSON 报文
-     * @param file      导入文件
-     * @param request   HTTP请求对象
-     * @param response  HTTP应答对象
-     */
-    void exp(boolean devMode, String product, String action, String subAction, String data, File file, HttpServletRequest request, HttpServletResponse response);
 }
