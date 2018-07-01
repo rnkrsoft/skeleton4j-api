@@ -8,6 +8,10 @@ import javax.web.skeleton4j.enums.InterfaceCall;
  * 接口执行器
  */
 public interface InterfaceInvoker {
+    /**
+     * 设置配置对象
+     * @param config
+     */
     void setConfig(Skeleton4jConfig config);
     /**
      * 执行器能够处理的请求类型

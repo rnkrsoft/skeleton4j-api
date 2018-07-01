@@ -11,6 +11,7 @@ import java.util.ServiceLoader;
 
 /**
  * Created by rnkrsoft.com on 2017/12/12.
+ * 组件注册工厂
  */
 public final class WebComponentRegistryFactory {
     static final WebComponentRegistry INSTANCE = newInstance();
@@ -18,6 +19,10 @@ public final class WebComponentRegistryFactory {
     private WebComponentRegistryFactory() {
     }
 
+    /**
+     * 获取已生成的实例
+     * @return 组建注册对象
+     */
     public static WebComponentRegistry getInstance() {
         return INSTANCE;
     }

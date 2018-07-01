@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * Created by rnkrsoft.com on 2018/1/7.
+ * 权限上下文
  */
 public interface AuthorityContext {
     HttpServletRequest getRequest();
