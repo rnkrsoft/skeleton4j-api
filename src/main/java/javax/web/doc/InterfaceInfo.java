@@ -155,7 +155,6 @@ public class InterfaceInfo implements Comparable<InterfaceInfo> {
         }
         return response.getElementClass();
     }
-
     /**
      * 根据当前接口信息创建引用对象
      *
