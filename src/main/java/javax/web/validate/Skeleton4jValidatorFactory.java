@@ -5,16 +5,20 @@ import java.util.ServiceLoader;
 
 /**
  * Created by rnkrsoft.com on 2018/1/4.
+ * 校验器工厂类
  */
 public class Skeleton4jValidatorFactory {
 
-    static final Skeleton4jValidator INSTANCE = newInstance();
+    static Skeleton4jValidator INSTANCE = newInstance();
 
     private Skeleton4jValidatorFactory() {
 
     }
 
     public static Skeleton4jValidator getInstance() {
+        if (INSTANCE == null){
+            INSTANCE = newInstance();
+        }
         return INSTANCE;
     }
 
