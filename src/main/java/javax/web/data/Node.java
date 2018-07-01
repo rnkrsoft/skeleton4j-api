@@ -37,6 +37,10 @@ public class Node implements Serializable {
      */
     List<Node> nodes;
 
+    /**
+     * 获取树形节点
+     * @return 节点列表
+     */
     public List<Node> getNodes() {
         if (nodes == null) {
             this.nodes = new ArrayList();
@@ -44,6 +48,11 @@ public class Node implements Serializable {
         return nodes;
     }
 
+    /**
+     * 增加节点
+     * @param node 节点
+     * @return 父节点
+     */
     public Node addNode(Node node) {
         if (nodes == null) {
             this.nodes = new ArrayList();

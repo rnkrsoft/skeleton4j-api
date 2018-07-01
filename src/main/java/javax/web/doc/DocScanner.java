@@ -8,8 +8,6 @@ import java.util.List;
  * 文档扫描器接口
  */
 public interface DocScanner {
-
-
     /**
      * 注册过滤器
      *

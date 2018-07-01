@@ -25,12 +25,6 @@ public class RootNode extends AbstractResponse implements Nodeable {
         return nodes;
     }
 
-    /**
-     * 增加节点
-     *
-     * @param node 节点
-     * @return 树
-     */
     public Nodeable addNode(Node node) {
         if (nodes == null) {
             this.nodes = new ArrayList();
