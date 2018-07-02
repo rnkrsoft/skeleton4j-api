@@ -7,7 +7,7 @@ import java.io.File;
 /**
  * Created by rnkrsoft.com on 2018/6/30.
  */
-public interface Skeleton4jImpService extends Skeleton4jDependency {
+public interface Skeleton4jImpService{
     /**
      * 导入文件预览，返回解析出的数据页面
      *

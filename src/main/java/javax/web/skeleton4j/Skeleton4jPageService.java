@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by rnkrsoft.com on 2018/6/30.
  */
-public interface Skeleton4jPageService extends Skeleton4jDependency {
+public interface Skeleton4jPageService {
     /**
      * @param devMode  是否为开发模式
      * @param product  模块名称 模块名即权限中的product
