@@ -115,6 +115,20 @@ public interface DocScanner {
     List<ServiceInfo> listService();
 
     /**
+     * 根据服务类名获取服务信息
+     * @param serviceName 类名
+     * @return 服务信息
+     */
+    ServiceInfo lookupService(String serviceName);
+
+    /**
+     * 根据服务类对象获取服务信息
+     * @param serviceClass 服务类
+     * @return 服务信息
+     */
+    ServiceInfo lookupService(Class serviceClass);
+
+    /**
      * 根据服务名，列出接口
      *
      * @param serviceNames 服务名

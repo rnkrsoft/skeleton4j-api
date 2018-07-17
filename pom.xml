@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <groupId>com.rnkrsoft.skeleton4j</groupId>
     <artifactId>skeleton4j-api</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1-beta1</version>
     <name>skeleton4j-api</name>
     <description>skeleton4j application interface</description>
     <url>https://github.com/rnkrsoft.com/skeleton4j-api.git</url>
@@ -20,10 +20,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
         <sourceEncoding>UTF-8</sourceEncoding>
-        <io4j.version>1.0.1-SNAPSHOT</io4j.version>
-        <groundwork.version>1.0.1-SNAPSHOT</groundwork.version>
-        <logtrace4j.version>1.0.1-SNAPSHOT</logtrace4j.version>
-        <reflection4j.version>1.0.1-SNAPSHOT</reflection4j.version>
+        <io4j.version>1.0.1-beta1</io4j.version>
+        <groundwork.version>1.0.1-beta1</groundwork.version>
+        <logtrace4j.version>1.0.1-beta1</logtrace4j.version>
+        <reflection4j.version>1.0.1-beta1</reflection4j.version>
     </properties>
     <dependencies>
         <dependency>

@@ -78,6 +78,16 @@ public class DemoDocScanner implements DocScanner {
     }
 
     @Override
+    public ServiceInfo lookupService(String serviceName) {
+        return null;
+    }
+
+    @Override
+    public ServiceInfo lookupService(Class serviceClass) {
+        return null;
+    }
+
+    @Override
     public List<InterfaceInfo> listInterface(String... serviceNames) {
         return null;
     }
