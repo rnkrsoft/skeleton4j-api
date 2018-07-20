@@ -5,12 +5,26 @@ import com.rnkrsoft.logtrace4j.ErrorContext;
 
 import javax.web.doc.RspCodeReadable;
 import javax.web.skeleton4j.config.Skeleton4jConfig;
+import javax.web.skeleton4j.pool.ModulePool;
+import javax.web.skeleton4j.render.RenderContext;
+import javax.web.skeleton4j.render.WebRenderedResult;
 
 /**
  * Created by rnkrsoft.com on 2017/10/13.
  * 页面渲染服务
  */
-public interface PageRenderService {
+public interface Skeleton4jPageRenderService {
+    /**
+     * 获取模块池
+     * @param modulePool 模块池
+     */
+    void setModulePool(ModulePool modulePool);
+
+    /**
+     * 获取模块池
+     * @return 模块池
+     */
+    ModulePool getModulePool();
     /**
      * 设置配置对象
      * @param config 配置对象

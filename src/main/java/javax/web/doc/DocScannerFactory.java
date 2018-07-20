@@ -27,7 +27,7 @@ public final class DocScannerFactory {
         Iterator<DocScanner> scannerIterator = serviceLoader.iterator();
         while (scanner == null && scannerIterator.hasNext()) {
             DocScanner scanner0 = scannerIterator.next();
-            if (impClassName != null) {
+            if (impClassName != null && !impClassName.isEmpty()) {
                 if (scanner0.getClass().getName().equals(impClassName)) {
                     scanner = scanner0;
                 }

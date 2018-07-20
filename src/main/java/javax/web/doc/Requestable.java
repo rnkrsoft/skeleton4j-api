@@ -8,17 +8,4 @@ import java.io.Serializable;
  * 用于实现接口模式的切换
  */
 public interface Requestable extends Serializable {
-    /**
-     * 接口模式
-     *
-     * @return 接口模式
-     */
-    String getInterfaceMode();
-
-    /**
-     * 设置接口模式
-     *
-     * @param interfaceMode 接口模式
-     */
-    void setInterfaceMode(String interfaceMode);
 }

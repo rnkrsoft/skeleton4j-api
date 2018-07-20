@@ -6,15 +6,15 @@ import com.rnkrsoft.interfaces.EnumStringCode;
  * 接口调用方式
  */
 public enum InterfaceCall implements EnumStringCode {
+    LOCAL("LOCAL", "本地通过new调用"),
     DUBBO("DUBBO", "DUBBO调用"),
     SPRING_CLOUD("SPRING_CLOUD", "Spring Cloud调用"),
+    SPRING_BEAN("SPRING_BEAN", "本地Spring Bean调用"),
     ZEROC_ICE("ZEROC_ICE", "Zeroc ICE 调用"),
-    G_RPC("G_RPC", "gRPC 调用"),
+    GPC("GRPC", "gRPC 调用"),
     WEB_SERVICE("WEB_SERVICE", "WEB SERVICE 调用"),
     JBI("JBI", "Java Business Integration 调用"),
-    REST_FUL("REST_FUL", "RESTful 调用"),
-    SPRING_BEAN("SPRING_BEAN", "本地Spring Bean调用"),
-    LOCAL("LOCAL", "本地通过new调用");
+    RESTFUL("RESTFUL", "RESTful 调用");
     String code;
     String desc;
 

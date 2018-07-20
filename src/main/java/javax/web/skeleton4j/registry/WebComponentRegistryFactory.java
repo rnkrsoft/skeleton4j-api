@@ -82,7 +82,7 @@ public final class WebComponentRegistryFactory {
         Iterator<WebComponentRegistry> iterator = serviceLoader.iterator();
         while (registry == null && iterator.hasNext()) {
             WebComponentRegistry registry0 = iterator.next();
-            if (impClassName != null) {
+            if (impClassName != null && !impClassName.isEmpty()) {
                 if (registry0.getClass().getName().equals(impClassName)) {
                     registry = registry0;
                 }

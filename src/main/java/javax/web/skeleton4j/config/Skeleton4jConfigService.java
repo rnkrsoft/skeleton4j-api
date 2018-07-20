@@ -1,6 +1,4 @@
-package javax.web.skeleton4j;
-
-import javax.web.skeleton4j.config.Skeleton4jConfig;
+package javax.web.skeleton4j.config;
 
 /**
  * Created by rnkrsoft.com on 2017/12/16.

@@ -1,11 +1,9 @@
-package javax.web.skeleton4j;
+package javax.web.skeleton4j.config;
 
 import com.rnkrsoft.logtrace4j.ErrorContext;
 import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.ServiceLoader;
 
 /**
@@ -39,7 +37,7 @@ public final class Skeleton4jConfigServiceFactory {
         Iterator<Skeleton4jConfigService> serviceIterator = serviceLoader.iterator();
         while (service == null && serviceIterator.hasNext()) {
             Skeleton4jConfigService service0 = serviceIterator.next();
-            if (impClassName != null) {
+            if (impClassName != null && !impClassName.isEmpty()) {
                 if (service0.getClass().getName().equals(impClassName)) {
                     service = service0;
                 }
@@ -50,7 +48,7 @@ public final class Skeleton4jConfigServiceFactory {
         if (service == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
             errorContext.message("未发现'{}' 实现", impClassName == null ? Skeleton4jConfigService.class.getName() : impClassName)
-                    .solution("在META-INF/services/javax.web.skeleton4j.Skeleton4jConfigService");
+                    .solution("在META-INF/services/javax.web.skeleton4j.config.Skeleton4jConfigService");
             Iterator<Skeleton4jConfigService> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {

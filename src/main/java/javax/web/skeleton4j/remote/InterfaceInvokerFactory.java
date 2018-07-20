@@ -76,6 +76,6 @@ public class InterfaceInvokerFactory {
      * @return Skeleton4j配置服务实例
      */
     public static InterfaceInvoker newInstance() {
-        return newInstance(InterfaceCall.SPRING_BEAN);
+        return newInstance(InterfaceCall.LOCAL);
     }
 }

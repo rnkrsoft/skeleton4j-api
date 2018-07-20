@@ -1,4 +1,4 @@
-package javax.web.skeleton4j;
+package javax.web.skeleton4j.service;
 
 
 /**

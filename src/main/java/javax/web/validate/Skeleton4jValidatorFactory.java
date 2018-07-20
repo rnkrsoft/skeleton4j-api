@@ -34,7 +34,7 @@ public class Skeleton4jValidatorFactory {
         Iterator<Skeleton4jValidator> serviceIterator = serviceLoader.iterator();
         while (validator == null && serviceIterator.hasNext()) {
             Skeleton4jValidator validator0 = serviceIterator.next();
-            if (impClassName != null) {
+            if (impClassName != null && !impClassName.isEmpty()) {
                 if (validator0.getClass().getName().equals(impClassName)) {
                     validator = validator0;
                 }

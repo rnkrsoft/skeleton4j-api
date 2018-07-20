@@ -1,11 +1,11 @@
-package javax.web.skeleton4j;
+package javax.web.skeleton4j.service;
 
 import javax.web.doc.DocScanner;
 import javax.web.skeleton4j.authority.AuthorityExtractor;
 import javax.web.skeleton4j.authority.AuthorityService;
 import javax.web.skeleton4j.config.Skeleton4jConfig;
 import javax.web.skeleton4j.pool.ModulePool;
-import javax.web.skeleton4j.render.PageRenderService;
+import javax.web.skeleton4j.render.Skeleton4jPageRenderService;
 import java.io.File;
 import java.util.Collection;
 import java.util.List;
@@ -75,7 +75,7 @@ public interface Skeleton4jDependency {
      * 页面渲染服务
      * @return
      */
-    PageRenderService getPageRenderService();
+    Skeleton4jPageRenderService getPageRenderService();
     AuthorityService getAuthorityService();
     AuthorityExtractor getAuthorityExtractor();
 

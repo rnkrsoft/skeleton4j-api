@@ -1,4 +1,4 @@
-package javax.web.skeleton4j;
+package javax.web.skeleton4j.service;
 
 import com.rnkrsoft.logtrace4j.ErrorContext;
 import com.rnkrsoft.logtrace4j.ErrorContextFactory;
@@ -34,7 +34,7 @@ public final class Skeleton4jServiceFactory {
         Iterator<Skeleton4jService> serviceIterator = serviceLoader.iterator();
         while (service == null && serviceIterator.hasNext()) {
             Skeleton4jService service0 = serviceIterator.next();
-            if (impClassName != null) {
+            if (impClassName != null && !impClassName.isEmpty()) {
                 if (service0.getClass().getName().equals(impClassName)) {
                     service = service0;
                 }
@@ -45,7 +45,7 @@ public final class Skeleton4jServiceFactory {
         if (service == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
             errorContext.message("未发现'{}' 实现", impClassName == null ? Skeleton4jService.class.getName() : impClassName)
-                    .solution("在META-INF/services/javax.web.skeleton4j.Skeleton4jService");
+                    .solution("在META-INF/services/javax.web.skeleton4j.service.Skeleton4jService");
             Iterator<Skeleton4jService> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {
