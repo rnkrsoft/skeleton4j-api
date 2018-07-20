@@ -1,18 +1,18 @@
 package javax.web.doc;
 
-import javax.web.doc.enums.FilterType;
+import javax.web.doc.enums.ElementSetType;
 import java.lang.reflect.Method;
 
 /**
  * 过滤器
  */
-public interface DocScannerFilter {
+public interface DocScannerColumnFilter {
     /**
      * 过滤器能够处理的类型
      *
      * @return 过滤器类型
      */
-    FilterType getFilterType();
+    ElementSetType getFilterType();
 
     /**
      * 判断是否能够使用当前过滤器进行处理

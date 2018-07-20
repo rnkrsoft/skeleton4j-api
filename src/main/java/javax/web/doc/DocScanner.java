@@ -14,7 +14,14 @@ public interface DocScanner {
      * @param filter 过滤器
      * @return 文档扫描器
      */
-    DocScanner register(DocScannerFilter filter);
+    DocScanner register(DocScannerColumnFilter filter);
+
+    /**
+     * 注册过滤字段过滤器
+     * @param filter 过滤器
+     * @return 文档扫描器
+     */
+    DocScanner register(DocScannerIgnoreColumnFilter filter);
 
     /**
      * 设置类加载器

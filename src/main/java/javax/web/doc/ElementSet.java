@@ -3,6 +3,7 @@ package javax.web.doc;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.web.doc.enums.ElementSetType;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.Map;
  * Created by rnkrsoft.com on 2017/12/7.
  */
 public class ElementSet {
+    @Getter
+    ElementSetType elementSetType;
     /**
      * 类对象
      */
@@ -45,8 +48,9 @@ public class ElementSet {
      *
      * @param elementClass
      */
-    ElementSet(Class<?> elementClass) {
+    ElementSet(Class<?> elementClass, ElementSetType elementSetType) {
         this.elementClass = elementClass;
+        this.elementSetType = elementSetType;
     }
 
     /**
