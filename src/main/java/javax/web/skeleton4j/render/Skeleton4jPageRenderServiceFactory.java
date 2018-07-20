@@ -48,7 +48,7 @@ public final class Skeleton4jPageRenderServiceFactory {
         if (service == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
             errorContext.message("未发现'{}' 实现", impClassName == null ? Skeleton4jPageRenderService.class.getName() : impClassName)
-                    .solution("在META-INF/services/javax.web.skeleton4j.config.Skeleton4jConfigService");
+                    .solution("在META-INF/services/{}", Skeleton4jPageRenderService.class.getName());
             Iterator<Skeleton4jPageRenderService> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {

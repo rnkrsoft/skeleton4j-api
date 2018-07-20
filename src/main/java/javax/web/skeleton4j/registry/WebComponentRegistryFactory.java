@@ -93,7 +93,7 @@ public final class WebComponentRegistryFactory {
         if (registry == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
             errorContext.message("未发现'{}' 实现", impClassName == null ? WebComponentRegistry.class.getName() : impClassName)
-                    .solution("在META-INF/services/javax.web.skeleton4j.registry.WebComponentRegistry文件中定义实现类");
+                    .solution("在META-INF/services/{}文件中定义实现类", WebComponentRegistry.class.getName());
             Iterator<WebComponentRegistry> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {

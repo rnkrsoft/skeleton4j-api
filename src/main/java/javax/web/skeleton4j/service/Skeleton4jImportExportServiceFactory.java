@@ -34,7 +34,7 @@ public class Skeleton4jImportExportServiceFactory {
         if (service == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset()
                     .message("未发现支持文件格式 '{}' 的实现", format)
-                    .solution("在META-INF/services/javax.web.skeleton4j.config.Skeleton4jConfigService");
+                    .solution("在META-INF/services/{}", Skeleton4jImportExportService.class.getName());
             Iterator<Skeleton4jImportExportService> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {

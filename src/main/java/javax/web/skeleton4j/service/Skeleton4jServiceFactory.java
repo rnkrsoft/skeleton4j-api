@@ -45,7 +45,7 @@ public final class Skeleton4jServiceFactory {
         if (service == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
             errorContext.message("未发现'{}' 实现", impClassName == null ? Skeleton4jService.class.getName() : impClassName)
-                    .solution("在META-INF/services/javax.web.skeleton4j.service.Skeleton4jService");
+                    .solution("在META-INF/services/{}", Skeleton4jService.class.getName());
             Iterator<Skeleton4jService> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {
