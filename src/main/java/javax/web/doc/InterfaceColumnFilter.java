@@ -19,9 +19,10 @@ public interface InterfaceColumnFilter {
      * 检测是否匹配忽略过滤器
      *
      * @param interfaceMethod 接口方法
+     * @param objectClass     对象类
      * @param column          字段对象
      * @param fullColumnName  全字段名
      * @return 是否匹配需要过滤的字段
      */
-    boolean match(Method interfaceMethod, Field column, String fullColumnName);
+    boolean match(Method interfaceMethod, Class objectClass, Field column, String fullColumnName);
 }
