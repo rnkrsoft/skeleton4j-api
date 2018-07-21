@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 /**
  * 过滤器
  */
-public interface DocScannerColumnFilter {
+public interface InterfaceObjectHandler {
     /**
      * 过滤器能够处理的类型
      *

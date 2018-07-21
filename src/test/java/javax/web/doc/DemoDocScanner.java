@@ -8,12 +8,12 @@ import java.util.List;
  */
 public class DemoDocScanner implements DocScanner {
     @Override
-    public DocScanner register(DocScannerColumnFilter filter) {
+    public DocScanner register(InterfaceObjectHandler filter) {
         return null;
     }
 
     @Override
-    public DocScanner register(DocScannerIgnoreColumnFilter filter) {
+    public DocScanner register(InterfaceColumnFilter filter) {
         return null;
     }
 

@@ -11,17 +11,17 @@ public interface DocScanner {
     /**
      * 注册过滤器
      *
-     * @param filter 过滤器
+     * @param handler 处理器
      * @return 文档扫描器
      */
-    DocScanner register(DocScannerColumnFilter filter);
+    DocScanner register(InterfaceObjectHandler handler);
 
     /**
      * 注册过滤字段过滤器
      * @param filter 过滤器
      * @return 文档扫描器
      */
-    DocScanner register(DocScannerIgnoreColumnFilter filter);
+    DocScanner register(InterfaceColumnFilter filter);
 
     /**
      * 设置类加载器
