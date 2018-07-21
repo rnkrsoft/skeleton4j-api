@@ -13,7 +13,7 @@ public interface InterfaceColumnFilter {
      *
      * @return 过滤器类型
      */
-    ElementSetType getFilterType();
+    ElementSetType getObjectType();
 
     /**
      * 检测是否匹配忽略过滤器

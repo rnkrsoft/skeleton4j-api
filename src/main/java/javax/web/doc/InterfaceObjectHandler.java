@@ -12,7 +12,7 @@ public interface InterfaceObjectHandler {
      *
      * @return 过滤器类型
      */
-    ElementSetType getFilterType();
+    ElementSetType getObjectType();
 
     /**
      * 判断是否能够使用当前过滤器进行处理
@@ -32,5 +32,5 @@ public interface InterfaceObjectHandler {
      * @param paramClass   参数类对象
      * @return 处理完成的参数类对象
      */
-    Class filter(Class serviceClass, Method method, Class paramClass);
+    Class handle(Class serviceClass, Method method, Class paramClass);
 }
