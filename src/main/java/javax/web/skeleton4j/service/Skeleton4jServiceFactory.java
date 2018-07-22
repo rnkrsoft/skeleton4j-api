@@ -12,13 +12,20 @@ import java.util.ServiceLoader;
  */
 public final class Skeleton4jServiceFactory {
 
-    static final Skeleton4jService INSTANCE = newInstance();
+    static Skeleton4jService INSTANCE;
 
     private Skeleton4jServiceFactory() {
 
     }
 
-    public static Skeleton4jService getInstance() {
+    public static Skeleton4jService getInstance(String impClassName) {
+        if (INSTANCE == null){
+            synchronized (Skeleton4jServiceFactory.class){
+                if (INSTANCE == null){
+                    INSTANCE = newInstance(impClassName);
+                }
+            }
+        }
         return INSTANCE;
     }
 

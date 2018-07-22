@@ -11,10 +11,26 @@ import java.util.ServiceLoader;
  * 文档扫描器工厂类
  */
 public final class DocScannerFactory {
+    static DocScanner INSTANCE = null;
     private DocScannerFactory() {
 
     }
 
+    /**
+     * 获取之前加载的文档扫描器
+     * @param impClassName 实现类名称
+     * @return 文档扫描器
+     */
+    public static DocScanner getInstance(String impClassName){
+        if (INSTANCE == null){
+            synchronized (DocScannerFactory.class){
+                if (INSTANCE == null){
+                    INSTANCE = newInstance(impClassName);
+                }
+            }
+        }
+        return INSTANCE;
+    }
     /**
      * 新建一个文档扫描器
      *
