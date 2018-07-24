@@ -31,9 +31,9 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
      */
     Class<?> javaClass;
     /**
-     * Bean类
+     * 数据类
      */
-    Class<?> beanClass;
+    Class<?> dataClass;
     /**
      * 字段描述
      */
@@ -63,8 +63,8 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
         return javaClass.getName();
     }
 
-    public String getBeanClassName() {
-        return beanClass.getName();
+    public String getDataClassName() {
+        return dataClass.getName();
     }
 
     @Getter
@@ -76,7 +76,7 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
         final List<ElementInfo> elements = new ArrayList();
         String name;
         Class<?> javaClass;
-        Class<?> beanClass;
+        Class<?> dataClass;
         String desc;
         String usage;
         boolean required;
@@ -98,8 +98,8 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
             return this;
         }
 
-        public FormElementInfoBuilder beanClass(Class<?> beanClass) {
-            this.beanClass = beanClass;
+        public FormElementInfoBuilder dataClass(Class<?> dataClass) {
+            this.dataClass = dataClass;
             return this;
         }
 
@@ -138,7 +138,7 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
             }
             info.javaClass = javaClass;
             info.required = required;
-            info.beanClass = beanClass;
+            info.dataClass = dataClass;
             info.elements.addAll(elements);
             return info;
         }
