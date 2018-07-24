@@ -3,7 +3,7 @@ package javax.web.doc;
 import lombok.Getter;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 接口引用对象，用于对接口的非直接引用
  */
 public class ReferenceInterface {

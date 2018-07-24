@@ -3,7 +3,7 @@ package javax.web.skeleton4j.config;
 import java.util.Collection;
 
 /**
- * Created by devops4j on 2017/12/16.
+ * Created by rnkrsoft.com on 2017/12/16.
  * 配置对象
  */
 public interface Skeleton4jConfig {
@@ -63,6 +63,18 @@ public interface Skeleton4jConfig {
      * 服务器端口，默认为80
      */
     String SERVER_PORT = "serverPort";
+    /**
+     * 默认是否显示折叠菜单
+     */
+    String DEFAULT_SIDEBAR = "defaultSidebar";
+    /**
+     * 页面渲染服务类
+     */
+    String PAGE_RENDER_SERVICE_CLASS_NAME = "pageRenderServiceClassName";
+    /**
+     * 网页组件注册对象类名
+     */
+    String WEB_COMPONENT_REGISTRY_CLASS_NAME = "webComponentRegistryClassName";
     /**
      * 列出所有参数的参数名
      *

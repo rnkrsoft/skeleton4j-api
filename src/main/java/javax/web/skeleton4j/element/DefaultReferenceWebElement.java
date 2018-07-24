@@ -7,7 +7,7 @@ import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
 
 /**
- * Created by devops4j on 2017/12/8.
+ * Created by rnkrsoft.com on 2017/12/8.
  */
 public class DefaultReferenceWebElement implements ReferenceWebElement {
     @Getter

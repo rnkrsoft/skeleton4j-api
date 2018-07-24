@@ -7,7 +7,7 @@ import javax.web.skeleton4j.remote.InterfaceMetadata;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/10/13.
+ * Created by rnkrsoft.com on 2017/10/13.
  * 模块封装
  */
 public interface WebModule {

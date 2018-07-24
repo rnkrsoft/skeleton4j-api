@@ -1,4 +1,4 @@
-package javax.web.skeleton4j;
+package javax.web.skeleton4j.service;
 
 import javax.web.doc.InterfaceInfo;
 import java.io.File;
@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Created by devops4j on 2018/2/28.
+ * Created by rnkrsoft.com on 2018/2/28.
  * 导入导出服务
  */
 public interface Skeleton4jImportExportService {

@@ -4,7 +4,7 @@ package javax.web.skeleton4j.script;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/10/12.
+ * Created by rnkrsoft.com on 2017/10/12.
  * HTML 脚本封装对象接口
  */
 public interface WebScript {

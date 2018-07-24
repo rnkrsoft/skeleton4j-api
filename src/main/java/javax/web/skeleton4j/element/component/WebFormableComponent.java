@@ -7,7 +7,7 @@ import javax.web.skeleton4j.script.WebScript;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/10/13.
+ * Created by rnkrsoft.com on 2017/10/13.
  * 能够放入表单的组件
  */
 public interface WebFormableComponent extends WebComponent {

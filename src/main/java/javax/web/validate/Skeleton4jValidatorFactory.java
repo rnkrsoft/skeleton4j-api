@@ -4,17 +4,21 @@ import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2018/1/4.
+ * Created by rnkrsoft.com on 2018/1/4.
+ * 校验器工厂类
  */
 public class Skeleton4jValidatorFactory {
 
-    static final Skeleton4jValidator INSTANCE = newInstance();
+    static Skeleton4jValidator INSTANCE = newInstance();
 
     private Skeleton4jValidatorFactory() {
 
     }
 
     public static Skeleton4jValidator getInstance() {
+        if (INSTANCE == null){
+            INSTANCE = newInstance();
+        }
         return INSTANCE;
     }
 
@@ -30,7 +34,7 @@ public class Skeleton4jValidatorFactory {
         Iterator<Skeleton4jValidator> serviceIterator = serviceLoader.iterator();
         while (validator == null && serviceIterator.hasNext()) {
             Skeleton4jValidator validator0 = serviceIterator.next();
-            if (impClassName != null) {
+            if (impClassName != null && !impClassName.isEmpty()) {
                 if (validator0.getClass().getName().equals(impClassName)) {
                     validator = validator0;
                 }

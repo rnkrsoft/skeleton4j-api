@@ -6,10 +6,10 @@
     <packaging>jar</packaging>
     <groupId>com.rnkrsoft.skeleton4j</groupId>
     <artifactId>skeleton4j-api</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1-beta1</version>
     <name>skeleton4j-api</name>
     <description>skeleton4j application interface</description>
-    <url>https://github.com/devops4j/skeleton4j-api.git</url>
+    <url>https://github.com/rnkrsoft.com/skeleton4j-api.git</url>
     <licenses>
         <license>
             <name>Apache License Version 2.0</name>
@@ -20,10 +20,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
         <sourceEncoding>UTF-8</sourceEncoding>
-        <groundwork.version>1.0.1-SNAPSHOT</groundwork.version>
-        <logtrace4j.version>1.0.1-SNAPSHOT</logtrace4j.version>
-        <reflection4j.version>1.0.1-SNAPSHOT</reflection4j.version>
-        <rnkrsoft-io.version>1.0.0-SNAPSHOT</rnkrsoft-io.version>
+        <io4j.version>1.0.1-beta1</io4j.version>
+        <groundwork.version>1.0.1-beta1</groundwork.version>
+        <logtrace4j.version>1.0.1-beta1</logtrace4j.version>
+        <reflection4j.version>1.0.1-beta1</reflection4j.version>
     </properties>
     <dependencies>
         <dependency>
@@ -56,9 +56,9 @@
             <version>${groundwork.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.rnkrsoft.io</groupId>
-            <artifactId>io</artifactId>
-            <version>${rnkrsoft-io.version}</version>
+            <groupId>com.rnkrsoft.io4j</groupId>
+            <artifactId>io4j</artifactId>
+            <version>${io4j.version}</version>
         </dependency>
         <dependency>
             <groupId>com.rnkrsoft.logtrace4j</groupId>
@@ -73,12 +73,12 @@
     </dependencies>
     <developers>
         <developer>
-            <id>devops4j</id>
-            <name>devops4j</name>
-            <email>devops4j@devops4j.com</email>
-            <url>http://www.devops4j.com</url>
-            <organization>devops4j</organization>
-            <organizationUrl>http://www.devops4j.com</organizationUrl>
+            <id>rnkrsoft.com</id>
+            <name>rnkrsoft.com</name>
+            <email>rnkrsoft.com@rnkrsoft.com.com</email>
+            <url>http://www.rnkrsoft.com.com</url>
+            <organization>rnkrsoft.com</organization>
+            <organizationUrl>http://www.rnkrsoft.com.com</organizationUrl>
             <roles>
                 <role>architect</role>
                 <role>developer</role>

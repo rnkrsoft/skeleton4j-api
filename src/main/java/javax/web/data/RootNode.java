@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 申明用于选项或者树形结构数据获取时的对象定义
  * example:
  */
@@ -25,12 +25,6 @@ public class RootNode extends AbstractResponse implements Nodeable {
         return nodes;
     }
 
-    /**
-     * 增加节点
-     *
-     * @param node 节点
-     * @return 树
-     */
     public Nodeable addNode(Node node) {
         if (nodes == null) {
             this.nodes = new ArrayList();

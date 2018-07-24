@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by devops4j on 2017/12/11.
+ * Created by rnkrsoft.com on 2017/12/11.
  */
 @Getter
 public abstract class AbstractElementInfo implements ElementInfo {

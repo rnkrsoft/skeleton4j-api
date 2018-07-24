@@ -4,7 +4,7 @@ import javax.web.skeleton4j.element.WebElement;
 import java.lang.annotation.*;
 
 /**
- * Created by devops4j on 2017/12/7.
+ * Created by rnkrsoft.com on 2017/12/7.
  * 组件定义注解
  */
 @Target({ElementType.TYPE})

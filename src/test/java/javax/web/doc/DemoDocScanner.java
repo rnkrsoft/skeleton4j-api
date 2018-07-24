@@ -4,11 +4,16 @@ import javax.web.skeleton4j.registry.WebComponentRegistry;
 import java.util.List;
 
 /**
- * Created by devops4j on 2018/1/11.
+ * Created by rnkrsoft.com on 2018/1/11.
  */
 public class DemoDocScanner implements DocScanner {
     @Override
-    public DocScanner register(DocScannerFilter filter) {
+    public DocScanner register(InterfaceObjectHandler filter) {
+        return null;
+    }
+
+    @Override
+    public DocScanner register(InterfaceColumnFilter filter) {
         return null;
     }
 
@@ -74,6 +79,16 @@ public class DemoDocScanner implements DocScanner {
 
     @Override
     public List<ServiceInfo> listService() {
+        return null;
+    }
+
+    @Override
+    public ServiceInfo lookupService(String serviceName) {
+        return null;
+    }
+
+    @Override
+    public ServiceInfo lookupService(Class serviceClass) {
         return null;
     }
 

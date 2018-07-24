@@ -3,7 +3,7 @@ package javax.web.skeleton4j.annotation;
 import java.lang.annotation.*;
 
 /**
- * Created by devops4j on 2017/11/30.
+ * Created by rnkrsoft.com on 2017/11/30.
  * 用于在页面类中定义渲染方法的注解，需要标注在参数为WebPage的方法上
  */
 @Target({ElementType.METHOD})

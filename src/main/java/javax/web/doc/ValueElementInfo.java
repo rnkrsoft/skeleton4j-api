@@ -9,7 +9,7 @@ import javax.web.skeleton4j.registry.WebComponentRegistry;
 import java.util.*;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 原生类型字段的包装
  */
 @Getter

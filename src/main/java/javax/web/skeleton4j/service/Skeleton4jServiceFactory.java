@@ -1,4 +1,4 @@
-package javax.web.skeleton4j;
+package javax.web.skeleton4j.service;
 
 import com.rnkrsoft.logtrace4j.ErrorContext;
 import com.rnkrsoft.logtrace4j.ErrorContextFactory;
@@ -7,18 +7,25 @@ import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2017/12/16.
+ * Created by rnkrsoft.com on 2017/12/16.
  * Skeleton4j服务工厂类
  */
 public final class Skeleton4jServiceFactory {
 
-    static final Skeleton4jService INSTANCE = newInstance();
+    static Skeleton4jService INSTANCE;
 
     private Skeleton4jServiceFactory() {
 
     }
 
-    public static Skeleton4jService getInstance() {
+    public static Skeleton4jService getInstance(String impClassName) {
+        if (INSTANCE == null){
+            synchronized (Skeleton4jServiceFactory.class){
+                if (INSTANCE == null){
+                    INSTANCE = newInstance(impClassName);
+                }
+            }
+        }
         return INSTANCE;
     }
 
@@ -34,7 +41,7 @@ public final class Skeleton4jServiceFactory {
         Iterator<Skeleton4jService> serviceIterator = serviceLoader.iterator();
         while (service == null && serviceIterator.hasNext()) {
             Skeleton4jService service0 = serviceIterator.next();
-            if (impClassName != null) {
+            if (impClassName != null && !impClassName.isEmpty()) {
                 if (service0.getClass().getName().equals(impClassName)) {
                     service = service0;
                 }
@@ -45,7 +52,7 @@ public final class Skeleton4jServiceFactory {
         if (service == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
             errorContext.message("未发现'{}' 实现", impClassName == null ? Skeleton4jService.class.getName() : impClassName)
-                    .solution("在META-INF/services/javax.web.skeleton4j.Skeleton4jService");
+                    .solution("在META-INF/services/{}", Skeleton4jService.class.getName());
             Iterator<Skeleton4jService> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {

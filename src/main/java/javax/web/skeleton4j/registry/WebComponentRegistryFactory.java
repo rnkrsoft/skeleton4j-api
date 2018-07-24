@@ -10,7 +10,8 @@ import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2017/12/12.
+ * Created by rnkrsoft.com on 2017/12/12.
+ * 组件注册工厂
  */
 public final class WebComponentRegistryFactory {
     static final WebComponentRegistry INSTANCE = newInstance();
@@ -18,6 +19,10 @@ public final class WebComponentRegistryFactory {
     private WebComponentRegistryFactory() {
     }
 
+    /**
+     * 获取已生成的实例
+     * @return 组建注册对象
+     */
     public static WebComponentRegistry getInstance() {
         return INSTANCE;
     }
@@ -77,7 +82,7 @@ public final class WebComponentRegistryFactory {
         Iterator<WebComponentRegistry> iterator = serviceLoader.iterator();
         while (registry == null && iterator.hasNext()) {
             WebComponentRegistry registry0 = iterator.next();
-            if (impClassName != null) {
+            if (impClassName != null && !impClassName.isEmpty()) {
                 if (registry0.getClass().getName().equals(impClassName)) {
                     registry = registry0;
                 }
@@ -87,8 +92,8 @@ public final class WebComponentRegistryFactory {
         }
         if (registry == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
-            errorContext.message("未发现'{}' 实现", impClassName == null ? WebComponentRegistry.class.getName() : impClassName)
-                    .solution("在META-INF/services/javax.web.skeleton4j.registry.WebComponentRegistry文件中定义实现类");
+            errorContext.message("未发现'{}' 实现", (impClassName == null || impClassName.isEmpty()) ? WebComponentRegistry.class.getName() : impClassName)
+                    .solution("在META-INF/services/{}文件中定义实现类", WebComponentRegistry.class.getName());
             Iterator<WebComponentRegistry> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {

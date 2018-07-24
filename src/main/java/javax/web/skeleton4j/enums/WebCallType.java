@@ -3,7 +3,7 @@ package javax.web.skeleton4j.enums;
 import com.rnkrsoft.interfaces.EnumStringCode;
 
 /**
- * Created by devops4j on 2018/1/22.
+ * Created by rnkrsoft.com on 2018/1/22.
  * 管理台前端调用后端接口的方式
  */
 public enum WebCallType implements EnumStringCode {

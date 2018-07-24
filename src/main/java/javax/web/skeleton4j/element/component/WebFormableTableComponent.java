@@ -3,7 +3,7 @@ package javax.web.skeleton4j.element.component;
 import java.util.Collection;
 
 /**
- * Created by devops4j on 2017/12/15.
+ * Created by rnkrsoft.com on 2017/12/15.
  * 表单化的表格组件
  */
 public interface WebFormableTableComponent extends WebFormableComponent, WebGroupableComponent {

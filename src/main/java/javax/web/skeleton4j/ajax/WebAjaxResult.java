@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by devops4j on 2017/12/7.
+ * Created by rnkrsoft.com on 2017/12/7.
  * Ajax调用结果封装接口
  */
 public interface WebAjaxResult<T> {

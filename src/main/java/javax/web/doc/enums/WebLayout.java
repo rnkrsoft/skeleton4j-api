@@ -3,7 +3,7 @@ package javax.web.doc.enums;
 import com.rnkrsoft.interfaces.EnumStringCode;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 组件布局类型
  */
 public enum WebLayout implements EnumStringCode {

@@ -6,7 +6,7 @@ import javax.web.skeleton4j.enums.WebMode;
 import java.lang.annotation.*;
 
 /**
- * Created by devops4j on 2017/12/7.
+ * Created by rnkrsoft.com on 2017/12/7.
  * 导入接口定义的注解
  */
 @Target({ElementType.ANNOTATION_TYPE})

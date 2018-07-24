@@ -1,25 +1,23 @@
-package javax.web.skeleton4j;
+package javax.web.skeleton4j.render;
 
 import com.rnkrsoft.logtrace4j.ErrorContext;
 import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2017/12/18.
- * 配置服务工厂
+ * Created by rnkrsoft.com on 2017/12/18.
+ * 页面渲染服务工厂类
  */
-public final class Skeleton4jConfigServiceFactory {
-    static Skeleton4jConfigService INSTANCE = newInstance();
+public final class Skeleton4jPageRenderServiceFactory {
+    static Skeleton4jPageRenderService INSTANCE = newInstance();
 
-    private Skeleton4jConfigServiceFactory() {
+    private Skeleton4jPageRenderServiceFactory() {
 
     }
 
-    public static Skeleton4jConfigService getInstance() {
+    public static Skeleton4jPageRenderService getInstance() {
         if (INSTANCE == null) {
             return newInstance();
         }else{
@@ -33,13 +31,13 @@ public final class Skeleton4jConfigServiceFactory {
      * @param impClassName 实现类全限定名
      * @return Skeleton4j配置服务实例
      */
-    public static Skeleton4jConfigService newInstance(String impClassName) {
-        Skeleton4jConfigService service = null;
-        ServiceLoader<Skeleton4jConfigService> serviceLoader = ServiceLoader.load(Skeleton4jConfigService.class);
-        Iterator<Skeleton4jConfigService> serviceIterator = serviceLoader.iterator();
+    public static Skeleton4jPageRenderService newInstance(String impClassName) {
+        Skeleton4jPageRenderService service = null;
+        ServiceLoader<Skeleton4jPageRenderService> serviceLoader = ServiceLoader.load(Skeleton4jPageRenderService.class);
+        Iterator<Skeleton4jPageRenderService> serviceIterator = serviceLoader.iterator();
         while (service == null && serviceIterator.hasNext()) {
-            Skeleton4jConfigService service0 = serviceIterator.next();
-            if (impClassName != null) {
+            Skeleton4jPageRenderService service0 = serviceIterator.next();
+            if (impClassName != null && !impClassName.isEmpty()) {
                 if (service0.getClass().getName().equals(impClassName)) {
                     service = service0;
                 }
@@ -49,13 +47,13 @@ public final class Skeleton4jConfigServiceFactory {
         }
         if (service == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
-            errorContext.message("未发现'{}' 实现", impClassName == null ? Skeleton4jConfigService.class.getName() : impClassName)
-                    .solution("在META-INF/services/javax.web.skeleton4j.Skeleton4jConfigService");
-            Iterator<Skeleton4jConfigService> it = serviceLoader.iterator();
+            errorContext.message("未发现'{}' 实现", impClassName == null ? Skeleton4jPageRenderService.class.getName() : impClassName)
+                    .solution("在META-INF/services/{}", Skeleton4jPageRenderService.class.getName());
+            Iterator<Skeleton4jPageRenderService> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {
                 i++;
-                Skeleton4jConfigService service0 = it.next();
+                Skeleton4jPageRenderService service0 = it.next();
                 errorContext.extra("found", "实现[{}] {}", i, service0.getClass().getName());
             }
             throw errorContext.runtimeException();
@@ -68,7 +66,7 @@ public final class Skeleton4jConfigServiceFactory {
      *
      * @return Skeleton4j配置服务实例
      */
-    public static Skeleton4jConfigService newInstance() {
+    public static Skeleton4jPageRenderService newInstance() {
         return newInstance(null);
     }
 }

@@ -4,7 +4,7 @@ import javax.web.doc.enums.WebDisplayType;
 import java.lang.annotation.*;
 
 /**
- * Created by devops4j on 2017/12/7.
+ * Created by rnkrsoft.com on 2017/12/7.
  * 结果展示，展示类型为默认时，根据接口判断
  */
 @Target({ElementType.ANNOTATION_TYPE})

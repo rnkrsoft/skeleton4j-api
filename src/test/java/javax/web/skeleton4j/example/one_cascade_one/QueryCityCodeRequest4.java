@@ -8,7 +8,7 @@ import javax.web.skeleton4j.annotation.WebCascadeInterface;
 import javax.web.skeleton4j.annotation.WebResultDisplay;
 
 /**
- * Created by devops4j on 2017/12/7.
+ * Created by rnkrsoft.com on 2017/12/7.
  * 当前接口级联接口，
  */
 public class QueryCityCodeRequest4 {

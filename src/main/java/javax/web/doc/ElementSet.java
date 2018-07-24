@@ -3,15 +3,15 @@ package javax.web.doc;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.web.doc.enums.ElementSetType;
+import java.util.*;
 
 /**
- * Created by devops4j on 2017/12/7.
+ * Created by rnkrsoft.com on 2017/12/7.
  */
 public class ElementSet {
+    @Getter
+    ElementSetType elementSetType;
     /**
      * 类对象
      */
@@ -32,12 +32,10 @@ public class ElementSet {
     /**
      * 非分页字段
      */
-    @Getter
     final List<ElementInfo> elements = new ArrayList();
     /**
      * 分页字段
      */
-    @Getter
     final List<ElementInfo> pageables = new ArrayList();
 
     /**
@@ -45,10 +43,18 @@ public class ElementSet {
      *
      * @param elementClass
      */
-    ElementSet(Class<?> elementClass) {
+    ElementSet(Class<?> elementClass, ElementSetType elementSetType) {
         this.elementClass = elementClass;
+        this.elementSetType = elementSetType;
     }
 
+    public List<ElementInfo> getElements() {
+        return elements;
+    }
+
+    public List<ElementInfo> getPageables() {
+        return pageables;
+    }
     /**
      * 获取所有字段元素
      *
@@ -79,14 +85,28 @@ public class ElementSet {
     /**
      * 根据关键字模糊查找字段
      *
-     * @param keyword 关键字
+     * @param keyword 关键字 接受%查询
      * @return 结果
      */
     public List<ElementInfo> lookupFuzzy(String keyword) {
         List<ElementInfo> list = new ArrayList();
         for (String key : fullNameElements.keySet()) {
-            if (key.contains(keyword)) {
-                list.add(fullNameElements.get(key));
+           if(keyword.startsWith("%") && keyword.endsWith("%")){
+                if (key.contains(keyword.substring(1, keyword.length() -1))) {
+                    list.add(fullNameElements.get(key));
+                }
+           }else if (keyword.startsWith("%")){
+                if (key.endsWith(keyword.substring(1))) {
+                    list.add(fullNameElements.get(key));
+                }
+            }else  if (keyword.endsWith("%")){
+                if (key.startsWith(keyword.substring(0, keyword.length() - 1))) {
+                    list.add(fullNameElements.get(key));
+                }
+            }else{
+                if (key.contains(keyword)) {
+                    list.add(fullNameElements.get(key));
+                }
             }
         }
         return list;

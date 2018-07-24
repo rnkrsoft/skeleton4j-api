@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by devops4j on 2018/1/4.
+ * Created by rnkrsoft.com on 2018/1/4.
  */
 @Data
 public class ValidateContext {
@@ -31,7 +31,7 @@ public class ValidateContext {
     /**
      * 校验发生错误的代码
      */
-    int code = ValidateCause.SUCCESS.getCode();
+    String code = ValidateCause.SUCCESS.getCode();
     /**
      * 校验发生错误的描述
      */

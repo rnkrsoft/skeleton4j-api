@@ -7,14 +7,30 @@ import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 文档扫描器工厂类
  */
 public final class DocScannerFactory {
+    static DocScanner INSTANCE = null;
     private DocScannerFactory() {
 
     }
 
+    /**
+     * 获取之前加载的文档扫描器
+     * @param impClassName 实现类名称
+     * @return 文档扫描器
+     */
+    public static DocScanner getInstance(String impClassName){
+        if (INSTANCE == null){
+            synchronized (DocScannerFactory.class){
+                if (INSTANCE == null){
+                    INSTANCE = newInstance(impClassName);
+                }
+            }
+        }
+        return INSTANCE;
+    }
     /**
      * 新建一个文档扫描器
      *
@@ -27,7 +43,7 @@ public final class DocScannerFactory {
         Iterator<DocScanner> scannerIterator = serviceLoader.iterator();
         while (scanner == null && scannerIterator.hasNext()) {
             DocScanner scanner0 = scannerIterator.next();
-            if (impClassName != null) {
+            if (impClassName != null && !impClassName.isEmpty()) {
                 if (scanner0.getClass().getName().equals(impClassName)) {
                     scanner = scanner0;
                 }

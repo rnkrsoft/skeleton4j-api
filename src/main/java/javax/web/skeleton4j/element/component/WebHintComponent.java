@@ -3,7 +3,7 @@ package javax.web.skeleton4j.element.component;
 import javax.web.skeleton4j.script.WebScript;
 
 /**
- * Created by devops4j on 2017/10/13.
+ * Created by rnkrsoft.com on 2017/10/13.
  * 定义了提示信息展示的付接口
  */
 public interface WebHintComponent extends WebComponent {

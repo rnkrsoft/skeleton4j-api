@@ -3,7 +3,7 @@ package javax.web.doc.enums;
 import com.rnkrsoft.interfaces.EnumStringCode;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 触发事件类型,参照Jquery事件定义
  */
 public enum WebTriggerEvent implements EnumStringCode {

@@ -4,19 +4,24 @@ import javax.web.skeleton4j.registry.WebComponentRegistry;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 文档扫描器接口
  */
 public interface DocScanner {
-
-
     /**
      * 注册过滤器
      *
+     * @param handler 处理器
+     * @return 文档扫描器
+     */
+    DocScanner register(InterfaceObjectHandler handler);
+
+    /**
+     * 注册过滤字段过滤器
      * @param filter 过滤器
      * @return 文档扫描器
      */
-    DocScanner register(DocScannerFilter filter);
+    DocScanner register(InterfaceColumnFilter filter);
 
     /**
      * 设置类加载器
@@ -115,6 +120,20 @@ public interface DocScanner {
      * @return 服务列表
      */
     List<ServiceInfo> listService();
+
+    /**
+     * 根据服务类名获取服务信息
+     * @param serviceName 类名
+     * @return 服务信息
+     */
+    ServiceInfo lookupService(String serviceName);
+
+    /**
+     * 根据服务类对象获取服务信息
+     * @param serviceClass 服务类
+     * @return 服务信息
+     */
+    ServiceInfo lookupService(Class serviceClass);
 
     /**
      * 根据服务名，列出接口

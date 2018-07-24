@@ -3,7 +3,7 @@ package javax.web.skeleton4j.element.component;
 import java.util.Collection;
 
 /**
- * Created by devops4j on 2017/12/15.
+ * Created by rnkrsoft.com on 2017/12/15.
  * 选择组件，可展示为dropdown的或者平铺的选择组件
  */
 public interface WebSelectComponent extends WebFormableComponent, WebGroupableComponent {

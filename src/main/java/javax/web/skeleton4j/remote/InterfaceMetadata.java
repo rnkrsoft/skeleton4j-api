@@ -5,7 +5,7 @@ import javax.web.doc.InterfaceInfo;
 import javax.web.skeleton4j.enums.InterfaceCall;
 
 /**
- * Created by devops4j on 2017/12/8.
+ * Created by rnkrsoft.com on 2017/12/8.
  * 接口元信息
  * 在容器中描述的后端接口
  */

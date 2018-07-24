@@ -4,7 +4,7 @@ package javax.web.skeleton4j.annotation;
 import java.lang.annotation.*;
 
 /**
- * Created by devops4j on 2017/11/30.
+ * Created by rnkrsoft.com on 2017/11/30.
  * 页面注解，用于标注在类或者接口上，进行页面的定义
  */
 @Target({ElementType.TYPE})
