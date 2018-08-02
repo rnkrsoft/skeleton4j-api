@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * Created by woate on 2018/7/20.
+ * Created by rnkrsoft.com on 2018/7/20.
  */
 public interface InterfaceColumnFilter {
     /**

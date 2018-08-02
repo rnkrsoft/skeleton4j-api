@@ -13,6 +13,7 @@ import java.util.Map;
 
 /**
  * Created by rnkrsoft.com on 2017/12/11.
+ * 抽象的元素信息对象
  */
 @Getter
 public abstract class AbstractElementInfo implements ElementInfo {
@@ -20,10 +21,12 @@ public abstract class AbstractElementInfo implements ElementInfo {
      * 字段映射到对应页面的引用
      */
     final Map<WebPage, ReferenceWebElement> mappings = new HashMap();
-
+    /**
+     * 字段所属类型
+     */
     protected final ColumnType columnType;
     /**
-     * 字段的完整名称
+     * 字段的完整名称，使用类全限定名
      */
     protected final String fullName;
     /**
@@ -31,12 +34,16 @@ public abstract class AbstractElementInfo implements ElementInfo {
      */
     boolean readonly = false;
     /**
-     * 所属接口对象
+     * 字段所属接口对象
      */
     protected final InterfaceInfo interfaceInfo;
-
+    /**
+     * 字段所属的元素集合
+     */
     final ElementSet elementSet;
-
+    /**
+     * 字段所属的组件注册对象
+     */
     final WebComponentRegistry componentRegistry;
 
     public AbstractElementInfo(WebComponentRegistry componentRegistry, InterfaceInfo interfaceInfo, ElementSet elementSet, String fullName) {

@@ -2,6 +2,12 @@ package javax.web.skeleton4j.enums;
 
 import com.rnkrsoft.interfaces.EnumStringCode;
 
+/**
+ * Created by rnkrsoft.com on 2017/10/16.
+ * 导入接口对应的业务模式
+ * @see javax.web.skeleton4j.annotation.WebImport
+ *
+ */
 public enum WebMode implements EnumStringCode {
     CREATE("CREATE", "新建"),
     UPDATE("UPDATE", "修改"),

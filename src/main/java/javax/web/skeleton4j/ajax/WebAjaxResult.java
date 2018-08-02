@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public interface WebAjaxResult<T> {
     /**
-     * 结果码
-     *
+     * 结果码，三位通信结果码
+     * @see javax.web.skeleton4j.enums.InterfaceCode
      * @return 结果码
      */
     String getCode();

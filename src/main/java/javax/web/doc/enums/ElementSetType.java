@@ -1,7 +1,8 @@
 package javax.web.doc.enums;
 
 /**
- * 处理对象类型
+ * Created by rnkrsoft.com on 2018/1/19.
+ * 元素集合类型
  */
 public enum ElementSetType {
     REQUEST,

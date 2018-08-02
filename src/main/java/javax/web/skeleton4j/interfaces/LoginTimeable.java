@@ -3,6 +3,7 @@ package javax.web.skeleton4j.interfaces;
 import java.util.Date;
 
 /**
+ * Created by rnkrsoft.com on 2017/12/8.
  * 设置请求能够获取登录时间有关信息
  */
 public interface LoginTimeable {

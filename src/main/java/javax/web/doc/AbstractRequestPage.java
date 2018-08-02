@@ -5,13 +5,15 @@ import lombok.ToString;
 import javax.web.doc.annotation.ApidocElement;
 
 /**
- * 分页请求
+ * Created by rnkrsoft.com on 2017/12/5.
+ * 抽象的分页请求
+ * @see AbstractResponsePage
  */
 @ToString(callSuper = true)
 public abstract class AbstractRequestPage implements RequestPageable {
-    @ApidocElement("分页大小")
+    @ApidocElement(value = "分页大小", required = false, defaults = "20")
     int pageSize;
-    @ApidocElement("当前页")
+    @ApidocElement(value = "当前页", required = false, defaults = "1")
     int pageNo;
 
     public final int getPageSize() {
