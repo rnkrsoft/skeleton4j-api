@@ -59,6 +59,10 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
      */
     ValueDisplayType valueDisplayType;
     /**
+     * 是否能够多选
+     */
+    boolean multiple;
+    /**
      * Java类
      */
     Class<?> javaClass;
@@ -144,6 +148,7 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
         String desc;
         String placeholder;
         ValueDisplayType valueDisplayType;
+        boolean multiple = false;
         Class<?> javaClass;
         boolean required;
         int minLen;
@@ -192,6 +197,11 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
 
         public ValueElementInfoBuilder valueDisplayType(ValueDisplayType valueDisplayType) {
             this.valueDisplayType = valueDisplayType;
+            return this;
+        }
+
+        public ValueElementInfoBuilder multiple(boolean multiple) {
+            this.multiple = multiple;
             return this;
         }
 
@@ -287,6 +297,7 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
                 info.valueDisplayType = valueDisplayType;
                 info.javaClass = javaClass;
             }
+            info.multiple = multiple;
             info.required = required;
             info.minLen = minLen;
             info.maxLen = maxLen;
