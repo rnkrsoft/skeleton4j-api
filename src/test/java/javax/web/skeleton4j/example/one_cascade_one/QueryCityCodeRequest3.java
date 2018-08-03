@@ -32,6 +32,6 @@ public class QueryCityCodeRequest3 {
     /**
      * 该字段为使用接口校验当前值的例子，校验结果消息框提示
      */
-    @ApidocElement(value = "多个区", valueDisplayType = ValueDisplayType.List)
+    @ApidocElement(value = "多个区", valueDisplayType = ValueDisplayType.LIST)
     List<String> distinctCode;
 }

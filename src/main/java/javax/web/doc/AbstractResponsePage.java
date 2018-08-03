@@ -5,7 +5,11 @@ import lombok.ToString;
 import javax.web.doc.annotation.ApidocElement;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Created by rnkrsoft.com on 2017/12/5.
+ * 抽象的分页应答
+ * @see AbstractRequestPage
+ */
 @ToString(callSuper = true)
 public abstract class AbstractResponsePage<T> extends AbstractResponse implements ResponsePageable<T> {
     @ApidocElement("记录")

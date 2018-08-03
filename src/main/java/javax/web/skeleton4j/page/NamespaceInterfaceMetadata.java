@@ -1,6 +1,5 @@
 package javax.web.skeleton4j.page;
 
-
 import javax.web.doc.ReferenceInterface;
 import javax.web.doc.enums.WebLayout;
 import javax.web.skeleton4j.enums.InterfaceCall;

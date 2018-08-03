@@ -10,6 +10,8 @@ import java.util.LinkedList;
 
 /**
  * Created by rnkrsoft.com on 2017/10/9.
+ * 界面菜单的对象封装
+ * @see WebNode
  */
 @ToString
 public class WebMenu extends WebNode {
@@ -46,6 +48,9 @@ public class WebMenu extends WebNode {
          * 是否使用权限
          */
         boolean useAuthority;
+        /**
+         * 是否隐藏
+         */
         boolean hidden;
         /**
          * 所属模块
@@ -55,7 +60,6 @@ public class WebMenu extends WebNode {
          * 父菜单
          */
         String parent;
-
         /**
          * 子菜单
          */

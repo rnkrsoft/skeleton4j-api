@@ -6,6 +6,10 @@ import lombok.ToString;
 import javax.web.doc.enums.ElementSetType;
 import javax.web.skeleton4j.enums.ColumnType;
 
+/**
+ * Created by rnkrsoft.com on 2017/12/12.
+ * 接口信息对象
+ */
 @ToString(exclude = {"serviceInfo", "request", "response", "mappingRegistry", "docScanner"})
 public class InterfaceInfo implements Comparable<InterfaceInfo> {
     @Getter

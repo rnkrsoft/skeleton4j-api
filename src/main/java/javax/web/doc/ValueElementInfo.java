@@ -291,7 +291,7 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
             }
             info.enums.putAll(enums);
             if (valueDisplayType == null) {
-                info.valueDisplayType = ValueDisplayType.String;
+                info.valueDisplayType = ValueDisplayType.STRING;
                 info.javaClass = String.class;
             } else {
                 info.valueDisplayType = valueDisplayType;

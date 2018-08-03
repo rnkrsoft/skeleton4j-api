@@ -25,7 +25,7 @@ public class QueryCityCodeRequest4 {
     /**
      * 该字段为使用接口校验当前值的例子，校验结果消息框提示
      */
-    @ApidocElement(value = "国家/城市/区1", valueDisplayType = ValueDisplayType.String, interfaces = {
+    @ApidocElement(value = "国家/城市/区1", valueDisplayType = ValueDisplayType.STRING, interfaces = {
             @WebCascadeInterface(
                     cascadeEvent = WebTriggerEvent.BLUR,//失去焦点时调用级联接口
                     value = "com.rnkrsoft.service.queryTree",
@@ -38,7 +38,7 @@ public class QueryCityCodeRequest4 {
     /**
      * 该字段为使用接口校验当前值的例子，校验结果消息框提示
      */
-    @ApidocElement(value = "国家/城市/区2", valueDisplayType = ValueDisplayType.String, interfaces = {
+    @ApidocElement(value = "国家/城市/区2", valueDisplayType = ValueDisplayType.STRING, interfaces = {
             @WebCascadeInterface(
                     cascadeEvent = WebTriggerEvent.FOCUS,//获取焦点时调用级联接口
                     value = "com.rnkrsoft.service.queryTree",

@@ -30,7 +30,7 @@ public @interface ApidocElement {
     String value() default "";
 
     /**
-     * 是否为只读
+     * 字段作为界面元素时，是否为只读属性
      *
      * @return 是否为只读
      */
@@ -58,6 +58,13 @@ public @interface ApidocElement {
     boolean required() default true;
 
     /**
+     * 当前字段作为界面元素时是否为自适应展示。
+     * 如果为假，无论何时都展示；
+     * 如果为真，在界面宽度不够则隐藏，在宽度足够则显示
+     * @return 是否为自适应显示
+     */
+    boolean adaptive() default false;
+    /**
      * 字段类型
      * ValueDisplayType.String将数据展示为输入框
      * ValueDisplayType.Integer将数据展示为输入框
@@ -74,7 +81,7 @@ public @interface ApidocElement {
      *
      * @return 字段类型
      */
-    ValueDisplayType valueDisplayType() default ValueDisplayType.Auto;
+    ValueDisplayType valueDisplayType() default ValueDisplayType.AUTO;
 
     /**
      * 枚举字典类
@@ -91,7 +98,7 @@ public @interface ApidocElement {
     String[] defaults() default {};
 
     /**
-     * 占位符，如果为空，则默认使用desc
+     * 字段作为界面元素时，显示的占位符，如果为空，则默认使用desc
      *
      * @return 占位符
      */

@@ -8,6 +8,7 @@ import java.util.*;
 
 /**
  * Created by rnkrsoft.com on 2017/12/7.
+ * 元素集合
  */
 public class ElementSet {
     @Getter
@@ -40,18 +41,26 @@ public class ElementSet {
 
     /**
      * 新建一个元素集合
-     *
-     * @param elementClass
+     * @param elementClass 元素集合对应的Java对象
+     * @param elementSetType 元素集合类型
      */
     ElementSet(Class<?> elementClass, ElementSetType elementSetType) {
         this.elementClass = elementClass;
         this.elementSetType = elementSetType;
     }
 
+    /**
+     * 获取所有的元素列表
+     * @return 元素列表
+     */
     public List<ElementInfo> getElements() {
         return elements;
     }
 
+    /**
+     * 获取分页字段
+     * @return 分页字段
+     */
     public List<ElementInfo> getPageables() {
         return pageables;
     }

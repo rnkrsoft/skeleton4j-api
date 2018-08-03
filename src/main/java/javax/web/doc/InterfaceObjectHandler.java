@@ -4,7 +4,8 @@ import javax.web.doc.enums.ElementSetType;
 import java.lang.reflect.Method;
 
 /**
- * 过滤器
+ * 接口对象处理器，用于对接口存在泛型情况下的处理
+ * Created by rnkrsoft.com on 2017/12/12.
  */
 public interface InterfaceObjectHandler {
     /**

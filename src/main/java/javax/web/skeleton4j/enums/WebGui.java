@@ -1,7 +1,11 @@
 package javax.web.skeleton4j.enums;
 
 import com.rnkrsoft.interfaces.EnumStringCode;
-
+/**
+ * Created by rnkrsoft.com on 2017/10/16.
+ * 导入接口生成界面元素的类型
+ * @see javax.web.skeleton4j.annotation.WebImport
+ */
 public enum WebGui implements EnumStringCode {
     /**
      * 无界面，只导入接口，可以访问后端接口

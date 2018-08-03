@@ -1,5 +1,6 @@
 package javax.web.skeleton4j.menu;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import javax.web.skeleton4j.module.WebModule;
 /**
  * Created by rnkrsoft.com on 2017/10/9.
  */
+@Data
 public class WebNode {
     @Override
     public String toString() {
@@ -19,14 +21,10 @@ public class WebNode {
                 '}';
     }
 
-    @Getter
-    @Setter
     int no = 0;
     /**
      * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
      */
-    @Getter
-    @Setter
     String icon;
     /**
      * 菜单英文名称
@@ -35,52 +33,38 @@ public class WebNode {
     /**
      * 菜单展示名称
      */
-    @Getter
-    @Setter
     String title;
     /**
      * 状态
      */
-    @Getter
-    @Setter
     int status;
     /**
      * 是否使用权限
      */
-    @Getter
-    @Setter
     boolean useAuthority;
-
-    @Getter
-    @Setter
+    /**
+     * 是否隐藏
+     */
     boolean hidden;
     /**
      * 所属模块
      */
-    @Getter
-    @Setter
     WebModule module;
     /**
      * 父菜单
      */
-    @Getter
-    @Setter
     String parent;
     /**
      * product/action/version构成叶子菜单的最终访问路径，与Skeleton4jService的page方法入参一致
      */
-    @Getter
-    @Setter
     String product;
-
-    @Getter
-    @Setter
+    /**
+     *  功能
+     */
     String action;
     /**
      * 版本号
      */
-    @Getter
-    @Setter
     String version;
 
     public String getName() {

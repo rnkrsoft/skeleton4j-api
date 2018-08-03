@@ -15,53 +15,53 @@ public enum ValueDisplayType {
      * java.util.Collection<Integer>映射到Selection
      * java.util.Collection<Serialize>映射到Form
      */
-    Auto,
+    AUTO,
     /**
      * 字符串
      */
-    String,
+    STRING,
     /**
      * 整数
      */
-    Integer,
+    INTEGER,
     /**
      * 浮点数
      */
-    Decimal,
+    DECIMAL,
     /**
      * 列表
      */
-    List,
+    LIST,
     /**
      * 日期
      */
-    Date,
+    DATE,
     /**
      * 图片
      */
-    Image,
+    IMAGE,
     /**
      * 树
      */
-    Tree,
+    TREE,
     /**
      * 可供选择的类型，多选或者单选
      */
-    Selection,
+    SELECTION,
     /**
      * Markdown文本
      */
-    Markdown,
+    MARKDOWN,
     /**
      * 富文本
      */
-    RichText,
+    RICH_TEXT,
     /**
      * JSON数据
      */
-    Json,
+    JSON,
     /**
      * 源代码数据
      */
-    Source
+    SOURCE
 }
