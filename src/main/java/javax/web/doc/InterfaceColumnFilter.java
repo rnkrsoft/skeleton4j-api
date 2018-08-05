@@ -1,6 +1,7 @@
 package javax.web.doc;
 
 import javax.web.doc.enums.ElementSetType;
+import javax.web.doc.enums.FilterType;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -24,5 +25,5 @@ public interface InterfaceColumnFilter {
      * @param fullColumnName  全字段名
      * @return 是否匹配需要过滤的字段
      */
-    boolean match(Method interfaceMethod, Class objectClass, Field column, String fullColumnName);
+    FilterType match(Method interfaceMethod, Class objectClass, Field column, String fullColumnName);
 }
