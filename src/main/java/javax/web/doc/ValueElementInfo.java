@@ -330,6 +330,6 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
 
     @Override
     public String toString() {
-        return interfaceInfo.getFullName() + "." + columnType.getCode() + "." + getFullName();
+        return interfaceInfo.getFullName() + ":" + columnType.getCode() + ":" + getFullName();
     }
 }
