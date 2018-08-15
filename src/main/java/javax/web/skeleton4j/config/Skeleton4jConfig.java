@@ -36,6 +36,10 @@ public interface Skeleton4jConfig {
      */
     String USE_CACHE = "useCache";
     /**
+     * 环境
+     */
+    String ENV = "env";
+    /**
      * 是否使用开发模式
      */
     String DEV_MODE = "devMode";
@@ -76,6 +80,7 @@ public interface Skeleton4jConfig {
      */
     String WEB_COMPONENT_REGISTRY_CLASS_NAME = "webComponentRegistryClassName";
     String SKELETON4J_SERVICE_CLASS_NAME = "skeleton4jServiceClassName";
+
     /**
      * 列出所有参数的参数名
      *

@@ -2,6 +2,7 @@ package javax.web.skeleton4j.render;
 
 import com.rnkrsoft.io.buffer.ByteBuf;
 
+import javax.web.skeleton4j.config.Skeleton4jConfig;
 import javax.web.skeleton4j.element.container.WebContainer;
 import javax.web.skeleton4j.menu.WebMenu;
 import javax.web.skeleton4j.pool.ModulePool;
@@ -16,6 +17,11 @@ import java.util.Map;
  * 上下文
  */
 public interface WebContext {
+    /**
+     * 获取当前的配置
+     * @return
+     */
+    Skeleton4jConfig getConfig();
     /**
      * 渲染时传入的参数
      *
@@ -215,6 +221,7 @@ public interface WebContext {
      */
     WebContext codes(int indent, String... lines);
 
+    WebContext append(int indent, String ...lines);
     /**
      * 使用模块池中已注册的脚本
      *
