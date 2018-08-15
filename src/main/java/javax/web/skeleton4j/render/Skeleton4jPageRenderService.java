@@ -6,8 +6,6 @@ import com.rnkrsoft.logtrace4j.ErrorContext;
 import javax.web.doc.RspCodeReadable;
 import javax.web.skeleton4j.config.Skeleton4jConfig;
 import javax.web.skeleton4j.pool.ModulePool;
-import javax.web.skeleton4j.render.RenderContext;
-import javax.web.skeleton4j.render.WebRenderedResult;
 
 /**
  * Created by rnkrsoft.com on 2017/10/13.
