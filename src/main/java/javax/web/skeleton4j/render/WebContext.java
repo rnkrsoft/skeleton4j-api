@@ -208,6 +208,14 @@ public interface WebContext {
     WebContext codes(String... lines);
 
     /**
+     * 增加代码带缩进量
+     * @param indent 缩进量
+     * @param lines 代码行
+     * @return 上下文
+     */
+    WebContext codes(int indent, String... lines);
+
+    /**
      * 使用模块池中已注册的脚本
      *
      * @param alias 别名

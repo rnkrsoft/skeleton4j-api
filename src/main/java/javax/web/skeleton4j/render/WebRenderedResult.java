@@ -1,6 +1,7 @@
 package javax.web.skeleton4j.render;
 
 import com.rnkrsoft.io.buffer.ByteBuf;
+import com.rnkrsoft.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 
@@ -47,7 +48,14 @@ public class WebRenderedResult {
     }
 
     public WebRenderedResult codes(String... lines) {
-        this.codes.put("UTF-8", lines);
+        return codes(0, lines);
+    }
+
+    public WebRenderedResult codes(int indent, String... lines) {
+        String space = StringUtils.fill("", true, ' ', indent);
+        for (String line : lines){
+            codes.put("UTF-8", line == null ? space : (space +line), "\n");
+        }
         return this;
     }
 
