@@ -39,6 +39,10 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
      */
     final List<CascadeInterface> cascadeInterfaces = new ArrayList();
     /**
+     * 级联的菜单
+     */
+    final List<CascadeMenu> cascadeMenus = new ArrayList();
+    /**
      * 是否为唯一主键，标记为唯一组件，则可用于管理系统中表格中按钮事件的传值
      */
     boolean unique = false;
@@ -143,6 +147,7 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
         final List<String> defaults = new ArrayList();
         final List<String> patterns = new ArrayList();
         final List<CascadeInterface> cascadeInterfaces = new ArrayList();
+        final List<CascadeMenu> cascadeMenus = new ArrayList();
         boolean unique = false;
         String name;
         String desc;
@@ -265,6 +270,10 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
             return this;
         }
 
+        public ValueElementInfoBuilder cascadeMenu(CascadeMenu... cascadeMenus) {
+            this.cascadeMenus.addAll(Arrays.asList(cascadeMenus));
+            return this;
+        }
         public ValueElementInfoBuilder usage(String usage) {
             this.usage = usage;
             return this;
@@ -309,6 +318,7 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
             info.hidden = hidden;
             info.readonly = readonly;
             info.cascadeInterfaces.addAll(cascadeInterfaces);
+            info.cascadeMenus.addAll(cascadeMenus);
             return info;
         }
     }

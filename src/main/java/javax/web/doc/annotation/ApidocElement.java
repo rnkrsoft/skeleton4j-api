@@ -3,6 +3,7 @@ package javax.web.doc.annotation;
 import javax.web.doc.enums.PatternType;
 import javax.web.doc.enums.ValueDisplayType;
 import javax.web.skeleton4j.annotation.WebCascadeInterface;
+import javax.web.skeleton4j.annotation.WebCascadeMenuLevel1;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -124,6 +125,12 @@ public @interface ApidocElement {
      * @return 级联接口列表
      */
     WebCascadeInterface[] interfaces() default {};
+
+    /**
+     * 级联一级菜单集合接口，用于定义一级菜单的级联接口
+     * @return
+     */
+    WebCascadeMenuLevel1[] menus() default {};
 
     /**
      * 是否为隐藏字段
