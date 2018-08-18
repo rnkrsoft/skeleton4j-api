@@ -21,6 +21,10 @@ public class ValidateContext {
      */
     String failureField;
     /**
+     * 失败字段名称
+     */
+    String failureFieldName;
+    /**
      * 对象包装
      */
     MetaObject metaObject;
