@@ -79,7 +79,14 @@ public interface Skeleton4jConfig {
      * 网页组件注册对象类名
      */
     String WEB_COMPONENT_REGISTRY_CLASS_NAME = "webComponentRegistryClassName";
+    /**
+     * Skeleton4j服务类
+     */
     String SKELETON4J_SERVICE_CLASS_NAME = "skeleton4jServiceClassName";
+    /**
+     * 首页
+     */
+    String INDEX_PAGE = "indexPage";
 
     /**
      * 列出所有参数的参数名
