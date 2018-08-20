@@ -11,34 +11,26 @@ import java.util.ServiceLoader;
  * 页面渲染服务工厂类
  */
 public final class Skeleton4jPageRenderServiceFactory {
-    static Skeleton4jPageRenderService INSTANCE = newInstance();
 
     private Skeleton4jPageRenderServiceFactory() {
 
     }
 
-    public static Skeleton4jPageRenderService getInstance() {
-        if (INSTANCE == null) {
-            return newInstance();
-        }else{
-            return INSTANCE;
-        }
-    }
 
     /**
      * 构建一个Skeleton4j配置服务实例
      *
-     * @param impClassName 实现类全限定名
+     * @param theme 主题名
      * @return Skeleton4j配置服务实例
      */
-    public static Skeleton4jPageRenderService newInstance(String impClassName) {
+    public static Skeleton4jPageRenderService newInstance(String theme) {
         Skeleton4jPageRenderService service = null;
         ServiceLoader<Skeleton4jPageRenderService> serviceLoader = ServiceLoader.load(Skeleton4jPageRenderService.class);
         Iterator<Skeleton4jPageRenderService> serviceIterator = serviceLoader.iterator();
         while (service == null && serviceIterator.hasNext()) {
             Skeleton4jPageRenderService service0 = serviceIterator.next();
-            if (impClassName != null && !impClassName.isEmpty()) {
-                if (service0.getClass().getName().equals(impClassName)) {
+            if (theme != null && !theme.isEmpty()) {
+                if (theme.equals(service0.getTheme())) {
                     service = service0;
                 }
             } else {
@@ -47,7 +39,7 @@ public final class Skeleton4jPageRenderServiceFactory {
         }
         if (service == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
-            errorContext.message("未发现'{}' 实现", impClassName == null ? Skeleton4jPageRenderService.class.getName() : impClassName)
+            errorContext.message("未发现'{}'主题的渲染方法实现", theme == null ? null : theme)
                     .solution("在META-INF/services/{}", Skeleton4jPageRenderService.class.getName());
             Iterator<Skeleton4jPageRenderService> it = serviceLoader.iterator();
             int i = 0;
@@ -59,14 +51,5 @@ public final class Skeleton4jPageRenderServiceFactory {
             throw errorContext.runtimeException();
         }
         return service;
-    }
-
-    /**
-     * 构建一个Skeleton4j配置服务实例
-     *
-     * @return Skeleton4j配置服务实例
-     */
-    public static Skeleton4jPageRenderService newInstance() {
-        return newInstance(null);
     }
 }

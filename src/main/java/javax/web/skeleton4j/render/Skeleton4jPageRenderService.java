@@ -13,6 +13,11 @@ import javax.web.skeleton4j.pool.ModulePool;
  */
 public interface Skeleton4jPageRenderService {
     /**
+     * 主题名称
+     * @return 主题名称
+     */
+    String getTheme();
+    /**
      * 获取模块池
      * @param modulePool 模块池
      */

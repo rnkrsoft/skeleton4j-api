@@ -72,10 +72,6 @@ public interface Skeleton4jConfig {
      */
     String DEFAULT_SIDEBAR = "defaultSidebar";
     /**
-     * 页面渲染服务类
-     */
-    String PAGE_RENDER_SERVICE_CLASS_NAME = "pageRenderServiceClassName";
-    /**
      * 网页组件注册对象类名
      */
     String WEB_COMPONENT_REGISTRY_CLASS_NAME = "webComponentRegistryClassName";
