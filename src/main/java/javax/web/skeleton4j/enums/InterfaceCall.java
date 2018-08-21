@@ -11,7 +11,7 @@ public enum InterfaceCall implements EnumStringCode {
     SPRING_CLOUD("SPRING_CLOUD", "Spring Cloud调用"),
     SPRING_BEAN("SPRING_BEAN", "本地Spring Bean调用"),
     ZEROC_ICE("ZEROC_ICE", "Zeroc ICE 调用"),
-    GPC("GRPC", "gRPC 调用"),
+    GRPC("GRPC", "gRPC 调用"),
     WEB_SERVICE("WEB_SERVICE", "WEB SERVICE 调用"),
     JBI("JBI", "Java Business Integration 调用"),
     RESTFUL("RESTFUL", "RESTful 调用");
