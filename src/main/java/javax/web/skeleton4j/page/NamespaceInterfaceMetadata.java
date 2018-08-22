@@ -5,6 +5,7 @@ import javax.web.doc.enums.WebLayout;
 import javax.web.skeleton4j.enums.InterfaceCall;
 import javax.web.skeleton4j.enums.WebGui;
 import javax.web.skeleton4j.enums.WebMode;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -32,7 +33,7 @@ public interface NamespaceInterfaceMetadata {
      *
      * @return 接口列表
      */
-    Set<ReferenceInterface> getInterfaces();
+    List<ReferenceInterface> getInterfaces();
 
     /**
      * 交互界面类型
@@ -74,4 +75,6 @@ public interface NamespaceInterfaceMetadata {
      * @return 调用类型
      */
     InterfaceCall getCall();
+
+    void addInterface(ReferenceInterface referenceInterface);
 }
