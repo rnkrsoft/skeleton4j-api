@@ -18,11 +18,11 @@ public final class Skeleton4jServiceFactory {
 
     }
 
-    public static Skeleton4jService getInstance(String impClassName) {
+    public static Skeleton4jService getInstance(String impClassName, ClassLoader classLoader) {
         if (INSTANCE == null){
             synchronized (Skeleton4jServiceFactory.class){
                 if (INSTANCE == null){
-                    INSTANCE = newInstance(impClassName);
+                    INSTANCE = newInstance(impClassName, classLoader);
                 }
             }
         }
@@ -35,9 +35,9 @@ public final class Skeleton4jServiceFactory {
      * @param impClassName 实现类全限定名
      * @return Skeleton4j服务实例
      */
-    public static Skeleton4jService newInstance(String impClassName) {
+    public static Skeleton4jService newInstance(String impClassName, ClassLoader classLoader) {
         Skeleton4jService service = null;
-        ServiceLoader<Skeleton4jService> serviceLoader = ServiceLoader.load(Skeleton4jService.class);
+        ServiceLoader<Skeleton4jService> serviceLoader = ServiceLoader.load(Skeleton4jService.class, classLoader);
         Iterator<Skeleton4jService> serviceIterator = serviceLoader.iterator();
         while (service == null && serviceIterator.hasNext()) {
             Skeleton4jService service0 = serviceIterator.next();
@@ -70,7 +70,7 @@ public final class Skeleton4jServiceFactory {
      *
      * @return Skeleton4j服务实例
      */
-    public static Skeleton4jService newInstance() {
-        return newInstance(null);
+    public static Skeleton4jService newInstance(ClassLoader classLoader) {
+        return newInstance(null, classLoader);
     }
 }
