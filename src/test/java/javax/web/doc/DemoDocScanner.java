@@ -43,6 +43,11 @@ public class DemoDocScanner implements DocScanner {
     }
 
     @Override
+    public List<String> getScanPackages() {
+        return null;
+    }
+
+    @Override
     public DocScanner init(boolean ifThrow, String... packages) {
         return null;
     }

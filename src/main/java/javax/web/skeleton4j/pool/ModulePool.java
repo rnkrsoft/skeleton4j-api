@@ -64,19 +64,21 @@ public interface ModulePool {
 
     /**
      * 船建一个样式对象
+     * @param theme 主题名
      * @param alias 别名
      * @param version 版本号
      * @return 样式对象
      */
-    WebStyle createStyle(String alias, String version);
+    WebStyle createStyle(String theme, String alias, String version);
 
     /**
      * 船建一个脚本对象
+     * @param theme 主题名
      * @param alias 别名
      * @param version 版本号
      * @return 脚本对象
      */
-    WebScript createScript(String alias, String version);
+    WebScript createScript(String theme, String alias, String version);
     /**
      * 查询页面类
      *
@@ -106,11 +108,12 @@ public interface ModulePool {
     /**
      * 查找脚本
      *
+     * @param theme   主题名
      * @param alias   别名
      * @param version 版本号
      * @return 脚本对象
      */
-    WebScript lookupScript(String alias, String version);
+    WebScript lookupScript(String theme, String alias, String version);
 
     /**
      * 增加一个脚本到模块池
@@ -121,10 +124,11 @@ public interface ModulePool {
 
     /**
      * 获取名称能够匹配的脚本对象，版本号根据字典排列取最大
+     * @param theme 主题名
      * @param names 脚本名称数组
      * @return 脚本列表
      */
-    List<WebScript> scripts(String... names);
+    List<WebScript> scripts(String theme, String... names);
 
     /**
      * 增加一个样式到模块池
@@ -135,18 +139,20 @@ public interface ModulePool {
 
     /**
      * 查找指定别名和版本号的样式对象
+     * @param theme   主题名
      * @param alias 别名
      * @param version 版本号
      * @return 样式对象
      */
-    WebStyle lookupStyle(String alias, String version);
+    WebStyle lookupStyle(String theme, String alias, String version);
 
     /**
      * 获取名称能够匹配的样式对象，版本号根据字典排列取最大
+     * @param theme 主题名
      * @param names 样式名称数组
      * @return 样式列表
      */
-    List<WebStyle> styles(String... names);
+    List<WebStyle> styles(String theme, String... names);
 
     /**
      * 查找菜单节点
@@ -246,19 +252,21 @@ public interface ModulePool {
 
     /**
      * 根据别名和版本号移除脚本对象
+     * @param theme 主题名
      * @param alias 别名
      * @param version 版本号
      * @return 模块池
      */
-    ModulePool removeScript(String alias, String version);
+    ModulePool removeScript(String theme,String alias, String version);
 
     /**
      * 根据别名和版本号移除
+     * @param theme 主题名
      * @param alias 别名
      * @param version 版本号
      * @return 模块池
      */
-    ModulePool removeStyle(String alias, String version);
+    ModulePool removeStyle(String theme,String alias, String version);
 
     /**
      * 根据产品名，功能名和版本号进行节点移除

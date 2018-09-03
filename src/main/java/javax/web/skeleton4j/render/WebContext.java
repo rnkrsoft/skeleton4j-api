@@ -228,7 +228,7 @@ public interface WebContext {
      * @param alias 别名
      * @return 上下文
      */
-    WebContext enqueueScript(String alias);
+    WebContext enqueueScript(String theme, String alias);
 
     /**
      * 使用模块池中已注册的样式
@@ -236,7 +236,7 @@ public interface WebContext {
      * @param alias 别名
      * @return 上下文
      */
-    WebContext enqueueStyle(String alias);
+    WebContext enqueueStyle(String theme, String alias);
 
     /**
      * 使用模块池中已注册的脚本
@@ -245,7 +245,7 @@ public interface WebContext {
      * @param version 版本号
      * @return 上下文
      */
-    WebContext enqueueScript(String alias, String version);
+    WebContext enqueueScript(String theme, String alias, String version);
 
     /**
      * 使用模块池中已注册的样式
@@ -254,7 +254,7 @@ public interface WebContext {
      * @param version 版本号
      * @return 上下文
      */
-    WebContext enqueueStyle(String alias, String version);
+    WebContext enqueueStyle(String theme, String alias, String version);
 
     /**
      * 向上下文增加渲染产生的脚本对象，不向模块池注册

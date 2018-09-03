@@ -1,9 +1,6 @@
 package javax.web.doc;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +11,7 @@ import java.util.List;
 @Getter
 @ToString
 @EqualsAndHashCode
+@AllArgsConstructor
 public class CascadeMenu {
     /**
      * 菜单显示名称
@@ -26,9 +24,19 @@ public class CascadeMenu {
     /**
      * 当前菜单需要展示的按钮
      */
-    final List<CascadeInterface> interfaces = new ArrayList<CascadeInterface>();
+    final List<CascadeInterface> cascadeInterfaces = new ArrayList<CascadeInterface>();
     /**
      * 当前菜单需要展示的下一级菜单
      */
-    final List<CascadeMenu> menus = new ArrayList<CascadeMenu>();
+    final List<CascadeMenu> cascadeMenus = new ArrayList<CascadeMenu>();
+
+    public CascadeMenu add(CascadeMenu menu){
+        cascadeMenus.add(menu);
+        return this;
+    }
+
+    public CascadeMenu add(CascadeInterface cascadeInterface){
+        cascadeInterfaces.add(cascadeInterface);
+        return this;
+    }
 }

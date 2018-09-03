@@ -38,7 +38,7 @@ public interface WebMenuComponent extends WebComponent, WebFormableComponent {
     void setParent(ReferenceWebElement Parent);
 
     /**
-     * 父菜单
+     * 父菜单如果为null,则为第一级菜单
      */
     ReferenceWebElement getParent();
 
@@ -47,13 +47,13 @@ public interface WebMenuComponent extends WebComponent, WebFormableComponent {
      *
      * @return
      */
-    Collection<WebMenuComponent> getNodes();
+    Collection<WebFormableComponent> getNodes();
 
     /**
      * 增加子节点
      *
-     * @param node
+     * @param node 能够接受WebMenuComponent和WebButtonComponent
      * @return
      */
-    WebMenuComponent appendNode(WebMenuComponent... node);
+    WebMenuComponent appendNode(WebFormableComponent... node);
 }

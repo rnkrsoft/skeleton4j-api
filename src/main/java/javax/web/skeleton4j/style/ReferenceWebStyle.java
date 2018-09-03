@@ -5,8 +5,14 @@ import javax.web.skeleton4j.pool.ModulePool;
 /**
  * Created by rnkrsoft.com on 2017/11/21.
  * 引用的样式资源
+ * 样式名称由主题名:别名:版本号构成
  */
 public interface ReferenceWebStyle {
+    /**
+     * 所属的主题，如果与主题无关返回null
+     * @return 主题名
+     */
+    String getTheme();
     /**
      * 获取别名
      *

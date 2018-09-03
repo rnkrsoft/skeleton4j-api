@@ -24,7 +24,7 @@ public class ReferenceInterfaceUtils {
      * @return
      */
     public static ReferenceInterface getRefInterface(String inter, DocScanner docScanner) {
-        String[] inters = getRefInterfaceString(inter);
+        String[] inters = parse(inter);
         ReferenceInterface ref = new ReferenceInterface(docScanner, null, inters[0], inters[1], inters[2], inters[3]);
         return ref;
     }
@@ -36,7 +36,7 @@ public class ReferenceInterfaceUtils {
      * @param inter
      * @return {接口别名,接口服务名，接口名， 版本号}
      */
-    public static String[] getRefInterfaceString(String inter) {
+    public static String[] parse(String inter) {
         //接口别名，应为BOSS权限不支持长于10个长度的action名
         String alias = null;
         String version = null;

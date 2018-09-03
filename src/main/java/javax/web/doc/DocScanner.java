@@ -60,6 +60,12 @@ public interface DocScanner {
     DocScanner addScanPackage(String... packages);
 
     /**
+     * 获取扫描的包名数组
+     * @return 包名数组
+     */
+    List<String> getScanPackages();
+
+    /**
      * 初始化
      *
      * @param ifThrow  如果发生异常，是否抛出异常

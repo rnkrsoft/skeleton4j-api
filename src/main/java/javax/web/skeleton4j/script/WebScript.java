@@ -9,6 +9,11 @@ import java.util.List;
  */
 public interface WebScript {
     /**
+     * 所属的主题，如果与主题无关返回null
+     * @return 主题名
+     */
+    String getTheme();
+    /**
      * 获取别名
      *
      * @return 别名

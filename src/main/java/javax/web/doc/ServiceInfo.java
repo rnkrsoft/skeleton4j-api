@@ -12,7 +12,7 @@ import java.util.Set;
  * 服务信息
  */
 @Data
-@ToString(exclude = {"interfaces"})
+@ToString(exclude = {"cascadeInterfaces"})
 @AllArgsConstructor
 public class ServiceInfo implements Comparable<ServiceInfo> {
     final Set<InterfaceInfo> interfaces = new HashSet();

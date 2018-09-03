@@ -6,8 +6,14 @@ import javax.web.skeleton4j.pool.ModulePool;
 /**
  * Created by rnkrsoft.com on 2017/11/21.
  * 引用的脚本资源
+ * 脚本名称由主题名:别名:版本号构成
  */
 public interface ReferenceWebScript {
+    /**
+     * 所属的主题，如果与主题无关返回null
+     * @return 主题名
+     */
+    String getTheme();
     /**
      * 获取别名
      *
