@@ -8,16 +8,16 @@ public interface WebTreeComponent extends WebFormableComponent, WebGroupableComp
     /**
      * 设置是否为多选
      *
-     * @param multiSelect
+     * @param multiple
      */
-    void setMultiSelect(boolean multiSelect);
+    void setMultiple(boolean multiple);
 
     /**
      * 是否为多选
      *
      * @return 多选
      */
-    boolean isMultiSelect();
+    boolean isMultiple();
 
     /**
      * 设置树图展开

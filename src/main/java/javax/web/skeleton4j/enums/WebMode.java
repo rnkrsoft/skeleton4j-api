@@ -10,12 +10,13 @@ import com.rnkrsoft.interfaces.EnumStringCode;
  */
 public enum WebMode implements EnumStringCode {
     CREATE("CREATE", "新建"),
+    DELETE("DELETE", "删除"),
     UPDATE("UPDATE", "修改"),
     VIEW("VIEW", "查看"),
-    DELETE("DELETE", "删除"),
     QUERY("QUERY", "查询"),
     IMPORT("IMPORT", "导入"),
     EXPORT("EXPORT", "导出"),
+    URL("URL","URL"),
     OTHER("OTHER", "其他");
     String code;
     String desc;
