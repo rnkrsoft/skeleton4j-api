@@ -19,6 +19,11 @@ public @interface WebResource {
     ResourceType type() default ResourceType.AUTO;
 
     /**
+     * 资源文件处理的组件类全限定名
+     * @return 类全限定名
+     */
+    String componentClassName() default "";
+    /**
      * 资源路径
      *
      * @return 资源路径

@@ -19,10 +19,10 @@ public interface WebTableComponent extends WebComponent {
      *
      * @return
      */
-    Collection<WebFormableComponent> getUniqueColumns();
+    WebFormableComponent getUniqueColumn();
 
     /**
-     * 获取所有操作按钮
+     * 操作区组件,operates的实例为WebButtonComponent,WebMenuComponent
      *
      * @return
      */
@@ -31,26 +31,27 @@ public interface WebTableComponent extends WebComponent {
     /**
      * 增加唯一键
      *
-     * @param column
+     * @param uniqueColumn
      * @return
      */
-    WebTableComponent addUniqueColumn(WebFormableComponent... column);
+    void setUniqueColumn(WebFormableComponent uniqueColumn);
 
     /**
      * 增加字段
      *
-     * @param column 组件
+     * @param columns 组件
      * @return
      */
-    WebTableComponent addColumn(WebFormableComponent... column);
+    WebTableComponent addColumn(WebFormableComponent... columns);
 
     /**
-     * 增加操作按钮
+     * 操作区组件,operates的实例为WebButtonComponent,WebMenuComponent
      *
-     * @param operate
+     *
+     * @param operates
      * @return
      */
-    WebTableComponent addOperate(WebFormableComponent... operate);
+    WebTableComponent addOperate(WebFormableComponent... operates);
 
     /**
      * 向容器中增加对话框组件

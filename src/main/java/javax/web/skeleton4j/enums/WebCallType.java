@@ -8,7 +8,9 @@ import com.rnkrsoft.interfaces.EnumStringCode;
  */
 public enum WebCallType implements EnumStringCode {
     AJAX("AJAX", "AJAX调用"),
-    SHOW("SHOW", "显示"),
+    ONLY_SHOW("ONLY_SHOW", "只显示界面"),
+    EXPORT("EXPORT", "导出"),
+    IMPORT("IMPORT", "导入"),
     URL("URL", "URL调用");
     String code;
     String desc;

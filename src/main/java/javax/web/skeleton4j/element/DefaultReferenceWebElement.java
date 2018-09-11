@@ -1,5 +1,6 @@
 package javax.web.skeleton4j.element;
 
+import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 import lombok.Getter;
 
 import javax.web.doc.ElementInfo;
@@ -47,7 +48,10 @@ public class DefaultReferenceWebElement implements ReferenceWebElement {
     public void bind(WebElement element) {
         if (this.id != null && this.elementClass != null) {
             if (element.getElementClass() != this.elementClass || !element.getId().equals(this.id)) {
-                throw new IllegalArgumentException("当前字段'" + column + "'已经进行过映射到组件'" + this.id + "' 当前希望映射到组件'" + element.getId() + "'");
+                throw ErrorContextFactory.instance()
+                        .message("页面类'{}'当前字段'{}'已经进行过映射到组件'{}' 当前希望映射到组件'{}'", webPage.getWebPageClassName(), column, id, element.getId())
+                        .solution("移除重复导入的接口")
+                        .runtimeException();
             }
 
         }
