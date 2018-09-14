@@ -22,6 +22,17 @@ public interface WebConfirmBoxComponent extends WebComponent {
     void setTitle(String title);
 
     /**
+     *
+     * @return
+     */
+    String getMessage();
+
+    /**
+     *
+     * @param message
+     */
+    void setMessage(String message);
+    /**
      * 对话框中的内容是否为只读
      *
      * @return 是否为只读
