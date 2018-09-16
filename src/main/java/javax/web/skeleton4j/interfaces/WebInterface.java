@@ -119,7 +119,7 @@ public class WebInterface {
         /**
          * 执行后结果展示类型
          */
-        WebDisplayType displayType = WebDisplayType.MSG_BOX;
+        WebDisplayType displayType = WebDisplayType.DEFAULT;
         /**
          * 执行后结果需要影响的组件引用
          */

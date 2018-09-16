@@ -2,6 +2,7 @@ package javax.web.skeleton4j.element;
 
 
 import javax.web.doc.ElementInfo;
+import javax.web.doc.enums.WebDisplayType;
 import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
 
@@ -37,6 +38,14 @@ public interface ReferenceWebElement {
      */
     Class getElementClass();
 
+    /**
+     * 获取当前组件的展示方式
+     * 如果未对话框展示为对话框
+     * 如果为确认框展示为确认框
+     * 如果未消息框展示为消息框
+     * @return
+     */
+    WebDisplayType getDisplayType();
     /**
      * 组件的ID
      */

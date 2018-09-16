@@ -4,6 +4,10 @@ import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 import lombok.Getter;
 
 import javax.web.doc.ElementInfo;
+import javax.web.doc.enums.WebDisplayType;
+import javax.web.skeleton4j.element.component.WebConfirmBoxComponent;
+import javax.web.skeleton4j.element.component.WebDialogBoxComponent;
+import javax.web.skeleton4j.element.component.WebMsgBoxComponent;
 import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
 
@@ -31,6 +35,18 @@ public class DefaultReferenceWebElement implements ReferenceWebElement {
         this.elementClass = elementClass;
         this.webPage = webPage;
         this.id = id;
+    }
+
+    @Override
+    public WebDisplayType getDisplayType() {
+        if (elementClass == WebDialogBoxComponent.class){
+            return WebDisplayType.DIALOG_BOX;
+        }else if (elementClass == WebConfirmBoxComponent.class){
+            return WebDisplayType.CONFIRM_BOX;
+        }else if (elementClass == WebMsgBoxComponent.class){
+            return WebDisplayType.MSG_BOX;
+        }
+        return WebDisplayType.DEFAULT;
     }
 
     public WebElement get() {
