@@ -101,4 +101,30 @@ public class ReferenceInterface {
     public String toString() {
         return alias + "=" + serviceName + "." + interfaceName + ":" + version;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ReferenceInterface that = (ReferenceInterface) o;
+
+        if (namespace != null ? !namespace.equals(that.namespace) : that.namespace != null) return false;
+        if (alias != null ? !alias.equals(that.alias) : that.alias != null) return false;
+        if (serviceName != null ? !serviceName.equals(that.serviceName) : that.serviceName != null) return false;
+        if (interfaceName != null ? !interfaceName.equals(that.interfaceName) : that.interfaceName != null)
+            return false;
+        return !(version != null ? !version.equals(that.version) : that.version != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = namespace != null ? namespace.hashCode() : 0;
+        result = 31 * result + (alias != null ? alias.hashCode() : 0);
+        result = 31 * result + (serviceName != null ? serviceName.hashCode() : 0);
+        result = 31 * result + (interfaceName != null ? interfaceName.hashCode() : 0);
+        result = 31 * result + (version != null ? version.hashCode() : 0);
+        return result;
+    }
 }

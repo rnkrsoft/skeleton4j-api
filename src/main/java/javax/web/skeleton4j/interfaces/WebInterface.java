@@ -57,7 +57,7 @@ public class WebInterface {
     /**
      * 提供参数的组件引用
      */
-    final List<ReferenceWebElement> params;
+    final List<ReferenceWebElement> params = new ArrayList<ReferenceWebElement>();
     /**
      * 执行后结果展示类型
      */
@@ -69,7 +69,7 @@ public class WebInterface {
 
     WebInterface(List<ReferenceWebElement> preExecutes, List<ReferenceWebElement> params) {
         this.preExecutes = preExecutes;
-        this.params = params;
+        this.params.addAll(params);
     }
 
     public static WebInterfaceBuilder builder(){
