@@ -1,5 +1,6 @@
 package javax.web.doc;
 
+import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 import lombok.Getter;
 
 /**
@@ -82,7 +83,14 @@ public class ReferenceInterface {
         if (docScanner == null) {
             throw new NullPointerException("docScanner未初始化");
         }
-        return docScanner.listInterface(serviceName, interfaceName, version);
+        InterfaceInfo interfaceInfo = docScanner.listInterface(serviceName, interfaceName, version);
+        if (interfaceInfo == null){
+            throw ErrorContextFactory.instance()
+                    .message("{}接口不存在", this)
+                    .solution("检查服务类'{}'是否存在名为'{}'的接口方法并确认其版本号为'{}'", serviceName, interfaceInfo, version)
+                    .runtimeException();
+        }
+        return interfaceInfo;
     }
 
     /**
