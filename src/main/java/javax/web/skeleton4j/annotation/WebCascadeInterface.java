@@ -29,7 +29,17 @@ public @interface WebCascadeInterface {
      * @return 布局类型
      */
     WebLayout layout() default WebLayout.INLINE;
+    /**
+     * 菜单图片
+     * @return
+     */
+    String icon() default "";
 
+    /**
+     *  CSS样式类数组
+     * @return
+     */
+    String[] cssClasses() default {};
     /**
      * 展示名称，如果是按钮情况，则使用该字段的值展示，否则使用接口本身的名字
      *

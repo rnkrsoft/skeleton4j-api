@@ -5,6 +5,17 @@ package javax.web.skeleton4j.annotation;
  */
 public @interface WebCascadeMenuLevel2 {
     /**
+     * 菜单图片
+     * @return
+     */
+    String icon() default "";
+
+    /**
+     *  CSS样式类数组
+     * @return
+     */
+    String[] cssClasses() default {};
+    /**
      * 二级菜单名
      * @return
      */
