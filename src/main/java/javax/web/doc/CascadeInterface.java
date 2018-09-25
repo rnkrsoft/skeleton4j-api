@@ -13,6 +13,10 @@ import java.util.*;
 @EqualsAndHashCode
 public class CascadeInterface {
     /**
+     * 按钮图标
+     */
+    String icon;
+    /**
      * CSS样式使用的class选择器,可以定义多个，总是追加系统生成，例如该字段对应Text组件，则生成textComponent
      *
      * @return
@@ -56,6 +60,7 @@ public class CascadeInterface {
     }
 
     public static class CascadeInterfaceBuilder {
+        String icon;
         final Set<String> cssClasses = new HashSet();
         final List<ResultDisplay> resultDisplays = new ArrayList();
         final List<CascadeColumn> cascadeColumns = new ArrayList();
@@ -85,6 +90,11 @@ public class CascadeInterface {
 
         public CascadeInterfaceBuilder displayName(String displayName) {
             this.displayName = displayName;
+            return this;
+        }
+
+        public CascadeInterfaceBuilder icon(String icon) {
+            this.icon = icon;
             return this;
         }
 
@@ -128,6 +138,7 @@ public class CascadeInterface {
                 cascadeInterface.displayName = displayName;
             }
             cascadeInterface.confirm = confirm;
+            cascadeInterface.icon = icon;
             cascadeInterface.cssClasses.addAll(cssClasses);
             cascadeInterface.cascadeColumns.addAll(cascadeColumns);
             cascadeInterface.resultDisplays.addAll(resultDisplays);
