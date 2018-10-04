@@ -1,6 +1,7 @@
 package javax.web.skeleton4j.interfaces;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.web.doc.ReferenceInterface;
 import javax.web.doc.enums.WebDisplayType;
@@ -61,10 +62,12 @@ public class WebInterface {
     /**
      * 执行后结果展示类型
      */
+    @Setter
     WebDisplayType displayType;
     /**
      * 执行后结果需要影响的组件引用
      */
+    @Setter
     ReferenceWebElement target;
 
     WebInterface(List<ReferenceWebElement> preExecutes, List<ReferenceWebElement> params) {
