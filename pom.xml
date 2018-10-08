@@ -6,16 +6,9 @@
     <packaging>jar</packaging>
     <groupId>com.rnkrsoft.skeleton4j</groupId>
     <artifactId>skeleton4j-api</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1-beta1</version>
     <name>skeleton4j-api</name>
     <description>skeleton4j application interface</description>
-    <url>https://github.com/rnkrsoft.com/skeleton4j-api.git</url>
-    <licenses>
-        <license>
-            <name>Apache License Version 2.0</name>
-            <url>http://www.apache.org/licenses</url>
-        </license>
-    </licenses>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
@@ -54,21 +47,25 @@
             <groupId>com.rnkrsoft.groundwork</groupId>
             <artifactId>groundwork</artifactId>
             <version>${groundwork.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.rnkrsoft.io4j</groupId>
             <artifactId>io4j</artifactId>
             <version>${io4j.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.rnkrsoft.logtrace4j</groupId>
             <artifactId>logtrace4j</artifactId>
             <version>${logtrace4j.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.rnkrsoft.reflection4j</groupId>
             <artifactId>reflection4j</artifactId>
             <version>${reflection4j.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
     <developers>
@@ -128,18 +125,6 @@
             <id>release</id>
             <build>
                 <plugins>
-
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.16</version>
-                        <configuration>
-                            <forkMode>always</forkMode>
-                            <argLine>-Dfile.encoding=UTF-8</argLine>
-                        </configuration>
-                    </plugin>
-
                     <!-- Javadoc -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -201,12 +186,12 @@
     </repositories>
     <distributionManagement>
         <snapshotRepository>
-            <id>rnkrsoft</id>
-            <url>http://nexus.rnkrsoft.com/content/repositories/snapshots/</url>
+            <id>open-source-snapshots</id>
+            <url>http://nexus.rnkrsoft.com/content/repositories/open-source-snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>rnkrsoft</id>
-            <url>http://nexus.rnkrsoft.com/content/repositories/releases/</url>
+            <id>open-source-releases</id>
+            <url>http://nexus.rnkrsoft.com/content/repositories/open-source-releases/</url>
         </repository>
     </distributionManagement>
 </project>
