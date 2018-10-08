@@ -17,6 +17,10 @@ import java.util.Set;
 public class ServiceInfo implements Comparable<ServiceInfo> {
     final Set<InterfaceInfo> interfaces = new HashSet();
     /**
+     * 通道名
+     */
+    String channel;
+    /**
      * 服务名
      */
     String name;
