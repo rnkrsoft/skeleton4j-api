@@ -59,7 +59,7 @@ public class ReferenceInterfaceUtils {
         String temp = inter.substring(equalPos + 1, colonPos);
         int lastDotPos = temp.lastIndexOf(".");
         if (lastDotPos == -1) {
-           throw ErrorContextFactory.instance().message("接口名称格式不正确").runtimeException();
+           throw ErrorContextFactory.instance().message("接口名称'" + inter + "'格式不正确").runtimeException();
         }
         String serviceName = temp.substring(0, lastDotPos);
         String interfaceName = temp.substring(lastDotPos + 1);
