@@ -24,6 +24,10 @@ public interface Skeleton4jConfig {
      */
     String THEME_PACKAGES = "themePackages";
     /**
+     * 接口包路径，多个;分割
+     */
+    String INTERFACE_PACKAGES = "interfacePackages";
+    /**
      * 主题包路径，多个;分割
      */
     String PAGE_PACKAGES = "pagePackages";
