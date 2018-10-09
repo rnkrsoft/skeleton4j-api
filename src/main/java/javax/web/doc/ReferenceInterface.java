@@ -87,7 +87,7 @@ public class ReferenceInterface {
         if (interfaceInfo == null){
             throw ErrorContextFactory.instance()
                     .message("{}接口不存在", this)
-                    .solution("检查服务类'{}'是否存在名为'{}'的接口方法并确认其版本号为'{}'", serviceName, interfaceInfo, version)
+                    .solution("检查服务类'{}'是否存在名为'{}'的接口方法并确认其版本号为'{}'", serviceName, interfaceName, version)
                     .runtimeException();
         }
         return interfaceInfo;
@@ -102,7 +102,7 @@ public class ReferenceInterface {
         if (docScanner == null) {
             throw new NullPointerException("docScanner未初始化");
         }
-        InterfaceInfo interfaceInfo = docScanner.listInterface(serviceName, interfaceName);
+        InterfaceInfo interfaceInfo = docScanner.listInterface(serviceName, interfaceName, version);
         return interfaceInfo != null;
     }
 
