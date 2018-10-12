@@ -99,11 +99,7 @@ public class BeanElementInfo extends AbstractElementInfo implements ElementInfo 
             } else {
                 elementInfo.desc = desc;
             }
-            if (usage == null) {
-                elementInfo.usage = elementInfo.desc;
-            } else {
-                elementInfo.usage = usage;
-            }
+            elementInfo.usage = usage == null ? "" : usage;
             return elementInfo;
         }
     }

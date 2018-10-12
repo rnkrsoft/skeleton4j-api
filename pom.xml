@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <groupId>com.rnkrsoft.skeleton4j</groupId>
     <artifactId>skeleton4j-api</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1-beta1</version>
     <name>skeleton4j-api</name>
     <description>skeleton4j application interface</description>
     <properties>

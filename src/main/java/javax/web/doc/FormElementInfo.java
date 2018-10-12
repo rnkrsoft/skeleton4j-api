@@ -131,11 +131,7 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
             } else {
                 info.desc = desc;
             }
-            if (usage == null) {
-                info.usage = info.desc;
-            } else {
-                info.usage = usage;
-            }
+            info.usage = usage == null ? "" : usage;
             info.javaClass = javaClass;
             info.required = required;
             info.beanClass = beanClass;

@@ -274,6 +274,7 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
             this.cascadeMenus.addAll(Arrays.asList(cascadeMenus));
             return this;
         }
+
         public ValueElementInfoBuilder usage(String usage) {
             this.usage = usage;
             return this;
@@ -293,11 +294,7 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
             } else {
                 info.placeholder = placeholder;
             }
-            if (usage == null) {
-                info.usage = info.desc;
-            } else {
-                info.usage = usage;
-            }
+            info.usage = usage == null ? "" : usage;
             info.enums.putAll(enums);
             if (valueDisplayType == null) {
                 info.valueDisplayType = ValueDisplayType.STRING;
