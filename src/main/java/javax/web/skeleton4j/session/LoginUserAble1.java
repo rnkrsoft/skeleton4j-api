@@ -1,10 +1,10 @@
-package javax.web.skeleton4j.interfaces;
+package javax.web.skeleton4j.session;
 
 /**
  * Created by rnkrsoft.com on 2017/12/8.
  * 设置请求能够获取登录用户信息
  */
-public interface LoginUserable {
+public interface LoginUserAble {
     /**
      * 获取登录用户号
      *
