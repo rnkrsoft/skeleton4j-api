@@ -1,5 +1,7 @@
 package javax.web.skeleton4j.session;
 
+import java.util.List;
+
 /**
  * Created by rnkrsoft.com on 2017/12/8.
  * 设置请求能够获取登录用户信息
@@ -32,4 +34,5 @@ public interface LoginUserAble {
      * @param loginUserName
      */
     void setLoginUserName(String loginUserName);
+
 }

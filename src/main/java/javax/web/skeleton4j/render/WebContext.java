@@ -134,26 +134,16 @@ public interface WebContext {
     String getNickName();
 
     /**
-     * 用户所在组织编号
-     *
-     * @return 组织编号
-     */
-    String getGroup();
-
-    /**
-     * 用户所在组织描述
-     *
-     * @return 组织描述
-     */
-    String getGroupDesc();
-
-    /**
      * 用户头像
      *
      * @return 用户头像
      */
     String getUserAvatar();
 
+    String getUserBranchId();
+    String getUserBranchName();
+    String getUserCityId();
+    String getUserCityName();
     /**
      * 渲染产生的脚本对象
      *
