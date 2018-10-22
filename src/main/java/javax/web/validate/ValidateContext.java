@@ -12,10 +12,7 @@ import java.util.Map;
  */
 @Data
 public class ValidateContext {
-    /**
-     * 校验值对象
-     */
-    Object value;
+    String name;
     /**
      * 失败字段
      */
@@ -24,6 +21,10 @@ public class ValidateContext {
      * 失败字段名称
      */
     String failureFieldName;
+    /**
+     * 对象包装
+     */
+    MetaObject parent;
     /**
      * 对象包装
      */
@@ -58,11 +59,12 @@ public class ValidateContext {
         register(ValidateCause.NOT_DEFINE_ENUM_FACTORY_METHOD, ValidateCause.NOT_DEFINE_ENUM_FACTORY_METHOD.getDesc());
     }
 
-    public ValidateContext(ValidateContext validateContext, MetaObject metaObject) {
+    public ValidateContext(ValidateContext validateContext, MetaObject metaObject, String name) {
         this.causes.clear();
         this.causes.putAll(validateContext.getCauses());
-        this.metaObject = metaObject;
-        this.value = metaObject.getObject();
+        this.parent = metaObject;
+        this.metaObject = metaObject.metaObjectForProperty(name);
+        this.name = name;
         this.throwException = validateContext.isThrowException();
     }
 
@@ -91,7 +93,6 @@ public class ValidateContext {
         public ValidateContext build() {
             ValidateContext context = new ValidateContext();
             context.metaObject = GlobalSystemMetadata.forObject(value.getClass(), value);
-            context.value = value;
             context.throwException = throwException;
             return context;
         }
