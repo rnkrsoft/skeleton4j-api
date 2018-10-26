@@ -87,6 +87,10 @@ public interface Skeleton4jConfig {
      * 首页
      */
     String INDEX_PAGE = "indexPage";
+    /**
+     * ZOOKEEPER注册中心地址
+     */
+    String ZOOKEEPER_ADDRESS = "zookeeperAddress";
 
     /**
      * 列出所有参数的参数名
