@@ -4,6 +4,7 @@ import javax.web.doc.enums.PatternType;
 import javax.web.doc.enums.ValueDisplayType;
 import javax.web.skeleton4j.annotation.WebCascadeInterface;
 import javax.web.skeleton4j.annotation.WebCascadeMenuLevel1;
+import javax.web.validate.annotation.ValidateResult;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -138,4 +139,10 @@ public @interface ApidocElement {
      * @return 否为隐藏
      */
     boolean hidden() default false;
+
+    /**
+     * 当前字段校验的结果定义
+     * @return
+     */
+    ValidateResult validateResult() default @ValidateResult;
 }

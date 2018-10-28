@@ -12,15 +12,18 @@ import java.util.Map;
  */
 @Data
 public class ValidateContext {
-    String name;
     /**
-     * 失败字段
+     * 当前字段
      */
-    String failureField;
+    String fieldName;
     /**
-     * 失败字段名称
+     * 失败字段英文名称
      */
-    String failureFieldName;
+    String failFieldName;
+    /**
+     * 失败字段中文名称
+     */
+    String failFieldChsName;
     /**
      * 对象包装
      */
@@ -47,7 +50,7 @@ public class ValidateContext {
     boolean throwException;
 
     public ValidateContext() {
-        register(ValidateCause.IS_NULL_DATA, ValidateCause.IS_NULL_DATA.getDesc());
+        register(ValidateCause.IS_NULL, ValidateCause.IS_NULL.getDesc());
         register(ValidateCause.IS_REQUIRED, ValidateCause.IS_REQUIRED.getDesc());
         register(ValidateCause.NOT_MATCH_MIN_LEN, ValidateCause.NOT_MATCH_MIN_LEN.getDesc());
         register(ValidateCause.NOT_MATCH_MAX_LEN, ValidateCause.NOT_MATCH_MAX_LEN.getDesc());
@@ -55,16 +58,16 @@ public class ValidateContext {
         register(ValidateCause.NOT_MATCH_PATTERN, ValidateCause.NOT_MATCH_PATTERN.getDesc());
         register(ValidateCause.NOT_MATCH_ENUM, ValidateCause.NOT_MATCH_ENUM.getDesc());
         register(ValidateCause.NOT_IMPLEMENT_ENUM_INTERFACE, ValidateCause.NOT_IMPLEMENT_ENUM_INTERFACE.getDesc());
-        register(ValidateCause.NOT_SUPPORT_JAVA_TYPE, ValidateCause.NOT_SUPPORT_JAVA_TYPE.getDesc());
+        register(ValidateCause.NOT_SUPPORT_DATA_TYPE, ValidateCause.NOT_SUPPORT_DATA_TYPE.getDesc());
         register(ValidateCause.NOT_DEFINE_ENUM_FACTORY_METHOD, ValidateCause.NOT_DEFINE_ENUM_FACTORY_METHOD.getDesc());
     }
 
-    public ValidateContext(ValidateContext validateContext, MetaObject metaObject, String name) {
+    public ValidateContext(ValidateContext validateContext, MetaObject metaObject, String fieldName) {
         this.causes.clear();
         this.causes.putAll(validateContext.getCauses());
         this.parent = metaObject;
-        this.metaObject = metaObject.metaObjectForProperty(name);
-        this.name = name;
+        this.metaObject = metaObject.metaObjectForProperty(fieldName);
+        this.fieldName = fieldName;
         this.throwException = validateContext.isThrowException();
     }
 
@@ -93,6 +96,7 @@ public class ValidateContext {
         public ValidateContext build() {
             ValidateContext context = new ValidateContext();
             context.metaObject = GlobalSystemMetadata.forObject(value.getClass(), value);
+            context.parent = context.metaObject;
             context.throwException = throwException;
             return context;
         }

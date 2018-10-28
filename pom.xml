@@ -7,7 +7,7 @@
     <groupId>com.rnkrsoft.skeleton4j</groupId>
     <artifactId>skeleton4j-api</artifactId>
     <version>1.0.1-SNAPSHOT</version>
-    <name>skeleton4j-api</name>
+    <name>skeleton4j api module</name>
     <description>skeleton4j application interface</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
