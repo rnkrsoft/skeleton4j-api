@@ -91,7 +91,14 @@ public interface Skeleton4jConfig {
      * ZOOKEEPER注册中心地址
      */
     String ZOOKEEPER_ADDRESS = "zookeeperAddress";
-
+    /**
+     * 文件储存URL
+     */
+    String FILE_STORE_URL = "fileStoreUrl";
+    /**
+     * 退出登录
+     */
+    String LOGOUT_URL = "logoutUrl";
     /**
      * 列出所有参数的参数名
      *

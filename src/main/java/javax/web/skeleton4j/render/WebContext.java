@@ -144,6 +144,8 @@ public interface WebContext {
     String getUserBranchName();
     String getUserCityId();
     String getUserCityName();
+
+    String getLogoutUrl();
     /**
      * 渲染产生的脚本对象
      *
