@@ -29,6 +29,10 @@ public enum ValueDisplayType {
      */
     DECIMAL,
     /**
+     * 搜索控件
+     */
+    SEARCH_VIEW,
+    /**
      * 列表
      */
     LIST,
