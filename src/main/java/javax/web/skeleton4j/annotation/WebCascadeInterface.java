@@ -17,6 +17,11 @@ public @interface WebCascadeInterface {
     String value();
 
     /**
+     * 引用接口所在服务类
+     * @return
+     */
+    Class serviceClass() default Class.class;
+    /**
      * 是否在进行事件触发前进行确认操作
      *
      * @return 确认操作

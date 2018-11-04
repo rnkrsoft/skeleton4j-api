@@ -79,5 +79,5 @@ public @interface WebImport {
      * 导入的接口所在类对象
      * @return 服务类对象
      */
-    Class serviceClass() default Object.class;
+    Class serviceClass() default Class.class;
 }
