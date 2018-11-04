@@ -17,6 +17,7 @@ public enum WebDisplayType implements EnumStringCode {
     OPEN_URL_WINDOW("OPEN_URL_WINDOW", "在新窗口打开一个地址"),
     OPEN_URL_DIALOG("OPEN_URL_DIALOG", "在模态框打开一个地址"),
     DATA_SOURCE("DATA_SOURCE", "数据源"),
+    SEARCH_RESULT("SEARCH_RESULT","搜索结果"),
     INNER_HTML("INNER_HTML", "HTML内容填充");
     String code;
     String desc;
