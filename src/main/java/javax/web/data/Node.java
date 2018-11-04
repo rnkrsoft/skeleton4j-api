@@ -11,7 +11,8 @@ import java.util.List;
 
 /**
  * Created by rnkrsoft.com on 2017/12/5.
- * 树形节点
+ * 节点
+ * 通过Node接口传递节点数据
  */
 @Builder
 @NoArgsConstructor
