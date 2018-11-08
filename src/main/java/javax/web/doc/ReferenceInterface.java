@@ -2,11 +2,13 @@ package javax.web.doc;
 
 import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Created by rnkrsoft.com on 2017/12/5.
  * 接口引用对象，用于对接口的非直接引用
  */
+@Slf4j
 public class ReferenceInterface {
     @Getter
     DocScanner docScanner;
@@ -84,7 +86,8 @@ public class ReferenceInterface {
             throw new NullPointerException("docScanner未初始化");
         }
         InterfaceInfo interfaceInfo = docScanner.listInterface(serviceName, interfaceName, version);
-        if (interfaceInfo == null){
+        if (interfaceInfo == null) {
+            log.error("获取接口'{}'失败, 但是当前存在如下接口\n '{}'", this, docScanner.listService());
             throw ErrorContextFactory.instance()
                     .message("{}接口不存在", this)
                     .solution("检查服务类'{}'是否存在名为'{}'的接口方法并确认其版本号为'{}'", serviceName, interfaceName, version)
@@ -103,7 +106,12 @@ public class ReferenceInterface {
             throw new NullPointerException("docScanner未初始化");
         }
         InterfaceInfo interfaceInfo = docScanner.listInterface(serviceName, interfaceName, version);
-        return interfaceInfo != null;
+        if (interfaceInfo == null) {
+            log.error("接口'{}'不存在, 但是当前存在如下接口\n '{}'", this, docScanner.listService());
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public String toString() {
