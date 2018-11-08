@@ -32,4 +32,14 @@ public enum InterfaceCall implements EnumStringCode {
     public String getDesc() {
         return desc;
     }
+
+    public static InterfaceCall valueOfCode(String code){
+        InterfaceCall[] values = values();
+        for (InterfaceCall value : values){
+            if (value.getCode().equals(code)){
+                return value;
+            }
+        }
+        return LOCAL;
+    }
 }

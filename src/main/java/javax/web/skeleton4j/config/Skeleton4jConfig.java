@@ -100,6 +100,10 @@ public interface Skeleton4jConfig {
      */
     String LOGOUT_URL = "logoutUrl";
     /**
+     * 全局执行器
+     */
+    String GLOBAL_INTERFACE_CALL = "globalInterfaceCall";
+    /**
      * 列出所有参数的参数名
      *
      * @return 参数名集合
