@@ -185,10 +185,4 @@ public interface WebFormableComponent extends WebComponent {
      * @param placeholder 占位文本
      */
     void setPlaceholder(String placeholder);
-
-    /**
-     * 生成提示函数hint__${id}(title, message, timeout)
-     * @return 脚本对象
-     */
-//    WebScript makeHint();
 }

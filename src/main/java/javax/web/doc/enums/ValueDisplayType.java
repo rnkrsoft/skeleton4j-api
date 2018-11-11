@@ -67,5 +67,9 @@ public enum ValueDisplayType {
     /**
      * 源代码数据
      */
-    SOURCE
+    SOURCE,
+    /**
+     * 地图区域
+     */
+    MAP_REGION
 }
