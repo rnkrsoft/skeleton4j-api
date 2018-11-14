@@ -4,7 +4,7 @@ import java.util.Collection;
 
 /**
  * Created by rnkrsoft.com on 2017/12/16.
- * 配置对象
+ * Skeleton4j配置对象
  */
 public interface Skeleton4jConfig {
     /**
@@ -91,6 +91,10 @@ public interface Skeleton4jConfig {
      * ZOOKEEPER注册中心地址
      */
     String ZOOKEEPER_ADDRESS = "zookeeperAddress";
+    /**
+     * DUBBO直连提供者，如果为空，则使用注册中心
+     */
+    String DUBBO_DIRECT_PROVIDER = "dubboDirectProvider";
     /**
      * 文件储存URL
      */
