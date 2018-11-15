@@ -18,6 +18,12 @@ public @interface WebModule {
     String displayName();
 
     /**
+     * 展示菜单前的图标
+     * @return
+     */
+    String icon() default "";
+
+    /**
      * 是否使用权限校验，如果为假，则不需要权限
      *
      * @return 是否使用权限校验

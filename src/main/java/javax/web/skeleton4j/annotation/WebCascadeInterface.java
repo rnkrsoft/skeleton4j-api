@@ -53,6 +53,12 @@ public @interface WebCascadeInterface {
     String displayName() default "";
 
     /**
+     * 用于confirm为真时，出现的提示信息中的字段信息，使用字段
+     * @return
+     */
+    String confirmMessage() default "";
+
+    /**
      * 当前级联接口调用时需要的级联入参数组，填入的时当前接口的Java字段名
      *
      * @return 级联字段数组

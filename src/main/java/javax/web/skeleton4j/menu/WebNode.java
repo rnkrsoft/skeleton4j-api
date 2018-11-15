@@ -21,51 +21,55 @@ public class WebNode {
                 '}';
     }
 
-    int no = 0;
+    protected int no = 0;
     /**
      * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
      */
-    String icon;
+    protected String icon;
     /**
      * 菜单英文名称
      */
-    String name;
+    protected String name;
     /**
      * 菜单展示名称
      */
-    String title;
+    protected String title;
     /**
      * 状态
      */
-    int status;
+    protected int status;
     /**
      * 是否使用权限
      */
-    boolean useAuthority;
+    protected boolean useAuthority;
     /**
      * 是否隐藏
      */
-    boolean hidden;
+    protected boolean hidden;
+    /**
+     * 是否展开
+     */
+    protected boolean expand;
     /**
      * 所属模块
      */
-    WebModule module;
+    protected WebModule module;
     /**
      * 父菜单
      */
-    String parent;
+    protected String parent;
     /**
      * product/action/version构成叶子菜单的最终访问路径，与Skeleton4jService的page方法入参一致
      */
-    String product;
+    protected String product;
     /**
      *  功能
      */
-    String action;
+    protected String action;
     /**
      * 版本号
      */
-    String version;
+    protected String version;
 
     public String getName() {
         if (name == null) {
@@ -100,7 +104,14 @@ public class WebNode {
          * 是否使用权限
          */
         boolean useAuthority;
+        /**
+         * 是否隐藏
+         */
         boolean hidden;
+        /**
+         * 是否展开
+         */
+        boolean expand;
         /**
          * 所属模块
          */
@@ -143,6 +154,11 @@ public class WebNode {
             return this;
         }
 
+        public WebNodeBuilder expand(boolean expand) {
+            this.expand = expand;
+            return this;
+        }
+
         public WebNodeBuilder module(WebModule module) {
             this.module = module;
             return this;
@@ -175,6 +191,7 @@ public class WebNode {
             node.status = status;
             node.useAuthority = useAuthority;
             node.hidden = hidden;
+            node.expand = expand;
             node.module = module;
             node.parent = parent;
             node.product = product;

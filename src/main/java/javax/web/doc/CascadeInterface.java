@@ -39,6 +39,10 @@ public class CascadeInterface {
      */
     boolean confirm = false;
     /**
+     * 在接口出现确认框时，提示的确认信息
+     */
+    String confirmMessage = "";
+    /**
      * 级联接口
      */
     ReferenceInterface ref;
@@ -66,6 +70,7 @@ public class CascadeInterface {
         final List<CascadeColumn> cascadeColumns = new ArrayList();
         final Set<WebTriggerEvent> cascadeEvents = new HashSet();
         boolean confirm = false;
+        String confirmMessage = "";
         ReferenceInterface ref;
         WebLayout layout = WebLayout.INLINE;
         String displayName;
@@ -80,6 +85,11 @@ public class CascadeInterface {
 
         public CascadeInterfaceBuilder confirm(boolean confirm) {
             this.confirm = confirm;
+            return this;
+        }
+
+        public CascadeInterfaceBuilder confirmMessage(String confirmMessage) {
+            this.confirmMessage = confirmMessage;
             return this;
         }
 
@@ -124,8 +134,10 @@ public class CascadeInterface {
             cascadeInterface.ref = ref;
             cascadeInterface.layout = layout;
             if (displayName == null || displayName.isEmpty()) {
-                if (ref.getAlias().equals("update")) {
+                if (ref.getAlias().equals("toUpdate")) {
                     cascadeInterface.displayName = "编辑";
+                } else if (ref.getAlias().equals("update")) {
+                    cascadeInterface.displayName = "保存";
                 } else if (ref.getAlias().equals("add")) {
                     cascadeInterface.displayName = "新增";
                 } else if (ref.getAlias().equals("view") || ref.getAlias().equals("detail")) {
@@ -138,6 +150,7 @@ public class CascadeInterface {
                 cascadeInterface.displayName = displayName;
             }
             cascadeInterface.confirm = confirm;
+            cascadeInterface.confirmMessage = confirmMessage;
             cascadeInterface.icon = icon;
             cascadeInterface.cssClasses.addAll(cssClasses);
             cascadeInterface.cascadeColumns.addAll(cascadeColumns);

@@ -36,6 +36,12 @@ public interface WebModule {
     String getName();
 
     /**
+     * 模块对应的菜单图标
+     * @return
+     */
+    String getIcon();
+
+    /**
      * 包路径，只要包相同，则是相同的模块
      *
      * @return 包路径
