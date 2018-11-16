@@ -71,5 +71,9 @@ public enum ValueDisplayType {
     /**
      * 地图区域
      */
-    MAP_AREA
+    MAP_AREA,
+    /**
+     * 地图点
+     */
+    MAP_POINT
 }
