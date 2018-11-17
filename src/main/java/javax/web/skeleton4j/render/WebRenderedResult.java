@@ -33,13 +33,16 @@ public class WebRenderedResult {
     /**
      * 缓冲区
      */
-    ByteBuf codes;
+    final ByteBuf codes = ByteBuf.allocate(1024).autoExpand(true);
+
+    public WebRenderedResult() {
+
+    }
 
     public WebRenderedResult(String product, String action, String version) {
         this.product = product;
         this.action = action;
         this.version = version;
-        this.codes = ByteBuf.allocate(1024).autoExpand(true);
     }
 
     public WebRenderedResult codes(byte[] data) {
@@ -53,8 +56,8 @@ public class WebRenderedResult {
 
     public WebRenderedResult codes(int indent, String... lines) {
         String space = StringUtils.fill("", true, ' ', indent);
-        for (String line : lines){
-            codes.put("UTF-8", line == null ? space : (space +line), "\n");
+        for (String line : lines) {
+            codes.put("UTF-8", line == null ? space : (space + line), "\n");
         }
         return this;
     }
@@ -70,6 +73,7 @@ public class WebRenderedResult {
 
     /**
      * 将渲染结果写入应答中
+     *
      * @param request
      * @param response
      */
@@ -89,29 +93,22 @@ public class WebRenderedResult {
         FileOutputStream fos = null;
         File pageFile = null;
         try {
-            if (devMode) {
-                pageFile = new File("target/" + product + "/" + action + ".html");
+            if (devMode && product != null && action != null && version != null) {
+                pageFile = new File("target/" + product + "/" + action + "/" + version + ".html");
                 if (!pageFile.exists()) {
                     pageFile.getParentFile().mkdirs();
                 }
                 fos = new FileOutputStream(pageFile);
             }
             os = response.getOutputStream();
-            while (codes.readableLength() > 0) {
-                byte[] bytes = new byte[Math.min(bufferSize, codes.readableLength() % bufferSize)];
-                codes.get(bytes);
-                os.write(bytes);
-                if (devMode) {
-                    fos.write(bytes);
-                }
-            }
+            codes.write(os);
         } catch (IOException e) {
-            log.error("输出页面发生异常", e);
+            log.error("output page happens error", e);
         } finally {
             IOUtils.closeQuietly(os);
             if (devMode) {
                 IOUtils.closeQuietly(fos);
-                log.debug("输出页面{}", pageFile);
+                log.debug("output page '{}'", pageFile);
             }
         }
 

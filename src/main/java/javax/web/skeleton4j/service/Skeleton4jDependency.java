@@ -76,9 +76,18 @@ public interface Skeleton4jDependency {
      * @return
      */
     Skeleton4jPageRenderService getPageRenderService();
-    AuthorityService getAuthorityService();
-    AuthorityExtractor getAuthorityExtractor();
 
+    /**
+     * 获取权限校验服务
+     * @return
+     */
+    AuthorityService getAuthorityService();
+
+    /**
+     * 获取权限提取服务
+     * @return
+     */
+    AuthorityExtractor getAuthorityExtractor();
 
     /**
      * 初始化核心服务
