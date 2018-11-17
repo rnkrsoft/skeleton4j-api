@@ -72,12 +72,6 @@ public interface Skeleton4jDependency {
     Set<String> getSupportVersions();
 
     /**
-     * 页面渲染服务
-     * @return
-     */
-    Skeleton4jPageRenderService getPageRenderService();
-
-    /**
      * 获取权限校验服务
      * @return
      */

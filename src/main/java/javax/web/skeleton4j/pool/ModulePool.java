@@ -8,6 +8,7 @@ import javax.web.skeleton4j.menu.WebNode;
 import javax.web.skeleton4j.module.WebModule;
 import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.remote.InterfaceMetadata;
+import javax.web.skeleton4j.render.Skeleton4jPageRenderService;
 import javax.web.skeleton4j.script.WebScript;
 import javax.web.skeleton4j.style.WebStyle;
 import java.util.List;
@@ -314,4 +315,18 @@ public interface ModulePool {
      * @return 页面池
      */
     ModulePool removePage(String product, String action, String version);
+
+    /**
+     * 注册
+     * @param theme 主题
+     * @param pageRenderServiceClass 页面渲染类
+     * @return
+     */
+    ModulePool registerPageRenderServiceClass(String theme, Class<? extends Skeleton4jPageRenderService> pageRenderServiceClass);
+    /**
+     * 获取主题对应的页面渲染服务
+     * @param theme
+     * @return
+     */
+    Skeleton4jPageRenderService getPageRenderService(String theme);
 }

@@ -1,5 +1,6 @@
 package javax.web.skeleton4j.annotation;
 
+import javax.web.skeleton4j.render.Skeleton4jPageRenderService;
 import java.lang.annotation.*;
 
 /**
@@ -24,6 +25,11 @@ public @interface WebTheme {
      */
     String desc();
 
+    /**
+     * 主题注册的渲染服务
+     * @return
+     */
+    Class<? extends Skeleton4jPageRenderService> pageRenderServiceClass();
     /**
      * 主题导入的脚本和样式
      *
