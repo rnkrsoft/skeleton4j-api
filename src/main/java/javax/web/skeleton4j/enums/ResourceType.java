@@ -11,6 +11,14 @@ public enum ResourceType {
      */
     VELOCITY,
     /**
+     * Beetl模板文件
+     */
+    BEETL,
+    /**
+     * Java Server Page
+     */
+    JSP,
+    /**
      * 自动识别
      */
     AUTO,

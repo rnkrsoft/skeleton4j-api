@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/5.
- * 提供树形节点接口
+ * Created by rnkrsoft.com on 2017/12/5.
+ * 节点接口
  */
 public interface Nodeable extends Serializable {
     /**

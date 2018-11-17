@@ -13,6 +13,10 @@ import java.util.*;
 @EqualsAndHashCode
 public class CascadeInterface {
     /**
+     * 按钮图标
+     */
+    String icon;
+    /**
      * CSS样式使用的class选择器,可以定义多个，总是追加系统生成，例如该字段对应Text组件，则生成textComponent
      *
      * @return
@@ -35,6 +39,10 @@ public class CascadeInterface {
      */
     boolean confirm = false;
     /**
+     * 在接口出现确认框时，提示的确认信息
+     */
+    String confirmMessage = "";
+    /**
      * 级联接口
      */
     ReferenceInterface ref;
@@ -56,11 +64,13 @@ public class CascadeInterface {
     }
 
     public static class CascadeInterfaceBuilder {
+        String icon;
         final Set<String> cssClasses = new HashSet();
         final List<ResultDisplay> resultDisplays = new ArrayList();
         final List<CascadeColumn> cascadeColumns = new ArrayList();
         final Set<WebTriggerEvent> cascadeEvents = new HashSet();
         boolean confirm = false;
+        String confirmMessage = "";
         ReferenceInterface ref;
         WebLayout layout = WebLayout.INLINE;
         String displayName;
@@ -78,6 +88,11 @@ public class CascadeInterface {
             return this;
         }
 
+        public CascadeInterfaceBuilder confirmMessage(String confirmMessage) {
+            this.confirmMessage = confirmMessage;
+            return this;
+        }
+
         public CascadeInterfaceBuilder layout(WebLayout layout) {
             this.layout = layout;
             return this;
@@ -85,6 +100,11 @@ public class CascadeInterface {
 
         public CascadeInterfaceBuilder displayName(String displayName) {
             this.displayName = displayName;
+            return this;
+        }
+
+        public CascadeInterfaceBuilder icon(String icon) {
+            this.icon = icon;
             return this;
         }
 
@@ -114,8 +134,10 @@ public class CascadeInterface {
             cascadeInterface.ref = ref;
             cascadeInterface.layout = layout;
             if (displayName == null || displayName.isEmpty()) {
-                if (ref.getAlias().equals("update")) {
+                if (ref.getAlias().equals("toUpdate")) {
                     cascadeInterface.displayName = "编辑";
+                } else if (ref.getAlias().equals("update")) {
+                    cascadeInterface.displayName = "保存";
                 } else if (ref.getAlias().equals("add")) {
                     cascadeInterface.displayName = "新增";
                 } else if (ref.getAlias().equals("view") || ref.getAlias().equals("detail")) {
@@ -128,6 +150,8 @@ public class CascadeInterface {
                 cascadeInterface.displayName = displayName;
             }
             cascadeInterface.confirm = confirm;
+            cascadeInterface.confirmMessage = confirmMessage;
+            cascadeInterface.icon = icon;
             cascadeInterface.cssClasses.addAll(cssClasses);
             cascadeInterface.cascadeColumns.addAll(cascadeColumns);
             cascadeInterface.resultDisplays.addAll(resultDisplays);

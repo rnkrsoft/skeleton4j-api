@@ -4,17 +4,17 @@ import javax.web.skeleton4j.element.ReferenceWebElement;
 import java.util.Collection;
 
 /**
- * Created by devops4j on 2017/12/15.
+ * Created by rnkrsoft.com on 2017/12/15.
  */
 public interface WebMenuComponent extends WebComponent, WebFormableComponent {
     /**
-     * 图标 字体font:xxxx;图片路径classpath*:com.devops4j.xxx.png;class选择器class:fa fa-edit
+     * 图标 字体font:xxxx;图片路径classpath*:com.rnkrsoft.xxx.png;class选择器class:fa fa-edit
      * @param icon 图标
      */
     void setIcon(String icon);
 
     /**
-     * 图标 字体font:xxxx;图片路径classpath*:com.devops4j.xxx.png;class选择器class:fa fa-edit
+     * 图标 字体font:xxxx;图片路径classpath*:com.rnkrsoft.xxx.png;class选择器class:fa fa-edit
      * @return 图标
      */
     String getIcon();
@@ -38,7 +38,7 @@ public interface WebMenuComponent extends WebComponent, WebFormableComponent {
     void setParent(ReferenceWebElement Parent);
 
     /**
-     * 父菜单
+     * 父菜单如果为null,则为第一级菜单
      */
     ReferenceWebElement getParent();
 
@@ -47,13 +47,13 @@ public interface WebMenuComponent extends WebComponent, WebFormableComponent {
      *
      * @return
      */
-    Collection<WebMenuComponent> getNodes();
+    Collection<WebFormableComponent> getNodes();
 
     /**
      * 增加子节点
      *
-     * @param node
+     * @param node 能够接受WebMenuComponent和WebButtonComponent
      * @return
      */
-    WebMenuComponent appendNode(WebMenuComponent... node);
+    WebMenuComponent appendNode(WebFormableComponent... node);
 }

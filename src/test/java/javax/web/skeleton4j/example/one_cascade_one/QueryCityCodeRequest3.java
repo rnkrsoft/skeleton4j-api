@@ -8,7 +8,7 @@ import javax.web.skeleton4j.annotation.WebResultDisplay;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/7.
+ * Created by rnkrsoft.com on 2017/12/7.
  */
 public class QueryCityCodeRequest3 {
     /**
@@ -22,7 +22,7 @@ public class QueryCityCodeRequest3 {
     @ApidocElement(value = "城市",
             interfaces = {
                     @WebCascadeInterface(
-                            value = "com.devops4j.service.queryCity",
+                            value = "com.rnkrsoft.service.queryCity",
                             cascadeColumn = {"countyCode"},//任何情况默认入参包括自身
                             //调用后结果影响到distinctCode字段为多选，则展示方式为RELOAD_OPTIONS,不支持VALUE
                             resultDisplay = @WebResultDisplay(displayType = WebDisplayType.DATA_SOURCE, column = "distinctCode")
@@ -32,6 +32,6 @@ public class QueryCityCodeRequest3 {
     /**
      * 该字段为使用接口校验当前值的例子，校验结果消息框提示
      */
-    @ApidocElement(value = "多个区", valueDisplayType = ValueDisplayType.List)
+    @ApidocElement(value = "多个区", valueDisplayType = ValueDisplayType.LIST)
     List<String> distinctCode;
 }

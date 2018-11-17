@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 列表字段包装对象
  */
 @Getter
@@ -131,11 +131,7 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
             } else {
                 info.desc = desc;
             }
-            if (usage == null) {
-                info.usage = info.desc;
-            } else {
-                info.usage = usage;
-            }
+            info.usage = usage == null ? "" : usage;
             info.javaClass = javaClass;
             info.required = required;
             info.beanClass = beanClass;

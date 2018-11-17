@@ -1,6 +1,8 @@
 package javax.web.skeleton4j.render;
 
-import javax.web.skeleton4j.buffer.ByteBuf;
+import com.rnkrsoft.io.buffer.ByteBuf;
+
+import javax.web.skeleton4j.config.Skeleton4jConfig;
 import javax.web.skeleton4j.element.container.WebContainer;
 import javax.web.skeleton4j.menu.WebMenu;
 import javax.web.skeleton4j.pool.ModulePool;
@@ -11,10 +13,15 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * Created by devops4j on 2017/9/30.
+ * Created by rnkrsoft.com on 2017/9/30.
  * 上下文
  */
 public interface WebContext {
+    /**
+     * 获取当前的配置
+     * @return
+     */
+    Skeleton4jConfig getConfig();
     /**
      * 渲染时传入的参数
      *
@@ -79,6 +86,12 @@ public interface WebContext {
     String getTheme();
 
     /**
+     * 是否显示侧边栏
+     * @return
+     */
+    boolean isSidebar();
+
+    /**
      * 服务器根路径
      *
      * @return 服务器根路径
@@ -121,26 +134,18 @@ public interface WebContext {
     String getNickName();
 
     /**
-     * 用户所在组织编号
-     *
-     * @return 组织编号
-     */
-    String getGroup();
-
-    /**
-     * 用户所在组织描述
-     *
-     * @return 组织描述
-     */
-    String getGroupDesc();
-
-    /**
      * 用户头像
      *
      * @return 用户头像
      */
     String getUserAvatar();
 
+    String getUserBranchId();
+    String getUserBranchName();
+    String getUserCityId();
+    String getUserCityName();
+
+    String getLogoutUrl();
     /**
      * 渲染产生的脚本对象
      *
@@ -201,12 +206,21 @@ public interface WebContext {
     WebContext codes(String... lines);
 
     /**
+     * 增加代码带缩进量
+     * @param indent 缩进量
+     * @param lines 代码行
+     * @return 上下文
+     */
+    WebContext codes(int indent, String... lines);
+
+    WebContext append(int indent, String ...lines);
+    /**
      * 使用模块池中已注册的脚本
      *
      * @param alias 别名
      * @return 上下文
      */
-    WebContext enqueueScript(String alias);
+    WebContext enqueueScript(String theme, String alias);
 
     /**
      * 使用模块池中已注册的样式
@@ -214,7 +228,7 @@ public interface WebContext {
      * @param alias 别名
      * @return 上下文
      */
-    WebContext enqueueStyle(String alias);
+    WebContext enqueueStyle(String theme, String alias);
 
     /**
      * 使用模块池中已注册的脚本
@@ -223,7 +237,7 @@ public interface WebContext {
      * @param version 版本号
      * @return 上下文
      */
-    WebContext enqueueScript(String alias, String version);
+    WebContext enqueueScript(String theme, String alias, String version);
 
     /**
      * 使用模块池中已注册的样式
@@ -232,7 +246,7 @@ public interface WebContext {
      * @param version 版本号
      * @return 上下文
      */
-    WebContext enqueueStyle(String alias, String version);
+    WebContext enqueueStyle(String theme, String alias, String version);
 
     /**
      * 向上下文增加渲染产生的脚本对象，不向模块池注册

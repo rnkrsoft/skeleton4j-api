@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * JavaBean字段对象包装
  */
 @Getter
@@ -99,11 +99,7 @@ public class BeanElementInfo extends AbstractElementInfo implements ElementInfo 
             } else {
                 elementInfo.desc = desc;
             }
-            if (usage == null) {
-                elementInfo.usage = elementInfo.desc;
-            } else {
-                elementInfo.usage = usage;
-            }
+            elementInfo.usage = usage == null ? "" : usage;
             return elementInfo;
         }
     }

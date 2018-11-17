@@ -8,31 +8,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 申明用于选项或者树形结构数据获取时的对象定义
- * example:
  */
-@ToString
+@ToString(callSuper = true)
 public class RootNode extends AbstractResponse implements Nodeable {
     @ApidocElement("节点")
     List<Node> nodes;
 
     @Override
     public List<Node> getNodes() {
-        if (nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList();
         }
-        return nodes;
+        return this.nodes;
     }
 
-    /**
-     * 增加节点
-     *
-     * @param node 节点
-     * @return 树
-     */
     public Nodeable addNode(Node node) {
-        if (nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList();
         }
         this.nodes.add(node);

@@ -3,8 +3,13 @@ package javax.web.doc;
 import lombok.Getter;
 import lombok.ToString;
 
+import javax.web.doc.enums.ElementSetType;
 import javax.web.skeleton4j.enums.ColumnType;
 
+/**
+ * Created by rnkrsoft.com on 2017/12/12.
+ * 接口信息对象
+ */
 @ToString(exclude = {"serviceInfo", "request", "response", "mappingRegistry", "docScanner"})
 public class InterfaceInfo implements Comparable<InterfaceInfo> {
     @Getter
@@ -62,8 +67,8 @@ public class InterfaceInfo implements Comparable<InterfaceInfo> {
         this.usage = usage;
         this.className = className;
         this.methodName = methodName;
-        this.request = new ElementSet(requestClass);
-        this.response = new ElementSet(responseClass);
+        this.request = new ElementSet(requestClass, ElementSetType.REQUEST);
+        this.response = new ElementSet(responseClass, ElementSetType.RESPONSE);
     }
 
     @Override
@@ -155,7 +160,6 @@ public class InterfaceInfo implements Comparable<InterfaceInfo> {
         }
         return response.getElementClass();
     }
-
     /**
      * 根据当前接口信息创建引用对象
      *

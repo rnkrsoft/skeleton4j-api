@@ -4,7 +4,7 @@ import javax.web.skeleton4j.element.component.WebMenuComponent;
 import java.util.Collection;
 
 /**
- * Created by devops4j on 2017/10/20.
+ * Created by rnkrsoft.com on 2017/10/20.
  * 菜单容器接口
  */
 public interface WebMenuContainer extends WebContainer {

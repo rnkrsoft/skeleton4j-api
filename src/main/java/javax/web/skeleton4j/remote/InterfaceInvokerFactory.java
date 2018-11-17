@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.ServiceLoader;
 
 /**
- * Created by devops4j on 2018/1/22.
+ * Created by rnkrsoft.com on 2018/1/22.
  * 接口执行器工厂
  */
 public class InterfaceInvokerFactory {
@@ -44,7 +44,7 @@ public class InterfaceInvokerFactory {
         if (count == 0 || invoker == null) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
             errorContext.message("未发现'{}' 执行器", type)
-                    .solution("在META-INF/services/javax.web.skeleton4j.remote.InterfaceInvoker检查");
+                    .solution("在META-INF/services/{}检查", InterfaceInvoker.class.getName());
             Iterator<InterfaceInvoker> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {
@@ -56,7 +56,7 @@ public class InterfaceInvokerFactory {
         } else if (count > 1) {
             ErrorContext errorContext = ErrorContextFactory.instance().reset();
             errorContext.message("发现'{}' 执行器存在多个", type)
-                    .solution("在META-INF/services/javax.web.skeleton4j.remote.InterfaceInvoker检查");
+                    .solution("在META-INF/services/{}检查", InterfaceInvoker.class.getName());
             Iterator<InterfaceInvoker> it = serviceLoader.iterator();
             int i = 0;
             while (it.hasNext()) {
@@ -76,6 +76,6 @@ public class InterfaceInvokerFactory {
      * @return Skeleton4j配置服务实例
      */
     public static InterfaceInvoker newInstance() {
-        return newInstance(InterfaceCall.SPRING_BEAN);
+        return newInstance(InterfaceCall.LOCAL);
     }
 }

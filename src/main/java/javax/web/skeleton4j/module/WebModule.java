@@ -7,7 +7,7 @@ import javax.web.skeleton4j.remote.InterfaceMetadata;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/10/13.
+ * Created by rnkrsoft.com on 2017/10/13.
  * 模块封装
  */
 public interface WebModule {
@@ -34,6 +34,12 @@ public interface WebModule {
      * @return 模块名称(英文)
      */
     String getName();
+
+    /**
+     * 模块对应的菜单图标
+     * @return
+     */
+    String getIcon();
 
     /**
      * 包路径，只要包相同，则是相同的模块

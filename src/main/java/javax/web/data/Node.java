@@ -10,8 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/5.
- * 树形节点
+ * Created by rnkrsoft.com on 2017/12/5.
+ * 节点
+ * 通过Node接口传递节点数据
  */
 @Builder
 @NoArgsConstructor
@@ -37,6 +38,10 @@ public class Node implements Serializable {
      */
     List<Node> nodes;
 
+    /**
+     * 获取树形节点
+     * @return 节点列表
+     */
     public List<Node> getNodes() {
         if (nodes == null) {
             this.nodes = new ArrayList();
@@ -44,6 +49,11 @@ public class Node implements Serializable {
         return nodes;
     }
 
+    /**
+     * 增加节点
+     * @param node 节点
+     * @return 父节点
+     */
     public Node addNode(Node node) {
         if (nodes == null) {
             this.nodes = new ArrayList();

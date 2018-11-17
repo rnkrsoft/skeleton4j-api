@@ -3,8 +3,10 @@ package javax.web.skeleton4j.module;
 import javax.web.skeleton4j.pool.ModulePool;
 
 /**
- * Created by devops4j on 2017/10/9.
+ * Created by rnkrsoft.com on 2017/10/9.
  * 模块加载器, 用于完成模块加载和页面类的重组
+ * @see WebModule
+ * @see ModulePool
  */
 public interface ModuleLoader {
     /**

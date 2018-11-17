@@ -3,7 +3,7 @@ package javax.web.skeleton4j.element.component;
 import java.util.Collection;
 
 /**
- * Created by devops4j on 2017/11/9.
+ * Created by rnkrsoft.com on 2017/11/9.
  * 确认框组件
  */
 public interface WebConfirmBoxComponent extends WebComponent {
@@ -21,6 +21,17 @@ public interface WebConfirmBoxComponent extends WebComponent {
      */
     void setTitle(String title);
 
+    /**
+     *
+     * @return
+     */
+    String getMessage();
+
+    /**
+     *
+     * @param message
+     */
+    void setMessage(String message);
     /**
      * 对话框中的内容是否为只读
      *

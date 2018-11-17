@@ -5,7 +5,7 @@ import java.lang.annotation.*;
 
 /**
  * 用于声明资源文件
- * Created by devops4j on 2017/11/30.
+ * Created by rnkrsoft.com on 2017/11/30.
  */
 @Target({ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
@@ -18,6 +18,11 @@ public @interface WebResource {
      */
     ResourceType type() default ResourceType.AUTO;
 
+    /**
+     * 资源文件处理的组件类全限定名
+     * @return 类全限定名
+     */
+    String componentClassName() default "";
     /**
      * 资源路径
      *

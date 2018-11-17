@@ -7,11 +7,19 @@ import lombok.ToString;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by rnkrsoft.com on 2017/12/5.
+ * 服务信息
+ */
 @Data
-@ToString(exclude = {"interfaces"})
+@ToString(exclude = {"cascadeInterfaces"})
 @AllArgsConstructor
 public class ServiceInfo implements Comparable<ServiceInfo> {
     final Set<InterfaceInfo> interfaces = new HashSet();
+    /**
+     * 通道名
+     */
+    String channel;
     /**
      * 服务名
      */

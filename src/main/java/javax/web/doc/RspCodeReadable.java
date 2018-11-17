@@ -19,4 +19,10 @@ public interface RspCodeReadable extends Serializable {
      * @return 应答描述
      */
     String getRspDesc();
+
+    /**
+     * 是否为成功结果
+     * @return 返回真表示成功
+     */
+    boolean isSuccess();
 }

@@ -1,9 +1,10 @@
 package javax.web.skeleton4j.element.component;
 
+import javax.web.skeleton4j.element.ReferenceWebElement;
 import java.util.Collection;
 
 /**
- * Created by devops4j on 2017/11/9.
+ * Created by rnkrsoft.com on 2017/11/9.
  * 对话框组件
  */
 public interface WebDialogBoxComponent extends WebComponent {
@@ -50,6 +51,18 @@ public interface WebDialogBoxComponent extends WebComponent {
      */
     Collection<WebFormableComponent> getToolbar();
 
+    /**
+     * 向对话框增加引用字段
+     * @param items 字段
+     * @return 对话框
+     */
+    WebDialogBoxComponent appendReferenceItem(ReferenceWebElement... items);
+
+    /**
+     * 获取对话框中的引用字段，引用字段都为字段值，无组合框和表格类型
+     * @return 对话框中的引用字段集合
+     */
+    Collection<ReferenceWebElement> getReferenceItems();
     /**
      * 向对话框增加组件元素
      *

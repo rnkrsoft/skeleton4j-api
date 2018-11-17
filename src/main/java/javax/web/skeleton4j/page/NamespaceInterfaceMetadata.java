@@ -1,16 +1,16 @@
 package javax.web.skeleton4j.page;
 
-
 import javax.web.doc.ReferenceInterface;
 import javax.web.doc.enums.WebLayout;
 import javax.web.skeleton4j.enums.InterfaceCall;
 import javax.web.skeleton4j.enums.WebGui;
 import javax.web.skeleton4j.enums.WebMode;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
 /**
- * Created by devops4j on 2017/10/13
+ * Created by rnkrsoft.com on 2017/10/13
  * 导入带有命名空间的接口元信息.
  */
 public interface NamespaceInterfaceMetadata {
@@ -33,7 +33,7 @@ public interface NamespaceInterfaceMetadata {
      *
      * @return 接口列表
      */
-    Set<ReferenceInterface> getInterfaces();
+    List<ReferenceInterface> getInterfaces();
 
     /**
      * 交互界面类型
@@ -41,6 +41,12 @@ public interface NamespaceInterfaceMetadata {
      * @return 交互界面类型
      */
     WebGui getGui();
+
+    /**
+     * 在接口事件触发前，是否展示确认框
+     * @return 是否展示确认框
+     */
+    boolean isConfirm();
 
     /**
      * 是否初始化查询数据
@@ -69,4 +75,6 @@ public interface NamespaceInterfaceMetadata {
      * @return 调用类型
      */
     InterfaceCall getCall();
+
+    void addInterface(ReferenceInterface referenceInterface);
 }

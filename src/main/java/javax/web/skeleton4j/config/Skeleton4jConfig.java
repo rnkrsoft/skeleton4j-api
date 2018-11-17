@@ -3,8 +3,8 @@ package javax.web.skeleton4j.config;
 import java.util.Collection;
 
 /**
- * Created by devops4j on 2017/12/16.
- * 配置对象
+ * Created by rnkrsoft.com on 2017/12/16.
+ * Skeleton4j配置对象
  */
 public interface Skeleton4jConfig {
     /**
@@ -24,6 +24,10 @@ public interface Skeleton4jConfig {
      */
     String THEME_PACKAGES = "themePackages";
     /**
+     * 接口包路径，多个;分割
+     */
+    String INTERFACE_PACKAGES = "interfacePackages";
+    /**
      * 主题包路径，多个;分割
      */
     String PAGE_PACKAGES = "pagePackages";
@@ -35,6 +39,10 @@ public interface Skeleton4jConfig {
      * 是否使用本地缓存
      */
     String USE_CACHE = "useCache";
+    /**
+     * 环境
+     */
+    String ENV = "env";
     /**
      * 是否使用开发模式
      */
@@ -63,6 +71,42 @@ public interface Skeleton4jConfig {
      * 服务器端口，默认为80
      */
     String SERVER_PORT = "serverPort";
+    /**
+     * 默认是否显示折叠菜单
+     */
+    String DEFAULT_SIDEBAR = "defaultSidebar";
+    /**
+     * 网页组件注册对象类名
+     */
+    String WEB_COMPONENT_REGISTRY_CLASS_NAME = "webComponentRegistryClassName";
+    /**
+     * Skeleton4j服务类
+     */
+    String SKELETON4J_SERVICE_CLASS_NAME = "skeleton4jServiceClassName";
+    /**
+     * 首页
+     */
+    String INDEX_PAGE = "indexPage";
+    /**
+     * ZOOKEEPER注册中心地址
+     */
+    String ZOOKEEPER_ADDRESS = "zookeeperAddress";
+    /**
+     * DUBBO直连提供者，如果为空，则使用注册中心
+     */
+    String DUBBO_DIRECT_PROVIDER = "dubboDirectProvider";
+    /**
+     * 文件储存URL
+     */
+    String FILE_STORE_URL = "fileStoreUrl";
+    /**
+     * 退出登录
+     */
+    String LOGOUT_URL = "logoutUrl";
+    /**
+     * 全局执行器
+     */
+    String GLOBAL_INTERFACE_CALL = "globalInterfaceCall";
     /**
      * 列出所有参数的参数名
      *

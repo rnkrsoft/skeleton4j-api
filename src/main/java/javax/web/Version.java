@@ -1,7 +1,7 @@
 package javax.web;
 
 /**
- * Created by devops4j on 2017/12/29.
+ * Created by rnkrsoft.com on 2017/12/29.
  * 该类申明了Skeleton4j API的版本号
  */
 public class Version {
@@ -11,7 +11,7 @@ public class Version {
      * @return 版本号
      */
     public static String version() {
-        return "1.0.0";
+        return "1.0.1";
     }
 
     /**

@@ -9,7 +9,9 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 /**
- * Created by devops4j on 2017/10/9.
+ * Created by rnkrsoft.com on 2017/10/9.
+ * 界面菜单的对象封装
+ * @see WebNode
  */
 @ToString
 public class WebMenu extends WebNode {
@@ -27,7 +29,7 @@ public class WebMenu extends WebNode {
 
     public static class WebMenuBuilder {
         /**
-         * 图标 字体或者图片路径classpath*:com.devops4j.xxx.png
+         * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
          */
         String icon;
         /**
@@ -46,7 +48,18 @@ public class WebMenu extends WebNode {
          * 是否使用权限
          */
         boolean useAuthority;
+        /**
+         * 是否隐藏
+         */
         boolean hidden;
+        /**
+         * 是否展开
+         */
+        boolean expand;
+        /**
+         * 当前菜单所对应的产品编号
+         */
+        String product;
         /**
          * 所属模块
          */
@@ -55,7 +68,6 @@ public class WebMenu extends WebNode {
          * 父菜单
          */
         String parent;
-
         /**
          * 子菜单
          */
@@ -86,8 +98,18 @@ public class WebMenu extends WebNode {
             return this;
         }
 
+        public WebMenuBuilder expand(boolean expand) {
+            this.expand = expand;
+            return this;
+        }
+
         public WebMenuBuilder hidden(boolean hidden) {
             this.hidden = hidden;
+            return this;
+        }
+
+        public WebMenuBuilder product(String product) {
+            this.product = product;
             return this;
         }
 
@@ -115,6 +137,8 @@ public class WebMenu extends WebNode {
             node.status = status;
             node.useAuthority = useAuthority;
             node.hidden = hidden;
+            node.expand = expand;
+            node.product = product;
             node.module = module;
             node.parent = parent;
             node.nodes.addAll(nodes);

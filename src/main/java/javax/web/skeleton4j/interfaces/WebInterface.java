@@ -1,6 +1,7 @@
 package javax.web.skeleton4j.interfaces;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.web.doc.ReferenceInterface;
 import javax.web.doc.enums.WebDisplayType;
@@ -13,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/12/8.
+ * Created by rnkrsoft.com on 2017/12/8.
  * 远端接口调用信息类，定义Web前端交互的信息
  */
 @Getter
@@ -57,19 +58,21 @@ public class WebInterface {
     /**
      * 提供参数的组件引用
      */
-    final List<ReferenceWebElement> params;
+    final List<ReferenceWebElement> params = new ArrayList<ReferenceWebElement>();
     /**
      * 执行后结果展示类型
      */
+    @Setter
     WebDisplayType displayType;
     /**
      * 执行后结果需要影响的组件引用
      */
+    @Setter
     ReferenceWebElement target;
 
     WebInterface(List<ReferenceWebElement> preExecutes, List<ReferenceWebElement> params) {
         this.preExecutes = preExecutes;
-        this.params = params;
+        this.params.addAll(params);
     }
 
     public static WebInterfaceBuilder builder(){
@@ -119,7 +122,7 @@ public class WebInterface {
         /**
          * 执行后结果展示类型
          */
-        WebDisplayType displayType = WebDisplayType.MSG_BOX;
+        WebDisplayType displayType = WebDisplayType.DEFAULT;
         /**
          * 执行后结果需要影响的组件引用
          */

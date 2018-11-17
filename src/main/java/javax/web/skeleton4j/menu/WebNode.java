@@ -1,13 +1,15 @@
 package javax.web.skeleton4j.menu;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.web.skeleton4j.module.WebModule;
 
 /**
- * Created by devops4j on 2017/10/9.
+ * Created by rnkrsoft.com on 2017/10/9.
  */
+@Data
 public class WebNode {
     @Override
     public String toString() {
@@ -19,69 +21,55 @@ public class WebNode {
                 '}';
     }
 
-    @Getter
-    @Setter
-    int no = 0;
+    protected int no = 0;
     /**
-     * 图标 字体或者图片路径classpath*:com.devops4j.xxx.png
+     * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
      */
-    @Getter
-    @Setter
-    String icon;
+    protected String icon;
     /**
      * 菜单英文名称
      */
-    String name;
+    protected String name;
     /**
      * 菜单展示名称
      */
-    @Getter
-    @Setter
-    String title;
+    protected String title;
     /**
      * 状态
      */
-    @Getter
-    @Setter
-    int status;
+    protected int status;
     /**
      * 是否使用权限
      */
-    @Getter
-    @Setter
-    boolean useAuthority;
-
-    @Getter
-    @Setter
-    boolean hidden;
+    protected boolean useAuthority;
+    /**
+     * 是否隐藏
+     */
+    protected boolean hidden;
+    /**
+     * 是否展开
+     */
+    protected boolean expand;
     /**
      * 所属模块
      */
-    @Getter
-    @Setter
-    WebModule module;
+    protected WebModule module;
     /**
      * 父菜单
      */
-    @Getter
-    @Setter
-    String parent;
+    protected String parent;
     /**
      * product/action/version构成叶子菜单的最终访问路径，与Skeleton4jService的page方法入参一致
      */
-    @Getter
-    @Setter
-    String product;
-
-    @Getter
-    @Setter
-    String action;
+    protected String product;
+    /**
+     *  功能
+     */
+    protected String action;
     /**
      * 版本号
      */
-    @Getter
-    @Setter
-    String version;
+    protected String version;
 
     public String getName() {
         if (name == null) {
@@ -97,7 +85,7 @@ public class WebNode {
 
     public static class WebNodeBuilder {
         /**
-         * 图标 字体或者图片路径classpath*:com.devops4j.xxx.png
+         * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
          */
         String icon;
         /**
@@ -116,7 +104,14 @@ public class WebNode {
          * 是否使用权限
          */
         boolean useAuthority;
+        /**
+         * 是否隐藏
+         */
         boolean hidden;
+        /**
+         * 是否展开
+         */
+        boolean expand;
         /**
          * 所属模块
          */
@@ -159,6 +154,11 @@ public class WebNode {
             return this;
         }
 
+        public WebNodeBuilder expand(boolean expand) {
+            this.expand = expand;
+            return this;
+        }
+
         public WebNodeBuilder module(WebModule module) {
             this.module = module;
             return this;
@@ -191,6 +191,7 @@ public class WebNode {
             node.status = status;
             node.useAuthority = useAuthority;
             node.hidden = hidden;
+            node.expand = expand;
             node.module = module;
             node.parent = parent;
             node.product = product;

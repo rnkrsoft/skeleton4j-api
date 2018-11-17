@@ -4,10 +4,14 @@ import javax.web.skeleton4j.config.Skeleton4jConfig;
 import javax.web.skeleton4j.enums.InterfaceCall;
 
 /**
- * Created by devops4j on 2017/12/8.
+ * Created by rnkrsoft.com on 2017/12/8.
  * 接口执行器
  */
 public interface InterfaceInvoker {
+    /**
+     * 设置配置对象
+     * @param config
+     */
     void setConfig(Skeleton4jConfig config);
     /**
      * 执行器能够处理的请求类型

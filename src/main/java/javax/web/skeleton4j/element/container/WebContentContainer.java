@@ -3,7 +3,7 @@ package javax.web.skeleton4j.element.container;
 import java.util.List;
 
 /**
- * Created by devops4j on 2017/10/20.
+ * Created by rnkrsoft.com on 2017/10/20.
  * 内容区域容器接口
  */
 public interface WebContentContainer extends WebContainer {

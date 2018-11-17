@@ -7,12 +7,15 @@ import javax.web.skeleton4j.page.WebPage;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 字段信息父接口
+ * @see ValueElementInfo
+ * @see BeanElementInfo
+ * @see FormElementInfo
  */
 public interface ElementInfo {
     /**
-     * 获取字段的映射组件
+     * 获取字段的映射界面组件
      *
      * @param page 映射到页面
      * @return 组件引用
@@ -113,7 +116,7 @@ public interface ElementInfo {
     String getName();
 
     /**
-     * 获取完整名称
+     * 获取字段完整名称
      *
      * @return 完整名称
      */

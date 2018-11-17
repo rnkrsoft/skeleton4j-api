@@ -8,18 +8,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by devops4j on 2018/1/4.
+ * Created by rnkrsoft.com on 2018/1/4.
  */
 @Data
 public class ValidateContext {
     /**
-     * 校验值对象
+     * 当前字段
      */
-    Object value;
+    String fieldName;
     /**
-     * 失败字段
+     * 失败字段英文名称
      */
-    String failureField;
+    String failFieldName;
+    /**
+     * 失败字段中文名称
+     */
+    String failFieldChsName;
+    /**
+     * 对象包装
+     */
+    MetaObject parent;
     /**
      * 对象包装
      */
@@ -31,7 +39,7 @@ public class ValidateContext {
     /**
      * 校验发生错误的代码
      */
-    int code = ValidateCause.SUCCESS.getCode();
+    String code = ValidateCause.SUCCESS.getCode();
     /**
      * 校验发生错误的描述
      */
@@ -42,7 +50,7 @@ public class ValidateContext {
     boolean throwException;
 
     public ValidateContext() {
-        register(ValidateCause.IS_NULL_DATA, ValidateCause.IS_NULL_DATA.getDesc());
+        register(ValidateCause.IS_NULL, ValidateCause.IS_NULL.getDesc());
         register(ValidateCause.IS_REQUIRED, ValidateCause.IS_REQUIRED.getDesc());
         register(ValidateCause.NOT_MATCH_MIN_LEN, ValidateCause.NOT_MATCH_MIN_LEN.getDesc());
         register(ValidateCause.NOT_MATCH_MAX_LEN, ValidateCause.NOT_MATCH_MAX_LEN.getDesc());
@@ -50,15 +58,16 @@ public class ValidateContext {
         register(ValidateCause.NOT_MATCH_PATTERN, ValidateCause.NOT_MATCH_PATTERN.getDesc());
         register(ValidateCause.NOT_MATCH_ENUM, ValidateCause.NOT_MATCH_ENUM.getDesc());
         register(ValidateCause.NOT_IMPLEMENT_ENUM_INTERFACE, ValidateCause.NOT_IMPLEMENT_ENUM_INTERFACE.getDesc());
-        register(ValidateCause.NOT_SUPPORT_JAVA_TYPE, ValidateCause.NOT_SUPPORT_JAVA_TYPE.getDesc());
+        register(ValidateCause.NOT_SUPPORT_DATA_TYPE, ValidateCause.NOT_SUPPORT_DATA_TYPE.getDesc());
         register(ValidateCause.NOT_DEFINE_ENUM_FACTORY_METHOD, ValidateCause.NOT_DEFINE_ENUM_FACTORY_METHOD.getDesc());
     }
 
-    public ValidateContext(ValidateContext validateContext, MetaObject metaObject) {
+    public ValidateContext(ValidateContext validateContext, MetaObject metaObject, String fieldName) {
         this.causes.clear();
         this.causes.putAll(validateContext.getCauses());
-        this.metaObject = metaObject;
-        this.value = metaObject.getObject();
+        this.parent = metaObject;
+        this.metaObject = metaObject.metaObjectForProperty(fieldName);
+        this.fieldName = fieldName;
         this.throwException = validateContext.isThrowException();
     }
 
@@ -87,7 +96,7 @@ public class ValidateContext {
         public ValidateContext build() {
             ValidateContext context = new ValidateContext();
             context.metaObject = GlobalSystemMetadata.forObject(value.getClass(), value);
-            context.value = value;
+            context.parent = context.metaObject;
             context.throwException = throwException;
             return context;
         }

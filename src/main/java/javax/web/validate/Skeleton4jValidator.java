@@ -3,7 +3,7 @@ package javax.web.validate;
 import javax.web.doc.RspCodeWritable;
 
 /**
- * Created by devops4j on 2018/1/4.
+ * Created by rnkrsoft.com on 2018/1/4.
  * 校验器
  */
 public interface Skeleton4jValidator {

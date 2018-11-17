@@ -9,7 +9,7 @@ import javax.web.skeleton4j.registry.WebComponentRegistry;
 import java.util.*;
 
 /**
- * Created by devops4j on 2017/12/5.
+ * Created by rnkrsoft.com on 2017/12/5.
  * 原生类型字段的包装
  */
 @Getter
@@ -39,6 +39,10 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
      */
     final List<CascadeInterface> cascadeInterfaces = new ArrayList();
     /**
+     * 级联的菜单
+     */
+    final List<CascadeMenu> cascadeMenus = new ArrayList();
+    /**
      * 是否为唯一主键，标记为唯一组件，则可用于管理系统中表格中按钮事件的传值
      */
     boolean unique = false;
@@ -58,6 +62,10 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
      * 数据类型
      */
     ValueDisplayType valueDisplayType;
+    /**
+     * 是否能够多选
+     */
+    boolean multiple;
     /**
      * Java类
      */
@@ -139,11 +147,13 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
         final List<String> defaults = new ArrayList();
         final List<String> patterns = new ArrayList();
         final List<CascadeInterface> cascadeInterfaces = new ArrayList();
+        final List<CascadeMenu> cascadeMenus = new ArrayList();
         boolean unique = false;
         String name;
         String desc;
         String placeholder;
         ValueDisplayType valueDisplayType;
+        boolean multiple = false;
         Class<?> javaClass;
         boolean required;
         int minLen;
@@ -192,6 +202,11 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
 
         public ValueElementInfoBuilder valueDisplayType(ValueDisplayType valueDisplayType) {
             this.valueDisplayType = valueDisplayType;
+            return this;
+        }
+
+        public ValueElementInfoBuilder multiple(boolean multiple) {
+            this.multiple = multiple;
             return this;
         }
 
@@ -255,6 +270,11 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
             return this;
         }
 
+        public ValueElementInfoBuilder cascadeMenu(CascadeMenu... cascadeMenus) {
+            this.cascadeMenus.addAll(Arrays.asList(cascadeMenus));
+            return this;
+        }
+
         public ValueElementInfoBuilder usage(String usage) {
             this.usage = usage;
             return this;
@@ -274,19 +294,16 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
             } else {
                 info.placeholder = placeholder;
             }
-            if (usage == null) {
-                info.usage = info.desc;
-            } else {
-                info.usage = usage;
-            }
+            info.usage = usage == null ? "" : usage;
             info.enums.putAll(enums);
             if (valueDisplayType == null) {
-                info.valueDisplayType = ValueDisplayType.String;
+                info.valueDisplayType = ValueDisplayType.STRING;
                 info.javaClass = String.class;
             } else {
                 info.valueDisplayType = valueDisplayType;
                 info.javaClass = javaClass;
             }
+            info.multiple = multiple;
             info.required = required;
             info.minLen = minLen;
             info.maxLen = maxLen;
@@ -298,6 +315,7 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
             info.hidden = hidden;
             info.readonly = readonly;
             info.cascadeInterfaces.addAll(cascadeInterfaces);
+            info.cascadeMenus.addAll(cascadeMenus);
             return info;
         }
     }
@@ -319,6 +337,6 @@ public class ValueElementInfo extends AbstractElementInfo implements ElementInfo
 
     @Override
     public String toString() {
-        return interfaceInfo.getFullName() + "." + columnType.getCode() + "." + getFullName();
+        return interfaceInfo.getFullName() + ":" + columnType.getCode() + ":" + getFullName();
     }
 }

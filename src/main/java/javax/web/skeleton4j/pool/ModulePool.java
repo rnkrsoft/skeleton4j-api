@@ -64,19 +64,21 @@ public interface ModulePool {
 
     /**
      * 船建一个样式对象
+     * @param theme 主题名
      * @param alias 别名
      * @param version 版本号
      * @return 样式对象
      */
-    WebStyle createStyle(String alias, String version);
+    WebStyle createStyle(String theme, String alias, String version);
 
     /**
      * 船建一个脚本对象
+     * @param theme 主题名
      * @param alias 别名
      * @param version 版本号
      * @return 脚本对象
      */
-    WebScript createScript(String alias, String version);
+    WebScript createScript(String theme, String alias, String version);
     /**
      * 查询页面类
      *
@@ -106,71 +108,201 @@ public interface ModulePool {
     /**
      * 查找脚本
      *
+     * @param theme   主题名
      * @param alias   别名
      * @param version 版本号
      * @return 脚本对象
      */
-    WebScript lookupScript(String alias, String version);
+    WebScript lookupScript(String theme, String alias, String version);
 
+    /**
+     * 增加一个脚本到模块池
+     * @param script 脚本对象
+     * @return 模块池
+     */
     ModulePool addScript(WebScript script);
 
-    List<WebScript> scripts(String... names);
+    /**
+     * 获取名称能够匹配的脚本对象，版本号根据字典排列取最大
+     * @param theme 主题名
+     * @param names 脚本名称数组
+     * @return 脚本列表
+     */
+    List<WebScript> scripts(String theme, String... names);
 
-    WebStyle lookupStyle(String alias, String version);
-
-    List<WebStyle> styles(String... names);
-
+    /**
+     * 增加一个样式到模块池
+     * @param style 样式对象
+     * @return 模块池
+     */
     ModulePool addStyle(WebStyle style);
 
+    /**
+     * 查找指定别名和版本号的样式对象
+     * @param theme   主题名
+     * @param alias 别名
+     * @param version 版本号
+     * @return 样式对象
+     */
+    WebStyle lookupStyle(String theme, String alias, String version);
+
+    /**
+     * 获取名称能够匹配的样式对象，版本号根据字典排列取最大
+     * @param theme 主题名
+     * @param names 样式名称数组
+     * @return 样式列表
+     */
+    List<WebStyle> styles(String theme, String... names);
+
+    /**
+     * 查找菜单节点
+     * @param name 节点名
+     * @return 菜单节点
+     */
     WebNode lookupNode(String name);
 
+    /**
+     * 获取菜单节点列表
+     * @return 菜单节点列表
+     */
     List<WebNode> nodes();
 
+    /**
+     * 增加菜单节点
+     * @param node 节点
+     * @return 模块池
+     */
     ModulePool addNode(WebNode node);
 
-
+    /**
+     * 查找菜单
+     * @param name 菜单名
+     * @return 菜单项
+     */
     WebMenu lookupMenu(String name);
 
+    /**
+     * 菜单列表
+     * @return 菜单列表
+     */
     List<WebMenu> menus();
 
+    /**
+     * 增加菜单项
+     * @param menu 菜单项
+     * @return 模块池
+     */
     ModulePool addMenu(WebMenu menu);
 
-
+    /**
+     * 根据模块名查找模块
+     * @param name 模块名
+     * @return 模块对象
+     */
     WebModule lookupModule(String name);
 
+    /**
+     * 模块列表
+     * @return
+     */
     List<WebModule> modules();
 
+    /**
+     * 增加模块
+     * @param module 模块对象
+     * @return 模块池
+     */
     ModulePool addModule(WebModule module);
 
-
+    /**
+     * 通过坐标查找接口元信息
+     * @param product 产品名
+     * @param action 功能名
+     * @param subAction 操作名
+     * @param ifNotExistsReturnNull 如果不存在是否返回null，否则抛出异常
+     * @return 接口元信息
+     */
     InterfaceMetadata lookupInterface(String product, String action, String subAction, boolean ifNotExistsReturnNull);
 
+    /**
+     * 获取导入的接口元信息列表
+     * @return 列表
+     */
     List<InterfaceMetadata> importInterfaces();
 
+    /**
+     * 增加接口元信息对象
+     * @param interfaceMetadata 接口元信息
+     * @return
+     */
     ModulePool addInterface(InterfaceMetadata interfaceMetadata);
 
-
+    /**
+     * 列出所有导入的接口元信息
+     * @return 接口元信息
+     */
     Map<InterfaceInfo, List<InterfaceMetadata>> listImportInterfaces();
 
     /**
      * 全部清理
      *
-     * @return
+     * @return 模块池
      */
     ModulePool clean();
 
-    ModulePool removeScript(String alias, String version);
+    /**
+     * 根据别名和版本号移除脚本对象
+     * @param theme 主题名
+     * @param alias 别名
+     * @param version 版本号
+     * @return 模块池
+     */
+    ModulePool removeScript(String theme,String alias, String version);
 
-    ModulePool removeStyle(String alias, String version);
+    /**
+     * 根据别名和版本号移除
+     * @param theme 主题名
+     * @param alias 别名
+     * @param version 版本号
+     * @return 模块池
+     */
+    ModulePool removeStyle(String theme,String alias, String version);
 
+    /**
+     * 根据产品名，功能名和版本号进行节点移除
+     * @param product 产品名
+     * @param action 功能名
+     * @param version 版本号
+     * @return 模块池
+     */
     ModulePool removeNode(String product, String action, String version);
 
+    /**
+     * 根据模块键值进行移除
+     * @param key 模块键值
+     * @return 模块池
+     */
     ModulePool removeModule(String key);
-
+    /**
+     * 根据菜单键值进行移除
+     * @param key 菜单键值
+     * @return 模块池
+     */
     ModulePool removeMenu(String key);
-
+    /**
+     * 根据菜单节点键值进行移除
+     * @param key 菜单节点键值
+     * @return 模块池
+     */
     ModulePool removeNode(String key);
 
+    /**
+     * 根据产品名，功能名和操作名移除接口
+     * @param product 产品名
+     * @param action 功能名
+     * @param subAction 操作名
+     * @return 模块池
+     */
     ModulePool removeInterface(String product, String action, String subAction);
 
     /**
