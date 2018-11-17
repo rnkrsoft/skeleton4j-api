@@ -10,15 +10,23 @@
     <name>skeleton4j api module</name>
     <description>skeleton4j application interface</description>
     <properties>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <java.version>1.6</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.6</jdk.version>
-        <sourceEncoding>UTF-8</sourceEncoding>
-        <io4j.version>1.0.1-beta2</io4j.version>
-        <groundwork.version>1.0.1-beta2</groundwork.version>
-        <logtrace4j.version>1.0.1-beta2</logtrace4j.version>
-        <reflection4j.version>1.0.1-beta2</reflection4j.version>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <groundwork.version>1.0.1</groundwork.version>
+        <io4j.version>1.0.1</io4j.version>
+        <logtrace4j.version>1.0.1</logtrace4j.version>
+        <reflection4j.version>1.0.1</reflection4j.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -48,6 +56,12 @@
             <artifactId>groundwork</artifactId>
             <version>${groundwork.version}</version>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.rnkrsoft.io4j</groupId>
@@ -89,11 +103,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.0</version>
-                <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
-                    <encoding>${sourceEncoding}</encoding>
-                </configuration>
             </plugin>
             <!-- FilterType -->
             <plugin>
