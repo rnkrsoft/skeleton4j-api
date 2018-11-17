@@ -2,6 +2,7 @@ package javax.web.skeleton4j.pool;
 
 import javax.web.doc.DocScanner;
 import javax.web.doc.InterfaceInfo;
+import javax.web.skeleton4j.config.Skeleton4jConfig;
 import javax.web.skeleton4j.enums.InterfaceCall;
 import javax.web.skeleton4j.menu.WebMenu;
 import javax.web.skeleton4j.menu.WebNode;
@@ -18,6 +19,7 @@ import java.util.Map;
  * 模块池
  */
 public interface ModulePool {
+     ModulePool config(Skeleton4jConfig config);
     /**
      * 获取模块池
      * @return 模块池
