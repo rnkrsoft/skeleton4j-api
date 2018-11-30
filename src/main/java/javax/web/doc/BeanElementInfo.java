@@ -4,8 +4,7 @@ import lombok.Getter;
 
 import javax.web.doc.enums.ElementType;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by rnkrsoft.com on 2017/12/5.
@@ -29,6 +28,10 @@ public class BeanElementInfo extends AbstractElementInfo implements ElementInfo 
      * Java类
      */
     Class<?> javaClass;
+    /**
+     * 该字段所属的html class值，可以是多个
+     */
+    final Set<String> cssClasses = new HashSet();
     /**
      * 字段描述
      */
@@ -60,6 +63,7 @@ public class BeanElementInfo extends AbstractElementInfo implements ElementInfo 
         String fullName;
         String name;
         Class<?> javaClass;
+        Set<String> cssClasses = new HashSet();
         String desc;
         String usage;
 
@@ -85,6 +89,11 @@ public class BeanElementInfo extends AbstractElementInfo implements ElementInfo 
             return this;
         }
 
+        public BeanElementInfoBuilder cssClass(String... cssClass) {
+            this.cssClasses.addAll(Arrays.asList(cssClass));
+            return this;
+        }
+
         public BeanElementInfoBuilder usage(String usage) {
             this.usage = usage;
             return this;
@@ -99,6 +108,7 @@ public class BeanElementInfo extends AbstractElementInfo implements ElementInfo 
             } else {
                 elementInfo.desc = desc;
             }
+            elementInfo.cssClasses.addAll(cssClasses);
             elementInfo.usage = usage == null ? "" : usage;
             return elementInfo;
         }

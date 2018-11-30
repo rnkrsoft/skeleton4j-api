@@ -4,9 +4,7 @@ import lombok.Getter;
 
 import javax.web.doc.enums.ElementType;
 import javax.web.skeleton4j.registry.WebComponentRegistry;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by rnkrsoft.com on 2017/12/5.
@@ -30,6 +28,10 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
      * Java类
      */
     Class<?> javaClass;
+    /**
+     * 该字段所属的html class值，可以是多个
+     */
+    final Set<String> cssClasses = new HashSet();
     /**
      * Bean类
      */
@@ -76,6 +78,7 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
         final List<ElementInfo> elements = new ArrayList();
         String name;
         Class<?> javaClass;
+        Set<String> cssClasses = new HashSet();
         Class<?> beanClass;
         String desc;
         String usage;
@@ -90,6 +93,11 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
 
         public FormElementInfoBuilder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public FormElementInfoBuilder cssClass(String... cssClass) {
+            this.cssClasses.addAll(Arrays.asList(cssClass));
             return this;
         }
 
@@ -124,19 +132,20 @@ public class FormElementInfo extends AbstractElementInfo implements ElementInfo 
         }
 
         public FormElementInfo build() {
-            FormElementInfo info = new FormElementInfo(componentRegistry, interfaceInfo, elementSet, fullName);
-            info.name = name;
+            FormElementInfo elementInfo = new FormElementInfo(componentRegistry, interfaceInfo, elementSet, fullName);
+            elementInfo.name = name;
             if (desc == null) {
-                info.desc = info.name;
+                elementInfo.desc = elementInfo.name;
             } else {
-                info.desc = desc;
+                elementInfo.desc = desc;
             }
-            info.usage = usage == null ? "" : usage;
-            info.javaClass = javaClass;
-            info.required = required;
-            info.beanClass = beanClass;
-            info.elements.addAll(elements);
-            return info;
+            elementInfo.cssClasses.addAll(cssClasses);
+            elementInfo.usage = usage == null ? "" : usage;
+            elementInfo.javaClass = javaClass;
+            elementInfo.required = required;
+            elementInfo.beanClass = beanClass;
+            elementInfo.elements.addAll(elements);
+            return elementInfo;
         }
 
     }

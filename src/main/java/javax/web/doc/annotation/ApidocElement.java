@@ -86,6 +86,11 @@ public @interface ApidocElement {
     ValueDisplayType valueDisplayType() default ValueDisplayType.AUTO;
 
     /**
+     * CSS 类信息
+     * @return
+     */
+    String[] cssClasses() default {};
+    /**
      * 枚举字典类
      *
      * @return 枚举类，如果未定义则为Object

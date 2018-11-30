@@ -2,6 +2,7 @@ package javax.web.skeleton4j.annotation;
 
 /**
  * Created by rnkrsoft.com on 2018/8/16.
+ * 二级级联菜单
  */
 public @interface WebCascadeMenuLevel2 {
     /**
