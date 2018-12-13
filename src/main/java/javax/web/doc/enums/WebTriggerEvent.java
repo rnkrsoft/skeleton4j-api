@@ -8,7 +8,7 @@ import com.rnkrsoft.interfaces.EnumStringCode;
  */
 public enum WebTriggerEvent implements EnumStringCode {
     INIT("init", "页面初始化"),
-    VALIDATE_BUTTON("validate_button", "数据校验按钮"),
+    BUTTON("button", "按钮事件"),
     BLUR("blur", "元素失去焦点"),
     CHANGE("change", "值变化"),
     CLICK("click", "当用户点击某个对象时调用的事件句柄"),

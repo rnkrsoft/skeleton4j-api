@@ -12,6 +12,11 @@ import java.util.List;
  */
 public interface WebModule {
     /**
+     * 获取优先级
+     * @return
+     */
+    int getPriority();
+    /**
      * 当前模块是否使用权限，包含旗下接口
      * @return 是否使用权限
      */

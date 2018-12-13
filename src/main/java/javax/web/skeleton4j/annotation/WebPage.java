@@ -12,6 +12,12 @@ import java.lang.annotation.*;
 @Documented
 public @interface WebPage {
     /**
+     * 优先级，对模块进行排序
+     *
+     * @return 优先级
+     */
+    int priority() default 0;
+    /**
      * 页面访问URL
      *
      * @return URL

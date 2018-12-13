@@ -11,6 +11,12 @@ import java.lang.annotation.*;
 @Documented
 public @interface WebModule {
     /**
+     * 优先级，对模块进行排序
+     *
+     * @return 优先级
+     */
+    int priority() default 0;
+    /**
      * 展示名称,显示在二级菜单上的名称和页面标题上
      *
      * @return 展示名称

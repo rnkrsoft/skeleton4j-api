@@ -14,14 +14,14 @@ public class WebNode {
     @Override
     public String toString() {
         return "WebNode{" +
-                "no=" + no +
+                "priority=" + priority +
                 ", name='" + getName() + '\'' +
                 ", title='" + title + '\'' +
                 ", parent='" + parent + '\'' +
                 '}';
     }
 
-    protected int no = 0;
+    protected int priority = 0;
     /**
      * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
      */
@@ -84,6 +84,7 @@ public class WebNode {
     }
 
     public static class WebNodeBuilder {
+        int priority;
         /**
          * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
          */
@@ -128,6 +129,11 @@ public class WebNode {
          * 版本号
          */
         String version;
+
+        public WebNodeBuilder priority(int priority) {
+            this.priority = priority;
+            return this;
+        }
 
         public WebNodeBuilder icon(String icon) {
             this.icon = icon;
@@ -186,6 +192,7 @@ public class WebNode {
 
         public WebNode build() {
             WebNode node = new WebNode();
+            node.priority = priority;
             node.icon = icon;
             node.title = title;
             node.status = status;

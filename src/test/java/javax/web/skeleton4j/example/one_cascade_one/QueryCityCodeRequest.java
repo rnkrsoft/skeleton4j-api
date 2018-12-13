@@ -33,7 +33,7 @@ public class QueryCityCodeRequest {
      */
     @ApidocElement(value = "区", interfaces = {
             @WebCascadeInterface(
-                    cascadeEvent = WebTriggerEvent.VALIDATE_BUTTON,
+                    cascadeEvent = WebTriggerEvent.BUTTON,
                     value = "com.rnkrsoft.service.check",
                     //校验结果有两种提示MSG_BOX和HINT
                     resultDisplay = @WebResultDisplay(displayType = WebDisplayType.MSG_BOX)

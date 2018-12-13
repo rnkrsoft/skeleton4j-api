@@ -28,6 +28,7 @@ public class WebMenu extends WebNode {
     }
 
     public static class WebMenuBuilder {
+        int priority;
         /**
          * 图标 字体或者图片路径classpath*:com.rnkrsoft.xxx.png
          */
@@ -72,6 +73,12 @@ public class WebMenu extends WebNode {
          * 子菜单
          */
         Collection<WebNode> nodes = new LinkedList();
+
+        public WebMenuBuilder priority(int priority) {
+            this.priority = priority;
+            return this;
+        }
+
 
         public WebMenuBuilder icon(String icon) {
             this.icon = icon;
@@ -131,6 +138,7 @@ public class WebMenu extends WebNode {
 
         public WebMenu build() {
             WebMenu node = new WebMenu();
+            node.priority = priority;
             node.icon = icon;
             node.name = name;
             node.title = title;
