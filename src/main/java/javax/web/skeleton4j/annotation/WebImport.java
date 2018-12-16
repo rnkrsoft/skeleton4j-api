@@ -39,6 +39,12 @@ public @interface WebImport {
      * @return 确认操作
      */
     boolean confirm() default false;
+
+    /**
+     * 确认信息内容 支持$(变量名)表达式
+     * @return
+     */
+    String confirmMessage() default "";
     /**
      * 布局
      *

@@ -53,7 +53,8 @@ public @interface WebCascadeInterface {
     String displayName() default "";
 
     /**
-     * 用于confirm为真时，出现的提示信息中的字段信息，使用字段
+     * 用于confirm为真时，出现的提示信息中的字段信息
+     * 支持${变量名}表达式
      * @return
      */
     String confirmMessage() default "";

@@ -49,6 +49,11 @@ public interface NamespaceInterfaceMetadata {
     boolean isConfirm();
 
     /**
+     * 确认框待确认文本
+     * @return
+     */
+    String getConfirmMessage();
+    /**
      * 是否初始化查询数据
      *
      * @return 是否初始化查询数据
