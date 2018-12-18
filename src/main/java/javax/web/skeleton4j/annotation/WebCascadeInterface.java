@@ -2,12 +2,22 @@ package javax.web.skeleton4j.annotation;
 
 import javax.web.doc.enums.WebLayout;
 import javax.web.doc.enums.WebTriggerEvent;
+import javax.web.skeleton4j.enums.RuleMethod;
+import java.lang.annotation.*;
 
 /**
  * Created by rnkrsoft.com on 2017/12/7.
  * 用于定义级联接口
  */
+@Target({ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
 public @interface WebCascadeInterface {
+    /**
+     * 级联规则
+     * @return
+     */
+    WebCascadeRule[] rule() default @WebCascadeRule("*");
     /**
      * 级联接口
      * 格式别名=包名.类名.接口名:版本号，例如find=com.rnkrsoft.skeleton.UserService.findUser:1.0.0
