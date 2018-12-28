@@ -60,10 +60,6 @@ public interface Skeleton4jConfig {
      */
     String INLINE_STYLE = "inlineStyle";
     /**
-     * 权限管理器名
-     */
-    String AUTHORITY = "authority";
-    /**
      * 服务器地址,默认为空
      */
     String SERVER_HOST = "serverHost";
@@ -107,6 +103,14 @@ public interface Skeleton4jConfig {
      * 全局执行器
      */
     String GLOBAL_INTERFACE_CALL = "globalInterfaceCall";
+    /**
+     * 权限服务
+     */
+    String AUTHORITY_SERVICE_CLASS_NAME = "authorityServiceClassName";
+    /**
+     * 权限提取器
+     */
+    String AUTHORITY_EXTRACTOR_CLASS_NAME = "authorityExtractorClassName";
     /**
      * 列出所有参数的参数名
      *
